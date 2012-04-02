@@ -25,6 +25,17 @@ when "centos","redhat","scientific","fedora"
     include_recipe "yum::epel"
   end
   package "git"
+when "mac_os_x"
+  dmg_package "GitOSX-Installer" do
+    app node[:git][:osx_dmg][:app_name]
+    package_id node[:git][:osx_dmg][:package_id]
+    volumes_dir node[:git][:osx_dmg][:volumes_dir]
+    source node[:git][:osx_dmg][:url]
+    checksum node[:git][:osx_dmg][:checksum]
+    type "pkg"
+
+    action :install
+  end
 else
   package "git"
 end
