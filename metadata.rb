@@ -13,6 +13,6 @@ end
 
 supports "mac_os_x", ">= 10.6.0"
 
-%w{ runit yum }.each do |cb|
+%w{ runit yum dmg }.each do |cb|
   depends cb
 end
