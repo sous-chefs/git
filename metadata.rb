@@ -11,6 +11,8 @@ recipe            "git::server", "Sets up a runit_service for git daemon"
   supports os
 end
 
-%w{ runit yum }.each do |cb|
+supports "mac_os_x", ">= 10.6.0"
+
+%w{ runit yum dmg }.each do |cb|
   depends cb
 end
