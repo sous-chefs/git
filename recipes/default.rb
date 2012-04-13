@@ -25,6 +25,13 @@ when "centos","redhat","scientific","fedora"
     include_recipe "yum::epel"
   end
   package "git"
+when "windows"
+  windows_package "git" do
+    source node[:git][:url]
+    checksum node[:git][:checksum]
+    action :install
+    not_if { File.exists? 'C:\Program Files (x86)\Git\bin\git.exe' }
+  end
 else
   package "git"
 end
