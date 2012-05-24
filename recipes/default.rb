@@ -31,6 +31,7 @@ when "windows"
     checksum node[:git][:checksum]
     action :install
     not_if { File.exists? 'C:\Program Files (x86)\Git\bin\git.exe' }
+  end
 when "mac_os_x"
   dmg_package "GitOSX-Installer" do
     app node[:git][:osx_dmg][:app_name]
