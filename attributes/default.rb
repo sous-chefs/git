@@ -17,7 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-case platform
+case platform_family 
 when 'windows'
   set[:git][:version] = "1.7.9-preview20120201"
   set[:git][:url] = "http://msysgit.googlecode.com/files/Git-#{node[:git][:version]}.exe"
@@ -28,4 +28,9 @@ when "mac_os_x"
   default[:git][:osx_dmg][:package_id]  = "GitOSX.Installer.git1794.git.pkg"
   default[:git][:osx_dmg][:url]         = "http://git-osx-installer.googlecode.com/files/git-1.7.9.4-intel-universal-snow-leopard.dmg"
   default[:git][:osx_dmg][:checksum]    = "661c3fcf765572d3978df17c7636d59e"
+else
+  default[:git][:prefix] = "/usr/local"
+  default[:git][:version] = "1.7.11.4"
+  default[:git][:url] = "https://github.com/git/git/tarball/v#{node[:git][:version]}"
+  default[:git][:checksum] = "7a26d9bd0fd3384374bdc1afaae829f406bc123126817d994a460c49a3260ecc"
 end
