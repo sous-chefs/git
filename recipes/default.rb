@@ -19,7 +19,7 @@
 case node['platform_family']
 when "debian"
   package "git-core"
-when "redhat"
+when "redhat","fedora"
   case node['platform_version'].to_i
   when 5
     include_recipe "yum::epel"
