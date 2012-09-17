@@ -17,7 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-case platform_family 
+case node['platform_family']
 when 'windows'
   set[:git][:version] = "1.7.9-preview20120201"
   set[:git][:url] = "http://msysgit.googlecode.com/files/Git-#{node[:git][:version]}.exe"
