@@ -24,7 +24,7 @@ directory "/srv/git" do
   mode 0755
 end
 
-case node[:platform]
+case node['platform']
 when "debian", "ubuntu"
   include_recipe "runit"
   runit_service "git-daemon"
