@@ -21,11 +21,11 @@ include_recipe "git"
 directory "/srv/git" do
   owner "root"
   group "root"
-  mode 0755
+  mode 00755
 end
 
-case node[:platform]
-when "debian", "ubuntu"
+case node['platform_family']
+when "debian"
   include_recipe "runit"
   runit_service "git-daemon"
 else

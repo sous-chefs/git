@@ -16,29 +16,29 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-case node[:platform]
-when "debian", "ubuntu"
+case node['platform_family']
+when "debian"
   package "git-core"
-when "centos","redhat","scientific","fedora"
-  case node[:platform_version].to_i
+when "rhel","fedora"
+  case node['platform_version'].to_i
   when 5
     include_recipe "yum::epel"
   end
   package "git"
 when "windows"
   windows_package "git" do
-    source node[:git][:url]
-    checksum node[:git][:checksum]
+    source node['git']['url']
+    checksum node['git']['checksum']
     action :install
     not_if { File.exists? 'C:\Program Files (x86)\Git\bin\git.exe' }
   end
 when "mac_os_x"
   dmg_package "GitOSX-Installer" do
-    app node[:git][:osx_dmg][:app_name]
-    package_id node[:git][:osx_dmg][:package_id]
-    volumes_dir node[:git][:osx_dmg][:volumes_dir]
-    source node[:git][:osx_dmg][:url]
-    checksum node[:git][:osx_dmg][:checksum]
+    app node['git']['osx_dmg']['app_name']
+    package_id node['git']['osx_dmg']['package_id']
+    volumes_dir node['git']['osx_dmg']['volumes_dir']
+    source node['git']['osx_dmg']['url']
+    checksum node['git']['osx_dmg']['checksum']
     type "pkg"
     action :install
   end
