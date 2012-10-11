@@ -19,7 +19,7 @@
 include_recipe "build-essential"
 
 pkgs = value_for_platform_family(
-  ["rhel"] => %w{ expat-devel gettext-devel libcurl-devel openssl-devel zlib-devel }
+  ["rhel"] => %w{ expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel }
 )
 
 pkgs.each do |pkg|
