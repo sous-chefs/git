@@ -14,15 +14,21 @@ selection logic. This attribute was introduced in Ohai v0.6.12.
 
 ## Platform:
 
-* Debian/Ubuntu
-* ArchLinux
+The following platform families are supported:
+
+* Debian
+* Arch
+* RHEL
+* Fedora
+* Mac OS X (10.6.0+)
 * Windows
-* Mac OSX
 
 ## Cookbooks:
 
-###
-* runit
+* runit (for `git::server`)
+* build-essential (for `git::source`)
+* dmg (for OS X installation)
+* yum (for RHEL 5 installation)
 
 ### Windows Dependencies
 The [`windows_package`](https://github.com/opscode-cookbooks/windows#windows_package) resource from the Windows cookbook is required to
@@ -93,9 +99,8 @@ will be available once they are created.
 License and Author
 ==================
 
-Author:: Joshua Timberman (<joshua@opscode.com>)
-
-Copyright:: 2009-2012, Opscode, Inc.
+- Author:: Joshua Timberman (<joshua@opscode.com>)
+- Copyright:: 2009-2012, Opscode, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
