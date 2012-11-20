@@ -1,3 +1,13 @@
+## v2.0.0:
+
+This version uses platform_family attribute, making the cookbook incompatible
+with older versions of Chef/Ohai, hence the major version bump.
+
+* [COOK-1668] - git cookbook fails to run due to bad platform_family
+  call
+* [COOK-1759] - git::source needs additional package for rhel
+  platform_family
+
 ## v1.0.2:
 
 * [COOK-1537] - add recipe for source installation
