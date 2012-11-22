@@ -7,7 +7,7 @@ Requirements
 ============
 ## Ohai and Chef:
 
-* Ohai: 0.6.12+
+* Ohai: 6.14.0+
 
 This cookbook makes use of `node['platform_family']` to simplify platform
 selection logic. This attribute was introduced in Ohai v0.6.12.
