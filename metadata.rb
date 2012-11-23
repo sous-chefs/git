@@ -15,15 +15,6 @@ end
 
 supports "mac_os_x", ">= 10.6.0"
 
-case node['platform_family']
-when 'mac_os_x'
-  depends 'dmg'
-when 'debian'
-  depends 'runit'
-  depends 'build-essential'
-when 'rhel', 'fedora'
-  depends 'yum'
-  depends 'build-essential'
-when 'windows'
-  depends 'windows'
+%w{ dmg, runit, build-essential, yum, windows }.each do |cookbook|
+  depends cookbook
 end
