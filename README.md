@@ -5,15 +5,28 @@ Installs git and optionally sets up a git server as a daemon under runit.
 
 Requirements
 ============
+## Ohai and Chef:
+
+* Ohai: 6.14.0+
+
+This cookbook makes use of `node['platform_family']` to simplify platform
+selection logic. This attribute was introduced in Ohai v0.6.12.
 
 ## Platform:
 
 * Debian/Ubuntu
 * ArchLinux
+* Windows
+* Mac OSX
 
 ## Cookbooks:
 
+###
 * runit
+
+### Windows Dependencies
+The `windows_package` resource from the Windows cookbook is required to
+install the git package on Windows.
 
 Recipes
 =======

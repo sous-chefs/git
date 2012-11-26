@@ -1,3 +1,8 @@
+## v1.0.3:
+
+* [COOK-1943](http://tickets.opscode.com/browse/COOK-1943) - Update to 
+  git 1.8.0
+
 ## v1.0.2:
 
 * [COOK-1537] - add recipe for source installation
