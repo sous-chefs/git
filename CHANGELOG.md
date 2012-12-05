@@ -1,7 +1,6 @@
-## v1.0.3:
+## v1.1.0:
 
-* [COOK-1943](http://tickets.opscode.com/browse/COOK-1943) - Update to 
-  git 1.8.0
+* [COOK-1943] - Update to git 1.8.0
 
 ## v1.0.2:
 
