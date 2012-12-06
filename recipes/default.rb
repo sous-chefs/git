@@ -26,18 +26,7 @@ when "rhel","fedora"
   end
   package "git"
 when "windows"
-  # Create 'Path Option' reg value so that 
-  # 'Run Git from the Windows Command Prompt' option is selected during install
-  windows_registry 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Git_is1' do
-    values 'Inno Setup CodeFile: Path Option'  => 'Cmd'
-  end
-
-  windows_package node['git']['display_name'] do
-    source node['git']['url']
-    checksum node['git']['checksum']
-    installer_type :inno
-  end
-
+  include_recipe 'git::windows'
 when "mac_os_x"
   dmg_package "GitOSX-Installer" do
     app node['git']['osx_dmg']['app_name']
