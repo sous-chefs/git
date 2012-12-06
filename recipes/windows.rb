@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: git
-# Recipe:: default
+# Recipe:: windows
 #
 # Copyright 2008-2009, Opscode, Inc.
 #
@@ -16,27 +16,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-case node['platform_family']
-when "debian"
-  package "git-core"
-when "rhel","fedora"
-  case node['platform_version'].to_i
-  when 5
-    include_recipe "yum::epel"
-  end
-  package "git"
-when "windows"
-  include_recipe 'git::windows'
-when "mac_os_x"
-  dmg_package "GitOSX-Installer" do
-    app node['git']['osx_dmg']['app_name']
-    package_id node['git']['osx_dmg']['package_id']
-    volumes_dir node['git']['osx_dmg']['volumes_dir']
-    source node['git']['osx_dmg']['url']
-    checksum node['git']['osx_dmg']['checksum']
-    type "pkg"
-    action :install
-  end
-else
-  package "git"
+windows_package node['git']['display_name'] do
+  action :install
+  source node['git']['url']
+  checksum node['git']['checksum']
+  installer_type :inno
+end
+
+# Git is installed to Program Files (x86) on 64-bit machines and
+# 'Program Files' on 32-bit machines
+PROGRAM_FILES = ENV['ProgramFiles(x86)'] || ENV['ProgramFiles']
+
+windows_path "#{ PROGRAM_FILES }\\Git\\Cmd" do
+  action :add
 end
