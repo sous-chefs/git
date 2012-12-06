@@ -22,6 +22,9 @@ when 'windows'
   default['git']['version'] = "1.8.0-preview20121022"
   default['git']['url'] = "http://github.com/downloads/msysgit/git/Git-#{node['git']['version']}.exe"
   default['git']['checksum'] = "8ec19d04912fd27d7350823c857a4807b550fa63a3744bf6fd2841de8cfa9a0f"
+  default['git']['display_name'] = "Git version #{ node['git']['version'] }"
+  default['git']['setup_path_option'] = 'Cmd' # other values are BashOnly and CmdTools
+  default['git']['setup_crlf_option'] = 'CRLFAlways' # other values are LFOnly and CRLFCommitAsIs
 when "mac_os_x"
   default['git']['osx_dmg']['app_name']    = "git-1.8.0-intel-universal-snow-leopard"
   default['git']['osx_dmg']['volumes_dir'] = "Git 1.8.0 Snow Leopard Intel Universal"
