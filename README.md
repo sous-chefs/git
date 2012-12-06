@@ -39,8 +39,6 @@ The following attributes are platform-specific.
 * `node['git']['url']` - URL to git package
 * `node['git']['checksum']` - package SHA256 checksum
 * `node['git']['display_name']` - `windows_package` resource Display Name (makes the package install idempotent) 
-* `node['git']['setup_path_option']` - Add git and gitk to Windows Path (`Cmd`), Don't add git and gitk to Path (`BashOnly`), or add git, gitk, and git-related Unix tools to the path (`CmdTools`). Defaults to `Cmd`.
-* `node['git']['setup_crlf_option']` - How should git handle line ending conversions (CRLF)? Checkout Windows-style, commit Unix-style line endings(`CRLFAlways`), Checkout as-is, commit Unix-style line endings(`LFOnly`), or Checkout as-is, commit as-is (`CRLFCommitAsIs`). Defaults to `CRLFAlways`.
 
 #### Mac OS X
 

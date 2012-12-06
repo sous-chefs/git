@@ -16,25 +16,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-# Create 'Path Option' reg value so that 
-# 'Run Git from the Windows Command Prompt' option is selected during install
-if node['kernel']['machine'] =~ /x86_64/
-  SETUP_OPTIONS_KEY = 'HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Git_is1'
-else
-  SETUP_OPTIONS_KEY =  'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Git_is1'
-end
-
-windows_registry SETUP_OPTIONS_KEY do
-  values 'Inno Setup CodeFile: Path Option'  => node['git']['setup_path_option']
-end
-
-windows_registry SETUP_OPTIONS_KEY do
-  values 'Inno Setup CodeFile: CRLF Option' => node['git']['setup_crlf_option']
-end
-
 windows_package node['git']['display_name'] do
+  action :install
   source node['git']['url']
   checksum node['git']['checksum']
   installer_type :inno
+end
+
+# Git is installed to Program Files (x86) on 64-bit machines and
+# 'Program Files' on 32-bit machines
+PROGRAM_FILES = ENV['ProgramFiles(x86)'] || ENV['ProgramFiles']
+
+windows_path "#{ PROGRAM_FILES }\\Git\\Cmd" do
+  action :add
 end
