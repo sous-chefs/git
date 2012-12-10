@@ -1,7 +1,3 @@
-## v1.1.1:
-
-* [COOK-2020] - Add setup option attributes to Git Windows package install
-
 ## v1.1.0:
 
 * [COOK-1943] - Update to git 1.8.0
