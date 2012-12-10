@@ -25,8 +25,32 @@ selection logic. This attribute was introduced in Ohai v0.6.12.
 * runit
 
 ### Windows Dependencies
-The `windows_package` resource from the Windows cookbook is required to
+The [`windows_package`](https://github.com/opscode-cookbooks/windows#windows_package) resource from the Windows cookbook is required to
 install the git package on Windows.
+
+## Attributes
+
+### default
+The following attributes are platform-specific.
+
+#### Windows
+
+* `node['git']['version']` - git version to install
+* `node['git']['url']` - URL to git package
+* `node['git']['checksum']` - package SHA256 checksum
+* `node['git']['display_name']` - `windows_package` resource Display Name (makes the package install idempotent) 
+
+#### Mac OS X
+
+* `node['git']['osx_dmg']['url']` - URL to git package
+* `node['git']['osx_dmg']['checksum']` - package SHA256 checksum
+
+#### Linux
+
+* `node['git']['prefix']` - git install directory
+* `node['git']['version']` - git version to install
+* `node['git']['url']` - URL to git tarball
+* `node['git']['checksum']` - tarball SHA256 checksum
 
 Recipes
 =======
@@ -43,11 +67,22 @@ Sets up a git daemon to provide a server.
 
 Installs git from source.
 
+## windows
+
+Installs git client on Windows
+
 Usage
 =====
 
+
 This cookbook primarily installs git core packages. It can also be
 used to serve git repositories.
+
+To install git client (all supported platforms):
+
+    include_recipe 'git'
+
+To install git server:
 
     include_recipe "git::server"
 
