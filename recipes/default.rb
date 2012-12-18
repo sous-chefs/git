@@ -18,7 +18,12 @@
 
 case node['platform_family']
 when "debian"
-  package "git-core"
+  if node['platform'] == "ubuntu" && node['lsb']['release'] == "12.04"
+    # ubuntu 12.04 renames git-core to git
+    package "git"
+  else
+    package "git-core"
+  end
 when "rhel","fedora"
   case node['platform_version'].to_i
   when 5
