@@ -18,7 +18,11 @@
 
 case node['platform_family']
 when "debian"
-  package "git-core"
+  if node['platform'] == "ubuntu" && node['platform_version'].to_f < 10.10
+    package "git-core"
+  else
+    package "git"
+  end
 when "rhel","fedora"
   case node['platform_version'].to_i
   when 5
