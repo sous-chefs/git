@@ -1,3 +1,7 @@
+## v2.1.2:
+
+* [COOK-2043] - install git on ubuntu 12.04 not git-core
+
 ## v2.1.0:
 
 The repository didn't have pushed commits, and so the following
