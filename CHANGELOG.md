@@ -1,3 +1,9 @@
+## v2.1.4:
+
+* [COOK-2110] - initial test-kitchen support (only available in GitHub
+  repository).
+* [COOK-2253] - pin runit dependency
+
 ## v2.1.2:
 
 * [COOK-2043] - install git on ubuntu 12.04 not git-core
