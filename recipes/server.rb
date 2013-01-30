@@ -22,7 +22,7 @@ end
 
 include_recipe "git"
 
-directory "/srv/git" do
+directory node["git"]["server"]["base_path"] do
   owner "root"
   group "root"
   mode 00755
@@ -31,8 +31,25 @@ end
 case node['platform_family']
 when "debian"
   include_recipe "runit"
+
+  package "git-daemon-run"
+
   runit_service "git-daemon"
+when "rhel"
+  package "git-daemon"
+
+  template "/etc/xinetd.d/git" do
+    backup false
+    source "git-xinetd.d.erb"
+    owner "root"
+    group "root"
+    mode 00644
+  end
+
+  service "xinetd" do
+    action [:enable, :restart]
+  end
 else
   log "Platform requires setting up a git daemon service script."
-  log "Hint: /usr/bin/git daemon --export-all --user=nobody --group=daemon --base-path=/srv/git"
+  log "Hint: /usr/bin/git daemon --export-all --user=nobody --group=daemon --base-path=#{node["git"]["server"]["base_path"]}"
 end

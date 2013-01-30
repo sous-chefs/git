@@ -20,3 +20,9 @@ supports "mac_os_x", ">= 10.6.0"
 end
 
 depends "runit", "<= 0.16.2"
+
+attribute "git/server/base_path",
+  :display_name => "Git Daemon Base Path",
+  :description => "A directory containing git repositories to be exposed by the git-daemon",
+  :default => "/srv/git",
+  :recipes => ["git::server"]
