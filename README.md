@@ -92,9 +92,9 @@ To install git server:
 
     include_recipe "git::server"
 
-This creates the directory /srv/git and starts a git daemon, exporting
-all repositories found. Repositories need to be added manually, but
-will be available once they are created.
+This creates the directory specified by git/server/base_path (default is /srv/git)
+and starts a git daemon, exporting all repositories found. Repositories need to be
+added manually, but will be available once they are created.
 
 License and Author
 ==================
