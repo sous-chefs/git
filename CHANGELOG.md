@@ -1,3 +1,7 @@
+## v2.2.0:
+
+* [COOK-2303] - git::server support for RHEL platform_family
+
 ## v2.1.4:
 
 * [COOK-2110] - initial test-kitchen support (only available in GitHub
