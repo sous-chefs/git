@@ -34,7 +34,9 @@ when "debian"
 
   package "git-daemon-run"
 
-  runit_service "git-daemon"
+  runit_service "git-daemon" do
+    sv_templates false
+  end
 when "rhel"
   package "git-daemon"
 

@@ -1,3 +1,4 @@
 cookbook "git" do
-
+  configuration "default"
+  configuration "server"
 end
