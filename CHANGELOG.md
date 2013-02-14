@@ -1,3 +1,7 @@
+## v2.3.0:
+
+* [COOK-2385] - update git::server for `runit_service` resource support
+
 ## v2.2.0:
 
 * [COOK-2303] - git::server support for RHEL platform_family
