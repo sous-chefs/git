@@ -1,10 +1,13 @@
+## v2.4.0:
+
+* [COOK-2734] - update git versions
 ## v2.3.0:
 
 * [COOK-2385] - update git::server for `runit_service` resource support
 
 ## v2.2.0:
 
-* [COOK-2303] - git::server support for RHEL platform_family
+* [COOK-2303] - git::server support for RHEL `platform_family`
 
 ## v2.1.4:
 
@@ -28,13 +31,13 @@ community site. We're releasing 2.1.0 to correct this.
 
 ## v2.0.0:
 
-This version uses platform_family attribute, making the cookbook incompatible
+This version uses `platform_family` attribute, making the cookbook incompatible
 with older versions of Chef/Ohai, hence the major version bump.
 
-* [COOK-1668] - git cookbook fails to run due to bad platform_family
+* [COOK-1668] - git cookbook fails to run due to bad `platform_family`
   call
 * [COOK-1759] - git::source needs additional package for rhel
-  platform_family
+  `platform_family`
 
 ## v1.1.2:
 
