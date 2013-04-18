@@ -1,3 +1,7 @@
+## v2.5.0:
+
+* Relax runit version constraint (now depend on 1.0+).
+
 ## v2.4.0:
 
 * [COOK-2734] - update git versions
