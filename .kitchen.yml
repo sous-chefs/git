@@ -35,6 +35,7 @@ suites:
   attributes: {}
 
 - name: source
+  excludes: ["ubuntu-12.04", "ubuntu-10.04"]
   run_list:
   - recipe[git::source]
   attributes: {}
