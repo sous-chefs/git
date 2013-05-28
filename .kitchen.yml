@@ -34,6 +34,11 @@ suites:
   - recipe[git]
   attributes: {}
 
+- name: source
+  run_list:
+  - recipe[git::source]
+  attributes: {}
+
 - name: server
   run_list:
   - recipe[git::server]
