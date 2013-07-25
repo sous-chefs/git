@@ -26,7 +26,9 @@ end
 # Git is installed to Program Files (x86) on 64-bit machines and
 # 'Program Files' on 32-bit machines
 PROGRAM_FILES = ENV['ProgramFiles(x86)'] || ENV['ProgramFiles']
+GIT_PATH = ";#{ PROGRAM_FILES }\\Git\\Cmd"
 
-windows_path "#{ PROGRAM_FILES }\\Git\\Cmd" do
+ENV['PATH'] += ";#{GIT_PATH}"
+windows_path GIT_PATH do
   action :add
 end
