@@ -30,28 +30,29 @@ end
 
 case node['platform_family']
 when "debian"
-  include_recipe "runit"
-
-  package "git-daemon-run"
-
-  runit_service "git-daemon" do
-    sv_templates false
-  end
+  package "xinetd"
 when "rhel"
   package "git-daemon"
-
-  template "/etc/xinetd.d/git" do
-    backup false
-    source "git-xinetd.d.erb"
-    owner "root"
-    group "root"
-    mode 00644
-  end
-
-  service "xinetd" do
-    action [:enable, :restart]
-  end
 else
   log "Platform requires setting up a git daemon service script."
   log "Hint: /usr/bin/git daemon --export-all --user=nobody --group=daemon --base-path=#{node["git"]["server"]["base_path"]}"
+  return
+end
+
+template "/etc/xinetd.d/git" do
+  backup false
+  source "git-xinetd.d.erb"
+  owner "root"
+  group "root"
+  mode 00644
+  variables({
+    :git_daemon_binary => value_for_platform_family(
+      "debian" => "/usr/lib/git-core/git-daemon",
+      "rhel" => "/usr/libexec/git-core/git-daemon"
+    )
+  })
+end
+
+service "xinetd" do
+  action [:enable, :restart]
 end
