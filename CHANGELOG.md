@@ -3,6 +3,11 @@ git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
 
+v2.6.0
+------
+### Improvement
+- **[COOK-3193](https://tickets.opscode.com/browse/COOK-3193)** - Add proper debian packages
+
 v2.5.2
 ------
 ### Bug
