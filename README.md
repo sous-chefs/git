@@ -44,7 +44,7 @@ The following attributes are platform-specific.
 * `node['git']['version']` - git version to install
 * `node['git']['url']` - URL to git package
 * `node['git']['checksum']` - package SHA256 checksum
-* `node['git']['display_name']` - `windows_package` resource Display Name (makes the package install idempotent) 
+* `node['git']['display_name']` - `windows_package` resource Display Name (makes the package install idempotent)
 
 #### Mac OS X
 
