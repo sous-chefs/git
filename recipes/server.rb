@@ -46,10 +46,11 @@ when "rhel"
     owner "root"
     group "root"
     mode 00644
+    notifies :restart, "service[xinetd]"
   end
 
   service "xinetd" do
-    action [:enable, :restart]
+    action [:enable, :start]
   end
 else
   log "Platform requires setting up a git daemon service script."
