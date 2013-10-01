@@ -42,5 +42,12 @@ when "mac_os_x"
     action :install
   end
 else
-  package "git"
+  package "git" do
+    package_name case node['platform']
+                 when 'omnios'
+                   'developer/versioning/git'
+                 when 'smartos'
+                   'scmgit'
+                 end
+  end
 end
