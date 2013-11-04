@@ -3,6 +3,12 @@ git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
 
+v2.8.0
+------
+### Bug
+- [COOK-3433] - git::server does not correctly set git-daemon's base-path on Debian
+
+
 v2.7.0
 ------
 ### Bug
