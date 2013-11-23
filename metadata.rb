@@ -15,7 +15,7 @@ end
 
 supports "mac_os_x", ">= 10.6.0"
 
-%w{ dmg build-essential yum windows }.each do |cookbook|
+%w{ build-essential yum windows }.each do |cookbook|
   depends cookbook
 end
 
