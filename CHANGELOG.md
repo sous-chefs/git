@@ -3,6 +3,11 @@ git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
 
+v2.8.4
+------
+fixing metadata version error. locking to 3.0
+
+
 v2.8.1
 ------
 Locking yum dependency to '< 3'
