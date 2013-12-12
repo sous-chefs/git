@@ -19,7 +19,7 @@ supports "mac_os_x", ">= 10.6.0"
   depends cookbook
 end
 
-depends 'yum', '< 3'
+depends 'yum', '< 3.0'
 depends "runit", ">= 1.0"
 
 attribute "git/server/base_path",
