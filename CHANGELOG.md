@@ -3,6 +3,13 @@ git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
 
+v2.9.0
+------
+Updating to depend on cookbook yum ~> 3
+Fixing style to pass rubocop
+Updating test scaffolding
+
+
 v2.8.4
 ------
 fixing metadata version error. locking to 3.0
