@@ -16,43 +16,41 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if node["platform"] == "windows"
-  return "#{node['platform']} is not supported by the #{cookbook_name}::#{recipe_name} recipe"
-end
+return "#{node['platform']} is not supported by the #{cookbook_name}::#{recipe_name} recipe" if node['platform'] == 'windows'
 
-include_recipe "git"
+include_recipe 'git'
 
-directory node["git"]["server"]["base_path"] do
-  owner "root"
-  group "root"
+directory node['git']['server']['base_path'] do
+  owner 'root'
+  group 'root'
   mode 00755
 end
 
 case node['platform_family']
-when "debian"
-  package "xinetd"
-when "rhel"
-  package "git-daemon"
+when 'debian'
+  package 'xinetd'
+when 'rhel'
+  package 'git-daemon'
 else
-  log "Platform requires setting up a git daemon service script."
-  log "Hint: /usr/bin/git daemon --export-all --user=nobody --group=daemon --base-path=#{node["git"]["server"]["base_path"]}"
+  log 'Platform requires setting up a git daemon service script.'
+  log "Hint: /usr/bin/git daemon --export-all --user=nobody --group=daemon --base-path=#{node['git']['server']['base_path']}"
   return
 end
 
-template "/etc/xinetd.d/git" do
+template '/etc/xinetd.d/git' do
   backup false
-  source "git-xinetd.d.erb"
-  owner "root"
-  group "root"
+  source 'git-xinetd.d.erb'
+  owner 'root'
+  group 'root'
   mode 00644
-  variables({
+  variables(
     :git_daemon_binary => value_for_platform_family(
-      "debian" => "/usr/lib/git-core/git-daemon",
-      "rhel" => "/usr/libexec/git-core/git-daemon"
+      'debian' => '/usr/lib/git-core/git-daemon',
+      'rhel' => '/usr/libexec/git-core/git-daemon'
+      )
     )
-  })
 end
 
-service "xinetd" do
+service 'xinetd' do
   action [:enable, :restart]
 end

@@ -2,7 +2,8 @@ site :opscode
 
 metadata
 
+cookbook 'yum', '~> 3.0'
+
 group :integration do
-  cookbook "apt"
-  cookbook "yum"
+  cookbook 'apt'
 end
