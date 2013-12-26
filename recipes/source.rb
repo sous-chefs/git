@@ -28,7 +28,7 @@ when 'rhel'
   when 5
     pkgs = %w{ expat-devel gettext-devel curl-devel openssl-devel zlib-devel }
   when 6
-    pkgs = %w{ expat-devel gettext-devel curl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel }
+    pkgs = %w{ expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel }
   else
     pkgs = %w{ expat-devel gettext-devel curl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel } if node['platform'] == 'amazon'
   end
