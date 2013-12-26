@@ -19,7 +19,7 @@
 return "#{node['platform']} is not supported by the #{cookbook_name}::#{recipe_name} recipe" if node['platform'] == 'windows'
 
 include_recipe 'build-essential'
-include_recipe 'yum-epel' if node['platform_family'] == 'rhel'
+include_recipe 'yum-epel' if node['platform_family'] == 'rhel' && node['platform_version'].to_i < 6
 
 # move this to attributes.
 case node['platform_family']
