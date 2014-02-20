@@ -3,6 +3,11 @@ git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
 
+v2.9.1
+------
+Updating to only add GIT_PATH once in git::windows
+
+
 v2.9.0
 ------
 Updating to depend on cookbook yum ~> 3
