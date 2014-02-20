@@ -31,7 +31,8 @@ GIT_PATH = ";#{ PROGRAM_FILES }\\Git\\Cmd"
 # COOK-3482 - windows_path resource doesn't change the current process
 # environment variables. Therefore, git won't actually be on the PATH
 # until the next chef-client run
-ENV['PATH'] += ";#{GIT_PATH}"
+ENV['PATH'] += ";#{GIT_PATH}" unless ENV['PATH'].include?(GIT_PATH)
 windows_path GIT_PATH do
   action :add
+  not_if { ENV['PATH'].include?(GIT_PATH) }
 end
