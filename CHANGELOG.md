@@ -3,6 +3,12 @@ git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
 
+v2.10.0 (2014-02-25)
+--------------------
+- [COOK-4146] - wrong dependency in git::source for rhel 6
+- [COOK-3947] - Git cookbook adds itself to the path every run
+
+
 v2.9.0
 ------
 Updating to depend on cookbook yum ~> 3
