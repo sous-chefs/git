@@ -1,3 +1,6 @@
+AlignParameters:
+  Enabled: false
+
 Encoding:
   Enabled: false
 
