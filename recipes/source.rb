@@ -19,7 +19,7 @@
 return "#{node['platform']} is not supported by the #{cookbook_name}::#{recipe_name} recipe" if node['platform'] == 'windows'
 
 include_recipe 'build-essential'
-include_recipe 'yum-epel' if node['platform_family'] == 'rhel'
+include_recipe 'yum-epel' if node['platform_family'] == 'rhel' && node['platform_version'].to_i < 6
 
 # move this to attributes.
 case node['platform_family']
@@ -28,7 +28,7 @@ when 'rhel'
   when 5
     pkgs = %w{ expat-devel gettext-devel curl-devel openssl-devel zlib-devel }
   when 6
-    pkgs = %w{ expat-devel gettext-devel curl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel }
+    pkgs = %w{ expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel }
   else
     pkgs = %w{ expat-devel gettext-devel curl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel } if node['platform'] == 'amazon'
   end
