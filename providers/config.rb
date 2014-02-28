@@ -28,23 +28,32 @@ def load_current_resource
   @current_resource.exists = true if config == new_resource.value
 end
 
+# There is a problem with git config who don't manage good user
+# Even if when set good user in execute resource
+# "git config --#{new_resource.scope}"
+
 def config_cmd
-  cmd = 'git config'
+  cmd = "git config --file #{gitconfig_file}"
+  cmd << " #{new_resource.options}" if new_resource.options
+  return cmd
+end
+
+def gitconfig_file
   case new_resource.scope
   when 'system'
-    cmd << ' --file /etc/gitconfig'
+    return '/etc/gitconfig'
   when 'global'
-    fail if new_resource.user.nil?
-    cmd << " --file #{::File.join(::Dir.home(new_resource.user), '.gitconfig')}"
+    Chef::Log.error('Scope global need an user') unless new_resource.user
+    return ::File.join(::Dir.home(new_resource.user), '.gitconfig')
+  when 'local'
+    Chef::Log.error('Scope local need a path') unless new_resource.path
+    return ::File.join(new_resource.path, '.gitconfig')
   end
-  cmd << " #{new_resource.options}" if new_resource.options
-  # There is a bug with git config who don't manage good user
-  # Even if when set good user in execute resource
-  # "git config --#{new_resource.scope}"
 end
 
 def config
   cmd = [config_cmd, new_resource.key].join(' ')
   git_config = Mixlib::ShellOut.new(cmd, :user => new_resource.user, :group => new_resource.user, :cwd => new_resource.path)
+  Chef::Log.debug("Current config cmd: #{git_config.inspect}")
   git_config.run_command.stdout.chomp
 end
