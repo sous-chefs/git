@@ -34,8 +34,8 @@ end
 
 def config_cmd
   cmd = "git config --file #{gitconfig_file}"
-  cmd << " #{new_resource.options}" if new_resource.options
-  return cmd
+  cmd.concat(" #{new_resource.options}") if new_resource.options
+  cmd
 end
 
 def gitconfig_file
