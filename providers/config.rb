@@ -37,6 +37,7 @@ def config_cmd
     fail if new_resource.user.nil?
     cmd << " --file #{::File.join(::Dir.home(new_resource.user), '.gitconfig')}"
   end
+  cmd << " #{new_resource.options}" if new_resource.options
   # There is a bug with git config who don't manage good user
   # Even if when set good user in execute resource
   # "git config --#{new_resource.scope}"
