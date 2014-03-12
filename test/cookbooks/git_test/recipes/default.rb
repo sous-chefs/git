@@ -10,8 +10,9 @@ git_config 'add name to random' do
   value 'John Doe global'
 end
 
-directory '/home/random/git_repo' do
-  owner 'random'
+git '/home/random/git_repo' do
+  repository 'https://github.com/opscode/chef-repo.git'
+  user 'random'
 end
 
 git_config 'change local path' do
