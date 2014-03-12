@@ -3,6 +3,11 @@ git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
 
+v3.1.0 (2014-03-12)
+-------------------
+- [COOK-4392] - Cleanup git_config LWRP
+
+
 v3.0.0 (2014-02-28)
 -------------------
 [COOK-4387] Add git_config type
