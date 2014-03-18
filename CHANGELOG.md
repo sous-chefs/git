@@ -3,6 +3,11 @@ git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
 
+v4.0.0 (2014-03-18)
+-------------------
+- [COOK-4397] Only use_inline_resources on Chef 11
+
+
 v3.1.0 (2014-03-12)
 -------------------
 - [COOK-4392] - Cleanup git_config LWRP
