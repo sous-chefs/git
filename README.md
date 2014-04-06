@@ -20,6 +20,7 @@ The following platform families are supported:
 * Arch
 * RHEL
 * Fedora
+* FreeBSD (client only)
 * Mac OS X (10.6.0+)
 * Windows
 
