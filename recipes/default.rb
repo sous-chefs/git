@@ -51,3 +51,18 @@ else
                  end
   end
 end
+
+node['git']['config'].each do |level,configurations|
+  case level
+  when 'project'
+    levelSwitch = ""
+  else
+    levelSwitch = "--#{level}"
+  end
+  configurations.each do |attribute,value|
+    execute 'configure_git' do
+      command "git config #{levelSwitch} #{attribute} #{value}"
+      action :run
+    end
+  end
+end
