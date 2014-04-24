@@ -3,6 +3,11 @@ git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
 
+v4.0.2 (2014-04-23)
+-------------------
+- [COOK-4482] - Add FreeBSD support for installing git client
+
+
 v4.0.0 (2014-03-18)
 -------------------
 - [COOK-4397] Only use_inline_resources on Chef 11
