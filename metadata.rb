@@ -1,5 +1,5 @@
 name              'git'
-maintainer        'Opscode, Inc.'
+maintainer        'Chef Software, Inc.'
 maintainer_email  'cookbooks@opscode.com'
 license           'Apache 2.0'
 description       'Installs git and/or sets up a Git server daemon'

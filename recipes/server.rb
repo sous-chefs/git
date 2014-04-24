@@ -2,7 +2,7 @@
 # Cookbook Name:: git
 # Recipe:: server
 #
-# Copyright 2009, Opscode, Inc.
+# Copyright 2009-2014, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ include_recipe 'git'
 directory node['git']['server']['base_path'] do
   owner 'root'
   group 'root'
-  mode 00755
+  mode '0755'
 end
 
 case node['platform_family']
@@ -42,7 +42,7 @@ template '/etc/xinetd.d/git' do
   source 'git-xinetd.d.erb'
   owner 'root'
   group 'root'
-  mode 00644
+  mode '0644'
   variables(
     :git_daemon_binary => value_for_platform_family(
       'debian' => '/usr/lib/git-core/git-daemon',

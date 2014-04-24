@@ -44,7 +44,7 @@ end
 remote_file "#{Chef::Config['file_cache_path']}/git-#{node['git']['version']}.tar.gz" do
   source    node['git']['url']
   checksum  node['git']['checksum']
-  mode      00644
+  mode      '0644'
   not_if "test -f #{Chef::Config['file_cache_path']}/git-#{node['git']['version']}.tar.gz"
 end
 
