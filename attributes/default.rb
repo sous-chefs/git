@@ -39,5 +39,4 @@ end
 default['git']['server']['base_path'] = '/srv/git'
 default['git']['server']['export_all'] = 'true'
 
-default['git']['config']['system']['http.sslVerify'] = 'true'
-
+default['git']['config']['system']['http_ssl_verify'] = [ 'http.sslVerify', 'true' ]

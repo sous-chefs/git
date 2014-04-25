@@ -63,7 +63,7 @@ The following attributes are platform-specific.
 ### Git Configuration
 To set git configuration parameters, define attributs in the following format:
 
-* `default['git']['config']['LEVEL']['PARAMETER'] = 'VALUE'`
+* `default['git']['config']['LEVEL']['ATTRIBUTE_NAME'] = [ 'ATTRIBUTE_KEY', 'VALUE' ]`
 
 `LEVEL` can be any of the following:
 * `project`
@@ -71,7 +71,7 @@ To set git configuration parameters, define attributs in the following format:
 * `system`
 
 Example:
-* `default['git']['config']['system']['http.sslVerify'] = 'true'`
+* `default['git']['config']['system']['http_ssl_verify'] = ['http.sslVerify', 'true']`
 
 
 Recipes
