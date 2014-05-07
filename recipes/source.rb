@@ -23,6 +23,8 @@ include_recipe 'yum-epel' if node['platform_family'] == 'rhel' && node['platform
 
 # move this to attributes.
 case node['platform_family']
+when 'fedora'
+  pkgs = %w{ openssl-devel libcurl-devel expat-devel perl-ExtUtils-MakeMaker }
 when 'rhel'
   case node['platform_version'].to_i
   when 5
