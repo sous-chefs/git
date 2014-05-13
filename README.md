@@ -59,6 +59,21 @@ The following attributes are platform-specific.
 * `node['git']['url']` - URL to git tarball
 * `node['git']['checksum']` - tarball SHA256 checksum
 
+
+### Git Configuration
+To set git configuration parameters, define attributs in the following format:
+
+* `default['git']['config']['LEVEL']['ATTRIBUTE_NAME'] = [ 'ATTRIBUTE_KEY', 'VALUE' ]`
+
+`LEVEL` can be any of the following:
+* `project`
+* `global`
+* `system`
+
+Example:
+* `default['git']['config']['system']['http_ssl_verify'] = ['http.sslVerify', 'true']`
+
+
 Recipes
 =======
 
