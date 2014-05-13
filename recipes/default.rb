@@ -65,6 +65,7 @@ node['git']['config'].each do |level,configurations|
     execute "configure_git_#{level}_#{attribute_name}" do
       command "git config #{level_switch} \"#{attribute_key}\" \"#{attribute_value}\""
       action :run
+      not_if "git config --get #{level_switch} \"#{attribute_key}\" | grep -c \"#{attribute_value}\""
     end
   end
 end
