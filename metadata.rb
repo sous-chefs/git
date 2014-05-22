@@ -9,17 +9,22 @@ recipe            'git', 'Installs git'
 recipe            'git::server', 'Sets up a runit_service for git daemon'
 recipe            'git::source', 'Installs git from source'
 
-%w{ amazon arch centos debian fedora redhat scientific oracle amazon ubuntu windows }.each do |os|
-  supports os
-end
-
+supports 'amazon'
+supports 'arch'
+supports 'centos'
+supports 'debian'
+supports 'fedora'
 supports 'mac_os_x', '>= 10.6.0'
+supports 'oracle'
+supports 'redhat'
+supports 'scientific'
+supports 'ubuntu'
+supports 'windows'
 
-%w{ dmg build-essential windows }.each do |cookbook|
-  depends cookbook
-end
-
+depends 'build-essential'
+depends 'dmg'
 depends 'runit', '>= 1.0'
+depends 'windows'
 depends 'yum', '~> 3.0'
 depends 'yum-epel'
 
