@@ -30,13 +30,16 @@ depends 'yum-epel'
 
 attribute 'git/server/base_path',
           :display_name => 'Git Daemon Base Path',
-          :description => 'A directory containing git repositories to be exposed by the git-daemon',
+          :description => 'A directory containing git repositories to be ' \
+            'exposed by the git-daemon',
           :default => '/srv/git',
           :recipes => ['git::server']
 
 attribute 'git/server/export_all',
           :display_name => 'Git Daemon Export All',
-          :description => 'Adds the --export-all option to the git-daemon parameters, making all repositories publicly readable even if they lack the \'git-daemon-export-ok\' file',
+          :description => 'Adds the --export-all option to the git-daemon ' \
+            'parameters, making all repositories publicly readable even if ' \
+            'they lack the \'git-daemon-export-ok\' file',
           :choice => %w{ true false },
           :default => 'true',
           :recipes => ['git::server']
