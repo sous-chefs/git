@@ -21,6 +21,7 @@ windows_package node['git']['display_name'] do
   source node['git']['url']
   checksum node['git']['checksum']
   installer_type :inno
+  options '/NORESTART /VERYSILENT /SUPPRESSMSGBOXES'
 end
 
 # Git is installed to Program Files (x86) on 64-bit machines and
