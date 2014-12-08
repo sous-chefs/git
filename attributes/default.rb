@@ -20,7 +20,7 @@
 case node['platform_family']
 when 'windows'
   default['git']['version'] = '1.8.1.2-preview20130201'
-  default['git']['url'] = "https://msysgit.googlecode.com/files/Git-#{node['git']['version']}.exe"
+  default['git']['url'] = "https://github.com/msysgit/msysgit/releases/download/Git-#{node['git']['version']}/Git-#{node['git']['version']}.exe"
   default['git']['checksum'] = '796ac91f0c7456b53f2717a81f475075cc581af2f447573131013cac5b63bb2a'
   default['git']['display_name'] = "Git version #{ node['git']['version'] }"
 when 'mac_os_x'
