@@ -3,6 +3,7 @@ driver:
 
 provisioner:
   name: chef_zero
+  data_path: test/fixtures
 
 platforms:
   - name: centos-5.10
@@ -19,6 +20,7 @@ platforms:
 
 suites:
 - name: default
+  excludes: ["centos-5.10", "centos-6.5"]
   run_list:
   - recipe[git]
   - recipe[git_test::default]

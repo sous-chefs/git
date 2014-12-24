@@ -1,7 +1,7 @@
-require 'serverspec'
+require File.join(File.expand_path('..', ENV['BUSSER_ROOT']), 'kitchen/data/serverspec_helper')
 
-include Serverspec::Helper::Exec
-
-describe command('git --version') do
-  it { should return_exit_status 0 }
+describe 'git::default' do
+  describe command('git --version') do
+    its(:exit_status) { should eq 0 }
+  end
 end
