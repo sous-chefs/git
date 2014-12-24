@@ -11,6 +11,7 @@ gem 'guard-rubocop'
 gem 'rake'
 gem 'rubocop'
 gem 'serverspec'
+gem 'stove'
 
 group :integration, :test do
   gem 'test-kitchen'
