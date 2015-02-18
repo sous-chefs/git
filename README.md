@@ -32,7 +32,7 @@ The following platform families are supported:
 * yum (for RHEL 5 installation)
 
 ### Windows Dependencies
-The [`windows_package`](https://github.com/opscode-cookbooks/windows#windows_package) resource from the Windows cookbook is required to
+The [`windows_package`](https://github.com/chef-cookbooks/windows#windows_package) resource from the Windows cookbook is required to
 install the git package on Windows.
 
 ## Attributes
@@ -100,7 +100,7 @@ added manually, but will be available once they are created.
 License and Author
 ==================
 
-- Author:: Joshua Timberman (<joshua@opscode.com>)
+- Author:: Joshua Timberman (<joshua@chef.io>)
 - Copyright:: 2009-2014, Chef Software, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");

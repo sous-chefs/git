@@ -57,16 +57,16 @@ v2.8.0
 v2.7.0
 ------
 ### Bug
-- **[COOK-3624](https://tickets.opscode.com/browse/COOK-3624)** - Don't restart `xinetd` on each Chef client run
-- **[COOK-3482](https://tickets.opscode.com/browse/COOK-3482)** - Force git to add itself to the current process' PATH
+- **[COOK-3624](https://tickets.chef.io/browse/COOK-3624)** - Don't restart `xinetd` on each Chef client run
+- **[COOK-3482](https://tickets.chef.io/browse/COOK-3482)** - Force git to add itself to the current process' PATH
 
 ### New Feature
-- **[COOK-3223](https://tickets.opscode.com/browse/COOK-3223)** - Support Omnios and SmartOS package installs
+- **[COOK-3223](https://tickets.chef.io/browse/COOK-3223)** - Support Omnios and SmartOS package installs
 
 v2.6.0
 ------
 ### Improvement
-- **[COOK-3193](https://tickets.opscode.com/browse/COOK-3193)** - Add proper debian packages
+- **[COOK-3193](https://tickets.chef.io/browse/COOK-3193)** - Add proper debian packages
 
 v2.5.2
 ------

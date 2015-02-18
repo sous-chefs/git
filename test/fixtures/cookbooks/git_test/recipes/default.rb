@@ -11,7 +11,7 @@ git_config 'add name to random' do
 end
 
 git '/home/random/git_repo' do
-  repository 'https://github.com/opscode/chef-repo.git'
+  repository 'https://github.com/chef/chef-repo.git'
   user 'random'
 end
 
