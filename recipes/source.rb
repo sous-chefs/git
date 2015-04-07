@@ -29,13 +29,17 @@ when 'rhel'
   case node['platform_version'].to_i
   when 5
     pkgs = %w{ expat-devel gettext-devel curl-devel openssl-devel zlib-devel }
+    pkgs += %w{ libpcre3-dev } if node['git']['use_pcre']
   when 6, 7
     pkgs = %w{ expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel }
+    pkgs += %w{ libpcre3-dev } if node['git']['use_pcre']
   else
     pkgs = %w{ expat-devel gettext-devel curl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel } if node['platform'] == 'amazon'
+    pkgs += %w{ libpcre3-dev } if node['git']['use_pcre']
   end
 when 'debian'
   pkgs = %w{ libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev }
+  pkgs += %w{ libpcre3-dev } if node['git']['use_pcre']
 end
 
 pkgs.each do |pkg|
@@ -53,9 +57,11 @@ end
 # reduce line-noise-eyness
 execute "Extracting and Building Git #{node['git']['version']} from Source" do
   cwd Chef::Config['file_cache_path']
+  additional_make_params = ""
+  additional_make_params += "USE_LIBPCRE=1" if node['git']['use_pcre']
   command <<-COMMAND
     (mkdir git-#{node['git']['version']} && tar -zxf git-#{node['git']['version']}.tar.gz -C git-#{node['git']['version']} --strip-components 1)
-    (cd git-#{node['git']['version']} && make prefix=#{node['git']['prefix']} install)
+    (cd git-#{node['git']['version']} && make prefix=#{node['git']['prefix']} #{additional_make_params} install)
   COMMAND
   not_if "git --version | grep #{node['git']['version']}"
 end

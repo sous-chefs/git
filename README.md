@@ -58,6 +58,7 @@ The following attributes are platform-specific.
 * `node['git']['version']` - git version to install
 * `node['git']['url']` - URL to git tarball
 * `node['git']['checksum']` - tarball SHA256 checksum
+* `node['git']['use_pcre']` - if true, builds git with PCRE enabled
 
 Recipes
 =======
