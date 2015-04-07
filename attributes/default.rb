@@ -34,6 +34,7 @@ else
   default['git']['version'] = '1.9.5'
   default['git']['url'] = "https://nodeload.github.com/git/git/tar.gz/v#{node['git']['version']}"
   default['git']['checksum'] = '0f30984828d573da01d9f8e78210d5f4c56da1697fd6d278bad4cfa4c22ba271'
+  default['git']['use_pcre'] = false
 end
 
 default['git']['server']['base_path'] = '/srv/git'
