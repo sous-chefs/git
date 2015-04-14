@@ -39,7 +39,7 @@ end
 
 def config
   cmd = [config_cmd, new_resource.key].join(' ')
-  git_config = Mixlib::ShellOut.new(cmd, :user => new_resource.user, :group => new_resource.user, :cwd => new_resource.path, :env => cmd_env)
+  git_config = Mixlib::ShellOut.new(cmd, user: new_resource.user, group: new_resource.user, cwd: new_resource.path, env: cmd_env)
   Chef::Log.debug("Current config cmd: #{git_config.inspect}")
   git_config.run_command.stdout.chomp
 end

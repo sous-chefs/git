@@ -24,18 +24,18 @@ include_recipe 'yum-epel' if node['platform_family'] == 'rhel' && node['platform
 # move this to attributes.
 case node['platform_family']
 when 'fedora'
-  pkgs = %w{ openssl-devel libcurl-devel expat-devel perl-ExtUtils-MakeMaker }
+  pkgs = %w(openssl-devel libcurl-devel expat-devel perl-ExtUtils-MakeMaker)
 when 'rhel'
   case node['platform_version'].to_i
   when 5
-    pkgs = %w{ expat-devel gettext-devel curl-devel openssl-devel zlib-devel }
+    pkgs = %w(expat-devel gettext-devel curl-devel openssl-devel zlib-devel)
   when 6, 7
-    pkgs = %w{ expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel }
+    pkgs = %w(expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel)
   else
-    pkgs = %w{ expat-devel gettext-devel curl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel } if node['platform'] == 'amazon'
+    pkgs = %w(expat-devel gettext-devel curl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel) if node['platform'] == 'amazon'
   end
 when 'debian'
-  pkgs = %w{ libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev }
+  pkgs = %w(libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev)
 end
 
 pkgs.each do |pkg|
@@ -44,9 +44,9 @@ end
 
 # reduce line-noise-eyness
 remote_file "#{Chef::Config['file_cache_path']}/git-#{node['git']['version']}.tar.gz" do
-  source    node['git']['url']
-  checksum  node['git']['checksum']
-  mode      '0644'
+  source node['git']['url']
+  checksum node['git']['checksum']
+  mode '0644'
   not_if "test -f #{Chef::Config['file_cache_path']}/git-#{node['git']['version']}.tar.gz"
 end
 

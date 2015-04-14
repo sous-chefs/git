@@ -1,2 +1,2 @@
-name             'git_test'
-version          '0.1.0'
+name 'git_test'
+version '0.1.0'

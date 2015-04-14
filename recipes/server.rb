@@ -44,11 +44,11 @@ template '/etc/xinetd.d/git' do
   group 'root'
   mode '0644'
   variables(
-    :git_daemon_binary => value_for_platform_family(
+    git_daemon_binary: value_for_platform_family(
       'debian' => '/usr/lib/git-core/git-daemon',
       'rhel' => '/usr/libexec/git-core/git-daemon'
-      )
     )
+  )
 end
 
 service 'xinetd' do
