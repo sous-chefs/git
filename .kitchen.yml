@@ -18,12 +18,19 @@ platforms:
     run_list:
     - recipe[freebsd::portsnap]
 
+# # Uncomment after logging into Atlas
+# - name: windows-8.1-professional
+#   driver:
+#     box: chef/windows-8.1-professional # private
+
+# - name: windows-2008r2-standard
+#   driver:
+#     box: chef/windows-server-2008r2-standard # private
+
 suites:
 - name: default
-  excludes: ["centos-5.10", "centos-6.5"]
   run_list:
   - recipe[git]
-  - recipe[git_test::default]
   attributes: {}
 
 - name: source
@@ -32,7 +39,15 @@ suites:
   - recipe[git::source]
   attributes: {}
 
-- name: server
+# servespec on windows is pretty raw.  
+# os detection forces us to use a separate suite.
+# rather than the usual os[:family] tricks
+
+- name: default-windows
+  includes: [
+    'windows-8.1-professional', 
+    'windows-2008r2-standard'
+  ]
   run_list:
-  - recipe[git::server]
+  - recipe[git]
   attributes: {}

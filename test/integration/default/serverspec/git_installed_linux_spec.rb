@@ -1,7 +1,12 @@
-require File.join(File.expand_path('..', ENV['BUSSER_ROOT']), 'kitchen/data/serverspec_helper')
+require 'serverspec'
+
+set :backend, :exec
+
+puts "os: #{os}"
 
 describe 'git::default' do
   describe command('git --version') do
     its(:exit_status) { should eq 0 }
+    # its(:stdout) { should match(/something/) }
   end
 end

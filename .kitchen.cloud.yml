@@ -1,12 +1,11 @@
-#<% require 'kitchen-sync' %>
 ---
 driver_config:
-  digitalocean_api_token: <%= ENV['DIGITALOCEAN_API_TOKEN'] %>
-  aws_access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
-  aws_secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
-  aws_ssh_key_id: <%= ENV['AWS_KEYPAIR_NAME'] %>
-  flavor_id: <%= ENV['EC2_FLAVOR_ID'] %>
-  availability_zone: <%= ENV['AWS_AVAILABILITY_ZONE'] %>
+   digitalocean_api_token: <%= ENV['DIGITALOCEAN_API_TOKEN'] %>
+   aws_access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+   aws_secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+   aws_ssh_key_id: <%= ENV['AWS_KEYPAIR_NAME'] %>
+   flavor_id: <%= ENV['EC2_FLAVOR_ID'] %>
+   availability_zone: <%= ENV['AWS_AVAILABILITY_ZONE'] %>
 
 provisioner:
   name: chef_zero
@@ -81,6 +80,7 @@ platforms:
   - recipe[apt]
 
 - name: ubuntu-14.04
+  driver_plugin: vagrant
   driver_plugin: digital_ocean
   driver_config:
     size: 2gb
@@ -95,15 +95,17 @@ suites:
 - name: default
   run_list:
   - recipe[git]
-  attributes: {}
 
-# - name: source
-#   excludes: ["ubuntu-12.04", "ubuntu-10.04"]
-#   run_list:
-#   - recipe[git::source]
-#   attributes: {}
+- name: source
+  run_list:
+  - recipe[git::source]
+  excludes: ["ubuntu-12.04", "ubuntu-10.04"]
 
-# - name: server
-#   run_list:
-#   - recipe[git::server]
-#   attributes: {}
+- name: server
+  run_list:
+  - recipe[git::server]
+  includes: [
+    'centos-6.5', 
+    'amazon-2014.09', 
+    'debian-7.0' 
+    ]
