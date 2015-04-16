@@ -26,10 +26,11 @@ supports 'windows'
 
 depends 'build-essential'
 depends 'dmg'
-depends 'runit', '>= 1.0'
 depends 'windows'
-depends 'yum', '~> 3.0'
 depends 'yum-epel'
+
+source_url 'https://github.com/jssjr/git'
+issues_url 'https://github.com/jssjr/git/issues'
 
 attribute 'git/server/base_path',
           display_name: 'Git Daemon Base Path',
