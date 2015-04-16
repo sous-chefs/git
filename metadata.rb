@@ -29,8 +29,8 @@ depends 'dmg'
 depends 'windows'
 depends 'yum-epel'
 
-source_url 'https://github.com/jssjr/git'
-issues_url 'https://github.com/jssjr/git/issues'
+source_url 'https://github.com/jssjr/git' if respond_to?(:source_url)
+issues_url 'https://github.com/jssjr/git/issues' if respond_to?(:issues_url)
 
 attribute 'git/server/base_path',
           display_name: 'Git Daemon Base Path',
