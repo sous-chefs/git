@@ -10,6 +10,7 @@ driver_config:
 provisioner:
   name: chef_zero
   require_chef_omnibus: latest
+  # require_chef_omnibus: 11.18.0
 
 platforms:
 - name: centos-5.8
@@ -105,7 +106,7 @@ suites:
   run_list:
   - recipe[git::server]
   includes: [
-    'centos-6.5', 
-    'amazon-2014.09', 
-    'debian-7.0' 
+    'centos-6.5',
+    'amazon-2014.09',
+    'debian-7.0'
     ]
