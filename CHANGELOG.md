@@ -2,6 +2,11 @@ git Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the git cookbook.
 
+v4.2.2 (2015-04-23)
+-------------------
+- Fix up action in Chef::Resource::GitService
+- Adding matchers
+
 v4.2.1 (2015-04-17)
 -------------------
 - Fixing Chef 11 support.
