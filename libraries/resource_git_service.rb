@@ -4,7 +4,7 @@ class Chef
   class Resource
     class GitService < Chef::Resource::LWRPBase
       self.resource_name = :git_service
-      actions :create
+      actions :install
       default_action :install
 
       provides :git_service
