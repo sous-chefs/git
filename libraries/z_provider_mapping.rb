@@ -10,5 +10,6 @@ Chef::Platform.set platform: :fedora, resource: :git_client, provider: Chef::Pro
 Chef::Platform.set platform: :redhat, resource: :git_client, provider: Chef::Provider::GitClient::Package
 Chef::Platform.set platform: :scientific, resource: :git_client, provider: Chef::Provider::GitClient::Package
 Chef::Platform.set platform: :smartos, resource: :git_client, provider: Chef::Provider::GitClient::Package
+Chef::Platform.set platform: :solaris2, resource: :git_client, provider: Chef::Provider::GitClient::Package
 Chef::Platform.set platform: :suse, resource: :git_client, provider: Chef::Provider::GitClient::Package
 Chef::Platform.set platform: :ubuntu, resource: :git_client, provider: Chef::Provider::GitClient::Package
