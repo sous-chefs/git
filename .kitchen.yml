@@ -27,6 +27,14 @@ platforms:
 #   driver:
 #     box: chef/windows-server-2008r2-standard # private
 
+# - name: macosx-10.10
+#   driver:
+#     box: chef/macosx-10.10 # private
+
+# - name: macosx-10.9
+#   driver:
+#     box: chef/macosx-10.9 # private
+
 suites:
 - name: default
   run_list:
