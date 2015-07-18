@@ -2,6 +2,11 @@ git Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the git cookbook.
 
+v4.2.3 (2015-07-18)
+-------------------
+- mac_os_x provider mapping
+- various rubocops
+
 v4.2.2 (2015-04-23)
 -------------------
 - Fix up action in Chef::Resource::GitService
