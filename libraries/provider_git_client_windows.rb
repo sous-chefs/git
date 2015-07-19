@@ -7,10 +7,10 @@ class Chef
         provides :git_client, os: 'windows' if respond_to?(:provides)
 
         action :install do
-          windows_package node['git']['display_name'] do
+          windows_package parsed_windows_display_name do
             action :install
-            source node['git']['url']
-            checksum node['git']['checksum']
+            source parsed_windows_package_url
+            checksum parsed_windows_package_checksum
             installer_type :inno
           end
 

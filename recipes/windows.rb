@@ -15,3 +15,10 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+
+git_client 'default' do
+  windows_display_name node['windows']['display_name']
+  windows_package_url node['windows']['url']
+  windows_package_checksum node['windows']['checksum']
+  action :install
+end
