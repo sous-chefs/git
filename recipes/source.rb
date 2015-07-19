@@ -19,6 +19,10 @@
 # drive version from node attributes
 git_client 'default' do
   provider Chef::Provider::GitClient::Source
+  source_checksum node['git']['0f30984828d573da01d9f8e78210d5f4c56da1697fd6d278bad4cfa4c22ba271']
+  source_prefix node['git']['prefix']
+  source_url node['git']['url']
+  source_use_pcre node['git']['use_pcre']
   source_version node['git']['version']
   action :install
 end
