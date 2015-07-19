@@ -2,6 +2,10 @@ git Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the git cookbook.
 
+v4.2.4 (2015-07-19)
+-------------------
+- Fixing source provider selection bug from 4.2.3
+
 v4.2.3 (2015-07-18)
 -------------------
 - mac_os_x provider mapping
