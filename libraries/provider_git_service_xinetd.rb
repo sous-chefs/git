@@ -15,7 +15,7 @@ class Chef
 
         include_recipe 'git'
 
-        directory node['git']['server']['base_path'] do
+        directory new_resource.service_base_path do
           owner 'root'
           group 'root'
           mode '0755'
@@ -28,7 +28,7 @@ class Chef
           package 'git-daemon'
         else
           log 'Platform requires setting up a git daemon service script.'
-          log "Hint: /usr/bin/git daemon --export-all --user=nobody --group=daemon --base-path=#{node['git']['server']['base_path']}"
+          log "Hint: /usr/bin/git daemon --export-all --user=nobody --group=daemon --base-path=#{new_resource.service_base_path}"
           return
         end
 

@@ -17,5 +17,6 @@
 # limitations under the License.
 
 git_service 'default' do
+  service_base_path node['git']['server']['base_path']
   action :create
 end

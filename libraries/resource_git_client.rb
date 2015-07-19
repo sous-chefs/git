@@ -32,6 +32,9 @@ class Chef
       attribute :windows_display_name, kind_of: String, default: nil
       attribute :windows_package_url,  kind_of: String, default: nil
       attribute :windows_package_checksum,  kind_of: String, default: nil
+
+      # used by the service xinetd provider
+      attribute :service_base_path, kind_of: String, default: '/srv/git'
     end
   end
 end
