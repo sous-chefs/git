@@ -8,6 +8,9 @@ class Chef
       default_action :create
 
       provides :git_service
+
+      # used by the service xinetd provider
+      attribute :service_base_path, kind_of: String, default: '/srv/git'
     end
   end
 end

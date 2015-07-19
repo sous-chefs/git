@@ -13,7 +13,7 @@ class Chef
       attribute :source_checksum, kind_of: String, default: nil
       attribute :source_prefix, kind_of: String, default: '/usr/local'
       attribute :source_url, kind_of: String, default: nil
-      attribute :source_use_pcre, kind_of: [TrueCLass, FalseClass], default: false
+      attribute :source_use_pcre, kind_of: [TrueClass, FalseClass], default: false
       attribute :source_version, kind_of: String, default: nil
 
       # used by linux package providers
@@ -32,9 +32,6 @@ class Chef
       attribute :windows_display_name, kind_of: String, default: nil
       attribute :windows_package_url,  kind_of: String, default: nil
       attribute :windows_package_checksum,  kind_of: String, default: nil
-
-      # used by the service xinetd provider
-      attribute :service_base_path, kind_of: String, default: '/srv/git'
     end
   end
 end
