@@ -19,6 +19,6 @@
 # drive version from node attributes
 git_client 'default' do
   provider Chef::Provider::GitClient::Source
-  version node['git']['version']
+  source_version node['git']['version']
   action :install
 end

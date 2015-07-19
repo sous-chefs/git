@@ -8,6 +8,16 @@ module GitCookbook
       'git'
     end
 
+    def parsed_source_url
+      return new_resource.source_url if new_resource.source_url
+      return "https://nodeload.github.com/git/git/tar.gz/v#{new_resource.source_version}"
+    end
+
+    def parsed_source_checksum
+      return new_resource.source_checksum if new_resource.source_checksum
+      return '0f30984828d573da01d9f8e78210d5f4c56da1697fd6d278bad4cfa4c22ba271' # 1.9.5 tarball
+    end
+
     def parsed_package_version
       return new_resource.package_version if new_resource.package_version
     end
