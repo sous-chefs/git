@@ -4,8 +4,6 @@ class Chef
       class Source < Chef::Provider::GitClient
         include Chef::DSL::IncludeRecipe
 
-        provides :git_client, os: 'linux' if respond_to?(:provides)
-
         action :install do
           return "#{node['platform']} is not supported by the #{cookbook_name}::#{recipe_name} recipe" if node['platform'] == 'windows'
 
