@@ -2,6 +2,10 @@ git Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the git cookbook.
 
+v4.3.1 (2015-07-23)
+-------------------
+- Fixing up osx_dmg_source_url
+
 v4.3.0 (2015-07-20)
 -------------------
 - Removing references to node attributes from provider code
