@@ -2,6 +2,10 @@ git Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the git cookbook.
 
+v4.3.3 (2015-07-27)
+-------------------
+- #76: Use checksum keyname instead of value in source recipe
+
 v4.3.2 (2015-07-27)
 -------------------
 - Fixing up Windows provider (issue #73)
