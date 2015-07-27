@@ -2,6 +2,11 @@ git Cookbook CHANGELOG
 ======================
 This file is used to list changes made in each version of the git cookbook.
 
+v4.3.2 (2015-07-27)
+-------------------
+- Fixing up Windows provider (issue #73)
+- Supporting changes to source_prefix in source provider (#62)
+
 v4.3.1 (2015-07-23)
 -------------------
 - Fixing up osx_dmg_source_url

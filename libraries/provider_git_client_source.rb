@@ -53,6 +53,7 @@ class Chef
     (cd git-#{new_resource.source_version} && make prefix=#{new_resource.source_prefix} #{additional_make_params} install)
   COMMAND
             not_if "git --version | grep #{new_resource.source_version}"
+            not_if "#{new_resource.source_prefix}/bin/git --version | grep #{new_resource.source_version}"
           end
         end
 
