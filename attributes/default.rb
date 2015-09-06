@@ -26,7 +26,7 @@ when 'windows'
 when 'mac_os_x'
   default['git']['osx_dmg']['app_name']    = 'git-1.9.5-intel-universal-snow-leopard'
   default['git']['osx_dmg']['volumes_dir'] = 'Git 1.9.5 Snow Leopard Intel Universal'
-  default['git']['osx_dmg']['package_id']  = 'GitOSX.Installer.git195.git.pkg'
+  default['git']['osx_dmg']['package_id']  = 'GitOSX.Installer.git195Universal.git.pkg'
   default['git']['osx_dmg']['url']         = 'http://sourceforge.net/projects/git-osx-installer/files/git-1.9.5-intel-universal-snow-leopard.dmg/download'
   default['git']['osx_dmg']['checksum']    = '61b8a9fda547725f6f0996c3d39a62ec3334e4c28a458574bc2aea356ebe94a1'
 else
