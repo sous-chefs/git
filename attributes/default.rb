@@ -16,12 +16,12 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
 case node['platform_family']
 when 'windows'
-  default['git']['version'] = '1.9.5-preview20141217'
-  default['git']['url'] = "https://github.com/msysgit/msysgit/releases/download/Git-#{node['git']['version']}/Git-#{node['git']['version']}.exe"
-  default['git']['checksum'] = 'd7e78da2251a35acd14a932280689c57ff9499a474a448ae86e6c43b882692dd'
+  default['git']['version'] = '2.5.1'
+  default['git']['architecture'] = '32'
+  default['git']['url'] = "https://github.com/git-for-windows/git/releases/download/v#{node['git']['version']}.windows.1/Git-#{node['git']['version']}-#{node['git']['architecture']}-bit.exe"
+  default['git']['checksum'] = 'f1a6a1b96f2497331afbefda7c720995d7deb0ba55caeb7307bcee27dae8e157'
   default['git']['display_name'] = "Git version #{node['git']['version']}"
 when 'mac_os_x'
   default['git']['osx_dmg']['app_name']    = 'git-1.9.5-intel-universal-snow-leopard'
