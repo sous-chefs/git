@@ -28,6 +28,8 @@ when 'mac_os_x'
     osx_dmg_checksum node['git']['osx_dmg']['checksum']
     action :install
   end
+when 'windows'
+  include_recipe 'git::windows'
 else
   git_client 'default' do
     action :install

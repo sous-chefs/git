@@ -17,8 +17,8 @@
 # limitations under the License.
 
 git_client 'default' do
-  windows_display_name node['windows']['display_name']
-  windows_package_url node['windows']['url']
-  windows_package_checksum node['windows']['checksum']
+  windows_display_name node['git']['display_name']
+  windows_package_url node['git']['url']
+  windows_package_checksum node['git']['checksum']
   action :install
 end
