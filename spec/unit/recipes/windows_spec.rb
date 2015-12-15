@@ -1,12 +1,14 @@
 require 'spec_helper'
 
 describe_recipe 'git::windows' do
-  let(:chef_run) { ChefSpec::SoloRunner.new(
-    platform: 'windows', 
-    version: '2012',
-    step_into: 'git_client').converge(described_recipe) }
-  
-  it {expect(chef_run).to install_git_client('default') }
+  let(:chef_run) do
+    ChefSpec::SoloRunner.new(
+      platform: 'windows',
+      version: '2012',
+      step_into: 'git_client').converge(described_recipe)
+  end
+
+  it { expect(chef_run).to install_git_client('default') }
   it do
     expect(chef_run).to install_windows_package(chef_run.node['git']['display_name'])
       .with(source: chef_run.node['git']['url'])
@@ -21,6 +23,6 @@ describe_recipe 'git::windows' do
   end
   it do
     resource = chef_run.ruby_block('Add Git Path')
-    expect(resource).to do_nothing    
+    expect(resource).to do_nothing
   end
 end

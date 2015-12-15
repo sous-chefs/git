@@ -16,12 +16,12 @@ module GitCookbook
     # source
     def parsed_source_url
       return new_resource.source_url if new_resource.source_url
-      return "https://nodeload.github.com/git/git/tar.gz/v#{new_resource.source_version}"
+      "https://nodeload.github.com/git/git/tar.gz/v#{new_resource.source_version}"
     end
 
     def parsed_source_checksum
       return new_resource.source_checksum if new_resource.source_checksum
-      return '0f30984828d573da01d9f8e78210d5f4c56da1697fd6d278bad4cfa4c22ba271' # 1.9.5 tarball
+      '0f30984828d573da01d9f8e78210d5f4c56da1697fd6d278bad4cfa4c22ba271' # 1.9.5 tarball
     end
 
     # windows
@@ -44,6 +44,5 @@ module GitCookbook
       return new_resource.windows_package_checksum if new_resource.windows_package_checksum
       'd7e78da2251a35acd14a932280689c57ff9499a474a448ae86e6c43b882692dd'
     end
-
   end
 end

@@ -18,17 +18,17 @@ class Chef
             case node['platform_version'].to_i
             when 5
               pkgs = %w(expat-devel gettext-devel curl-devel openssl-devel zlib-devel)
-              pkgs += %w{ pcre-devel } if new_resource.source_use_pcre
+              pkgs += %w( pcre-devel ) if new_resource.source_use_pcre
             when 6, 7
               pkgs = %w(expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel)
-              pkgs += %w{ pcre-devel } if new_resource.source_use_pcre
+              pkgs += %w( pcre-devel ) if new_resource.source_use_pcre
             else
               pkgs = %w(expat-devel gettext-devel curl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel) if node['platform'] == 'amazon'
-              pkgs += %w{ pcre-devel } if new_resource.source_use_pcre
+              pkgs += %w( pcre-devel ) if new_resource.source_use_pcre
             end
           when 'debian'
             pkgs = %w(libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev)
-            pkgs += %w{ libpcre3-dev } if new_resource.source_use_pcre
+            pkgs += %w( libpcre3-dev ) if new_resource.source_use_pcre
           end
 
           pkgs.each do |pkg|
@@ -46,8 +46,8 @@ class Chef
           # reduce line-noise-eyness
           execute "Extracting and Building Git #{new_resource.source_version} from Source" do
             cwd Chef::Config['file_cache_path']
-            additional_make_params = ""
-            additional_make_params += "USE_LIBPCRE=1" if new_resource.source_use_pcre
+            additional_make_params = ''
+            additional_make_params += 'USE_LIBPCRE=1' if new_resource.source_use_pcre
             command <<-COMMAND
     (mkdir git-#{new_resource.source_version} && tar -zxf git-#{new_resource.source_version}.tar.gz -C git-#{new_resource.source_version} --strip-components 1)
     (cd git-#{new_resource.source_version} && make prefix=#{new_resource.source_prefix} #{additional_make_params} install)
