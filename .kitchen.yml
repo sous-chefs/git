@@ -6,14 +6,19 @@ provisioner:
   data_path: test/fixtures
 
 platforms:
-  - name: centos-5.10
-  - name: centos-6.5
-  - name: centos-7.0
-  - name: fedora-19
-  - name: fedora-20
-  - name: ubuntu-10.04
+  - name: centos-5.11
+  - name: centos-6.7
+  - name: centos-7.1
+  - name: debian-7.8
+    run_list: apt::default
+  - name: debian-8.1
+    run_list: apt::default
+  - name: fedora-21
+  - name: fedora-22
   - name: ubuntu-12.04
+    run_list: apt::default
   - name: ubuntu-14.04
+    run_list: apt::default
   - name: freebsd-9.2
     run_list:
     - recipe[freebsd::portsnap]
@@ -39,13 +44,9 @@ suites:
 - name: default
   run_list:
   - recipe[git]
-  attributes: {}
-
 - name: source
-  excludes: ["ubuntu-12.04", "ubuntu-10.04"]
   run_list:
   - recipe[git::source]
-  attributes: {}
 
 # servespec on windows is pretty raw.  
 # os detection forces us to use a separate suite.
@@ -58,4 +59,3 @@ suites:
   ]
   run_list:
   - recipe[git]
-  attributes: {}
