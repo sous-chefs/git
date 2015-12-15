@@ -1,4 +1,7 @@
 # Git Cookbook
+[![Build Status](https://travis-ci.org/chef-cookbooks/git.svg?branch=master)](https://travis-ci.org/chef-cookbooks/git) [![Cookbook Version](https://img.shields.io/cookbook/v/git.svg)](https://supermarket.chef.io/cookbooks/git)
+
+
 Installs git_client from package or source. Optionally sets up a git service under xinetd.
 
 ## Scope
