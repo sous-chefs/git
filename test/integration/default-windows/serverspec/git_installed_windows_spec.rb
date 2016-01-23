@@ -1,8 +1,7 @@
 require 'serverspec'
 
-set :backend, :exec
+set :backend, :cmd
 set :os, family: 'windows'
-puts "os: #{os}"
 
 PROGRAM_FILES = ENV['ProgramFiles(x86)'] || ENV['ProgramFiles']
 GIT_PATH = "#{ PROGRAM_FILES }\\Git\\Cmd"
