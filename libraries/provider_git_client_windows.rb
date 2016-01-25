@@ -17,7 +17,7 @@ class Chef
           # Git is installed to Program Files (x86) on 64-bit machines and
           # 'Program Files' on 32-bit machines
           PROGRAM_FILES = ENV['ProgramFiles(x86)'] || ENV['ProgramFiles']
-          GIT_PATH = "#{PROGRAM_FILES}\\Git\\Cmd"
+          GIT_PATH = "#{PROGRAM_FILES}\\Git\\Cmd".freeze
 
           # COOK-3482 - windows_path resource doesn't change the current process
           # environment variables. Therefore, git won't actually be on the PATH

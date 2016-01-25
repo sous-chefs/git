@@ -4,7 +4,7 @@ set :backend, :cmd
 set :os, family: 'windows'
 
 PROGRAM_FILES = ENV['ProgramFiles(x86)'] || ENV['ProgramFiles']
-GIT_PATH = "#{PROGRAM_FILES}\\Git\\Cmd"
+GIT_PATH = "#{PROGRAM_FILES}\\Git\\Cmd".freeze
 
 puts "PROGRAM_FILES: #{PROGRAM_FILES}"
 puts "GIT_PATH: #{GIT_PATH}"

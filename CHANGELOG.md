@@ -1,6 +1,9 @@
 # git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
+## v4.3.6 (2015-01-25)
+- Windows fixes
+
 ## v4.3.5 (2015-12-15)
 - Fixed installation on Windows nodes
 - Removed the last of the Chef 10 compatibility code
