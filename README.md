@@ -41,7 +41,7 @@ The following platforms have been tested with Test Kitchen:
 - depends 'yum-epel' - For older RHEL platform_family support
 
 ## Usage
-- Add `git::default`, `git::source`, of `git::windows` to your run_list
+- Add `git::default`, `git::source` or `git::windows` to your run_list
 - OR
 - Add `depends 'git', '~> 4.3'` to your cookbook's metadata.rb
 - include_recipe one of the recipes from your cookbook
