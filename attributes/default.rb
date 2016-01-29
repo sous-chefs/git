@@ -39,4 +39,4 @@ else
 end
 
 default['git']['server']['base_path'] = '/srv/git'
-default['git']['server']['export_all'] = 'true' # ?
+default['git']['server']['export_all'] = true
