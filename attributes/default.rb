@@ -21,7 +21,7 @@ case node['platform_family']
 when 'windows'
   default['git']['url'] = 'https://github.com/git-for-windows/git/releases/download/v2.7.0.windows.1/Git-2.7.0-32-bit.exe'
   default['git']['checksum'] = '58d7b7b8038e91ac6a29c3d9150da536f836247dafde4821c745ba1f88ccc0f1'
-  default['git']['display_name'] = "Git version 2.7.0 32-bit"
+  default['git']['display_name'] = 'Git version 2.7.0 32-bit'
 when 'mac_os_x'
   default['git']['osx_dmg']['app_name']    = 'git-1.9.5-intel-universal-snow-leopard'
   default['git']['osx_dmg']['volumes_dir'] = 'Git 1.9.5 Snow Leopard Intel Universal'
@@ -31,7 +31,7 @@ when 'mac_os_x'
 else
   default['git']['prefix'] = '/usr/local'
   default['git']['version'] = '1.9.5'
-  default['git']['url'] = "https://nodeload.github.com/git/git/tar.gz/v#{node['git']['version']}"
+  default['git']['url'] = 'https://nodeload.github.com/git/git/tar.gz/v1.9.5'
   default['git']['checksum'] = '0f30984828d573da01d9f8e78210d5f4c56da1697fd6d278bad4cfa4c22ba271'
   default['git']['use_pcre'] = false
 end
