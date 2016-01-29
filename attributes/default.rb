@@ -21,7 +21,7 @@ case node['platform_family']
 when 'windows'
   default['git']['url'] = 'https://github.com/git-for-windows/git/releases/download/v2.7.0.windows.1/Git-2.7.0-32-bit.exe'
   default['git']['checksum'] = '58d7b7b8038e91ac6a29c3d9150da536f836247dafde4821c745ba1f88ccc0f1'
-  default['git']['display_name'] = "Git version #{node['git']['version']}"
+  default['git']['display_name'] = "Git version 2.7.0 32-bit"
 when 'mac_os_x'
   default['git']['osx_dmg']['app_name']    = 'git-1.9.5-intel-universal-snow-leopard'
   default['git']['osx_dmg']['volumes_dir'] = 'Git 1.9.5 Snow Leopard Intel Universal'
