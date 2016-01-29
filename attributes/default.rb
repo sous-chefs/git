@@ -3,7 +3,7 @@
 # Cookbook Name:: git
 # Attributes:: default
 #
-# Copyright 2008-2015, Chef Software, Inc.
+# Copyright 2008-2016, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the 'License');
 # you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ case node['platform_family']
 when 'windows'
   default['git']['version'] = '2.5.1'
   default['git']['architecture'] = '32'
-  default['git']['url'] = "https://github.com/git-for-windows/git/releases/download/v#{node['git']['version']}.windows.1/Git-#{node['git']['version']}-#{node['git']['architecture']}-bit.exe"
+  default['git']['url'] = 'https://github.com/git-for-windows/git/releases/download/v%{version}.windows.1/Git-%{version}-%{architecture}-bit.exe'
   default['git']['checksum'] = 'f1a6a1b96f2497331afbefda7c720995d7deb0ba55caeb7307bcee27dae8e157'
   default['git']['display_name'] = "Git version #{node['git']['version']}"
 when 'mac_os_x'
@@ -33,7 +33,7 @@ when 'mac_os_x'
 else
   default['git']['prefix'] = '/usr/local'
   default['git']['version'] = '1.9.5'
-  default['git']['url'] = "https://nodeload.github.com/git/git/tar.gz/v#{node['git']['version']}"
+  default['git']['url'] = 'https://nodeload.github.com/git/git/tar.gz/v%{version}'
   default['git']['checksum'] = '0f30984828d573da01d9f8e78210d5f4c56da1697fd6d278bad4cfa4c22ba271'
   default['git']['use_pcre'] = false
 end
