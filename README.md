@@ -103,10 +103,10 @@ This cookbook ships with ready to use, attribute driven recipes that utilize the
 
 ## Attributes
 ### Windows
-- `node['git']['version']` - git version to install
+For Windows you can determine the appropriate attribute definitions on the [Git for Windows site](https://github.com/git-for-windows/git/releases).
+- `node['git']['display_name']` - esource Display Name (makes the package install idempotent)
 - `node['git']['url']` - URL to git package
 - `node['git']['checksum']` - package SHA256 checksum
-- `node['git']['display_name']` - `windows_package` resource Display Name (makes the package install idempotent)
 
 ### Mac OS X
 - `node['git']['osx_dmg']['url']` - URL to git package
