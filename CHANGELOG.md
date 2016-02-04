@@ -1,7 +1,13 @@
 # git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
-## v4.3.6 (2015-01-25)
+## v4.3.7 (2016-02-03)
+- PR [#90][] port node[git][server][export_all] to true/false ([@scalp42][]) 
+- PR [#89][] make attributes more wrapper friendly ([@scalp42][])
+- Update testing deps + rubocop fixes 
+- README fix ([@zverulacis][]) 
+
+## v4.3.6 (2016-01-25)
 - Windows fixes
 
 ## v4.3.5 (2015-12-15)
