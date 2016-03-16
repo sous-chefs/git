@@ -82,21 +82,21 @@ Currently, there are distinct sets of resource properties, used by the providers
 # used by source providers
 - `source_prefix` - Defaults to '/usr/local'
 - `source_url` - Defaults to a calculated URL based on source_version
-- `source_version` - Defaults to 1.9.5
+- `source_version` - Defaults to 2.7.4
 - `source_use_pcre` - configure option for build. Defaults to false
-- `source_checksum` - Defaults to a known value for the 1.9.5 source tarball
+- `source_checksum` - Defaults to a known value for the 2.7.4 source tarball
 
 # used by OSX package providers
-- `osx_dmg_app_name` - Defaults to 'git-1.9.5-intel-universal-snow-leopard'
-- `osx_dmg_package_id` - Defaults to 'GitOSX.Installer.git195.git.pkg'
-- `osx_dmg_volumes_dir` - Defaults to 'Git 1.9.5 Snow Leopard Intel Universal'
+- `osx_dmg_app_name` - Defaults to 'git-2.7.1-intel-universal-mavericks'
+- `osx_dmg_package_id` - Defaults to 'GitOSX.Installer.git271.git.pkg'
+- `osx_dmg_volumes_dir` - Defaults to 'Git 2.7.1 Mavericks Intel Universal'
 - `osx_dmg_url` - Defaults to Sourceforge
-- `osx_dmg_checksum` - Defaults to the value for 1.9.5
+- `osx_dmg_checksum` - Defaults to the value for 2.7.1
 
 # used by the Windows package providers
 - `windows_display_name` - Windows display name
 - `windows_package_url` - Defaults to the Internet
-- `windows_package_checksum` - Defaults to the value for 1.9.5
+- `windows_package_checksum` - Defaults to the value for 2.7.4
 
 ## Recipes
 This cookbook ships with ready to use, attribute driven recipes that utilize the `git_client` and `git_service` resources. As of cookbook 4.x, they utilize the same attributes layout scheme from the 3.x. Due to some overlap, it is currently impossible to simultaneously install the Git client as a package and from source by using the "manipulate a the node attributes and run a recipe" technique. If you need both, you'll need to utilize the git_client resource in a recipe.
