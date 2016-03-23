@@ -1,6 +1,9 @@
 # git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
+## v4.4.0 (2016-03-23)
+- PR #93 bump to latest git @ksubrama
+
 ## v4.3.7 (2016-02-03)
 - PR [#90][] port node[git][server][export_all] to true/false ([@scalp42][]) 
 - PR [#89][] make attributes more wrapper friendly ([@scalp42][])
