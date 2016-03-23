@@ -19,22 +19,22 @@
 
 case node['platform_family']
 when 'windows'
-  default['git']['version'] = '2.5.1'
+  default['git']['version'] = '2.7.4'
   default['git']['architecture'] = '32'
   default['git']['url'] = 'https://github.com/git-for-windows/git/releases/download/v%{version}.windows.1/Git-%{version}-%{architecture}-bit.exe'
-  default['git']['checksum'] = 'f1a6a1b96f2497331afbefda7c720995d7deb0ba55caeb7307bcee27dae8e157'
+  default['git']['checksum'] = '49601d5102df249d6f866ecfa1eea68eb5672acc1dbb7e4051099e792f6da5fc'
   default['git']['display_name'] = "Git version #{node['git']['version']}"
 when 'mac_os_x'
-  default['git']['osx_dmg']['app_name']    = 'git-1.9.5-intel-universal-snow-leopard'
-  default['git']['osx_dmg']['volumes_dir'] = 'Git 1.9.5 Snow Leopard Intel Universal'
+  default['git']['osx_dmg']['app_name']    = 'git-2.7.1-intel-universal-mavericks'
+  default['git']['osx_dmg']['volumes_dir'] = 'Git 2.7.1 Mavericks Intel Universal'
   default['git']['osx_dmg']['package_id']  = 'GitOSX.Installer.git195Universal.git.pkg'
-  default['git']['osx_dmg']['url']         = 'http://sourceforge.net/projects/git-osx-installer/files/git-1.9.5-intel-universal-snow-leopard.dmg/download'
-  default['git']['osx_dmg']['checksum']    = '61b8a9fda547725f6f0996c3d39a62ec3334e4c28a458574bc2aea356ebe94a1'
+  default['git']['osx_dmg']['url']         = 'http://sourceforge.net/projects/git-osx-installer/files/git-2.7.1-intel-universal-maverick.dmg/download'
+  default['git']['osx_dmg']['checksum']    = '260b32e8877eb72d07807b26163aeec42e2d98c350f32051ab1ff0cc33626440'
 else
   default['git']['prefix'] = '/usr/local'
-  default['git']['version'] = '1.9.5'
+  default['git']['version'] = '2.7.4'
   default['git']['url'] = 'https://nodeload.github.com/git/git/tar.gz/v%{version}'
-  default['git']['checksum'] = '0f30984828d573da01d9f8e78210d5f4c56da1697fd6d278bad4cfa4c22ba271'
+  default['git']['checksum'] = '8d53703d75890c03e26a915c7af3b7b98d8cfb94382f685a9bcbee1eeaec47b4'
   default['git']['use_pcre'] = false
 end
 
