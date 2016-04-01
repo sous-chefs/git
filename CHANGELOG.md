@@ -1,14 +1,18 @@
 # git Cookbook CHANGELOG
 This file is used to list changes made in each version of the git cookbook.
 
+
+## v4.4.1 (2016-03-31)
+- PR #95 support 32 bit and 64 bit installs on windows @smurawski
+
 ## v4.4.0 (2016-03-23)
 - PR #93 bump to latest git @ksubrama
 
 ## v4.3.7 (2016-02-03)
-- PR [#90][] port node[git][server][export_all] to true/false ([@scalp42][]) 
-- PR [#89][] make attributes more wrapper friendly ([@scalp42][])
+- PR #90 port node[git][server][export_all] to true/false @scalp42 
+- PR #89 make attributes more wrapper friendly @scalp42
 - Update testing deps + rubocop fixes 
-- README fix ([@zverulacis][]) 
+- README fix @zverulacis
 
 ## v4.3.6 (2016-01-25)
 - Windows fixes
