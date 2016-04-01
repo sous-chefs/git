@@ -33,7 +33,7 @@ when 'mac_os_x'
   default['git']['osx_dmg']['app_name']    = 'git-2.7.1-intel-universal-mavericks'
   default['git']['osx_dmg']['volumes_dir'] = 'Git 2.7.1 Mavericks Intel Universal'
   default['git']['osx_dmg']['package_id']  = 'GitOSX.Installer.git195Universal.git.pkg'
-  default['git']['osx_dmg']['url']         = 'http://sourceforge.net/projects/git-osx-installer/files/git-2.7.1-intel-universal-maverick.dmg/download'
+  default['git']['osx_dmg']['url']         = 'http://sourceforge.net/projects/git-osx-installer/files/git-2.7.1-intel-universal-mavericks.dmg/download'
   default['git']['osx_dmg']['checksum']    = '260b32e8877eb72d07807b26163aeec42e2d98c350f32051ab1ff0cc33626440'
 else
   default['git']['prefix'] = '/usr/local'
