@@ -20,9 +20,14 @@
 case node['platform_family']
 when 'windows'
   default['git']['version'] = '2.7.4'
-  default['git']['architecture'] = '32'
+  if node['kernel']['machine'] == 'x86_64'
+    default['git']['architecture'] = '64'
+    default['git']['checksum'] = '1290afb22f2441ce85f8f6f1a94c06768ca470dc18113a83ef6a4cefc16c2381'
+  else
+    default['git']['architecture'] = '32'
+    default['git']['checksum'] = '49601d5102df249d6f866ecfa1eea68eb5672acc1dbb7e4051099e792f6da5fc'
+  end
   default['git']['url'] = 'https://github.com/git-for-windows/git/releases/download/v%{version}.windows.1/Git-%{version}-%{architecture}-bit.exe'
-  default['git']['checksum'] = '49601d5102df249d6f866ecfa1eea68eb5672acc1dbb7e4051099e792f6da5fc'
   default['git']['display_name'] = "Git version #{node['git']['version']}"
 when 'mac_os_x'
   default['git']['osx_dmg']['app_name']    = 'git-2.7.1-intel-universal-mavericks'
