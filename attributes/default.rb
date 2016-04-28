@@ -19,13 +19,13 @@
 
 case node['platform_family']
 when 'windows'
-  default['git']['version'] = '2.7.4'
+  default['git']['version'] = '2.8.1'
   if node['kernel']['machine'] == 'x86_64'
     default['git']['architecture'] = '64'
-    default['git']['checksum'] = '1290afb22f2441ce85f8f6f1a94c06768ca470dc18113a83ef6a4cefc16c2381'
+    default['git']['checksum'] = '5e5283990cc91d1e9bd0858f8411e7d0afb70ce26e23680252fb4869288c7cfb'
   else
     default['git']['architecture'] = '32'
-    default['git']['checksum'] = '49601d5102df249d6f866ecfa1eea68eb5672acc1dbb7e4051099e792f6da5fc'
+    default['git']['checksum'] = '17418c2e507243b9c98db161e9e5e8041d958b93ce6078530569b8edaec6b8a4'
   end
   default['git']['url'] = 'https://github.com/git-for-windows/git/releases/download/v%{version}.windows.1/Git-%{version}-%{architecture}-bit.exe'
   default['git']['display_name'] = "Git version #{node['git']['version']}"
@@ -37,9 +37,9 @@ when 'mac_os_x'
   default['git']['osx_dmg']['checksum']    = 'c2912895a1e2018d9be4c646765d511f7c82e0114275505dbd13d1ac70c62023'
 else
   default['git']['prefix'] = '/usr/local'
-  default['git']['version'] = '2.7.4'
+  default['git']['version'] = '2.8.1'
   default['git']['url'] = 'https://nodeload.github.com/git/git/tar.gz/v%{version}'
-  default['git']['checksum'] = '8d53703d75890c03e26a915c7af3b7b98d8cfb94382f685a9bcbee1eeaec47b4'
+  default['git']['checksum'] = 'e08503ecaf5d3ac10c40f22871c996a392256c8d038d16f52ebf974cba29ae42'
   default['git']['use_pcre'] = false
 end
 
