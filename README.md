@@ -19,9 +19,13 @@ The following platforms have been tested with Test Kitchen:
 |--------------+-------|
 | centos-7     | X     |
 |--------------+-------|
-| fedora-21    | X     |
+| fedora-22    | X     |
 |--------------+-------|
-| debian-7.0   | X     |
+| fedora-23    | X     |
+|--------------+-------|
+| debian-7     | X     |
+|--------------+-------|
+| debian-8     | X     |
 |--------------+-------|
 | ubuntu-12.04 | X     |
 |--------------+-------|
@@ -122,7 +126,7 @@ This cookbook ships with ready to use, attribute driven recipes that utilize the
 ## License & Authors
 - Author:: Joshua Timberman ([joshua@chef.io](mailto:joshua@chef.io))
 - Author:: Sean OMeara ([sean@chef.io](mailto:sean@chef.io))
-- Copyright:: 2009-2015, Chef Software, Inc.
+- Copyright:: 2009-2016, Chef Software, Inc.
 
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
