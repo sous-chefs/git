@@ -28,3 +28,21 @@ git_config 'change system config' do
   key 'user.name'
   value 'John Doe system'
 end
+
+git_config 'url.https://github.com/.insteadOf' do
+  value 'git://github.com/'
+  scope 'system'
+  options '--add'
+end
+
+git_config 'url.https://github.com/.insteadOf' do
+  value 'git@github.com:'
+  scope 'system'
+  options '--add'
+end
+
+git_config 'url.https://github.com/.insteadOf' do
+  value 'ssh://git@github.com/'
+  scope 'system'
+  options '--add'
+end
