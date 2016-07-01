@@ -8,7 +8,7 @@ action :set do
   if @current_resource.exists
     Chef::Log.info "#{@new_resource} already exists - nothing to do."
   else
-    execute "#{config_cmd} #{new_resource.key} \"#{new_resource.value}\"" do
+    execute "#{config_cmd} #{new_resource.key} \"#{new_resource.value}\" #{new_resource.options}".rstrip do
       cwd new_resource.path
       user new_resource.user
       group new_resource.user
