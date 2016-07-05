@@ -55,14 +55,13 @@ The following platforms have been tested with Test Kitchen:
 
 ## Resources Overview
 - `git_client`: Manages a Git client installation on a machine. Acts
-
   as a singleton when using the (default) package provider. Source
-
   provider available as well.
 
 - `git_service`: Sets up a Git service via xinetd. WARNING: This is
-
   insecure and will probably be removed in the future
+
+- `git_config`: Sets up Git configuration on a node.
 
 ### git_client
 The `git_client` resource manages the installation of a Git client on a machine.
@@ -72,6 +71,20 @@ The `git_client` resource manages the installation of a Git client on a machine.
 ```
 git_client 'default' do
   action :install
+end
+```
+
+### git_config
+The `git_config` resource manages the configuration of Git client on a
+machine.
+
+#### Example
+
+``` ruby
+git_config 'url.https://github.com/.insteadOf' do
+  value 'git://github.com/'
+  scope 'system'
+  options '--add'
 end
 ```
 
