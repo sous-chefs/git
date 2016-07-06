@@ -3,7 +3,10 @@ driver:
 
 provisioner:
   name: chef_zero
-  data_path: test/fixtures
+
+verifier:
+  name: inspec
+  format: doc
 
 platforms:
   - name: centos-5.11
@@ -48,15 +51,16 @@ suites:
 - name: source
   run_list:
   - recipe[git::source]
-
-# servespec on windows is pretty raw.
-# os detection forces us to use a separate suite.
-# rather than the usual os[:family] tricks
-
-- name: default-windows
-  includes: [
-    'windows-8.1-professional',
-    'windows-2008r2-standard'
-  ]
+  excludes:
+    - windows-2012r2-standard
+    - windows-2008r2-standard
+    - macosx-1010
+    - macosx-1011
+- name: server
   run_list:
-  - recipe[git]
+  - recipe[git::server]
+  excludes:
+    - windows-2012r2-standard
+    - windows-2008r2-standard
+    - macosx-1010
+    - macosx-1011
