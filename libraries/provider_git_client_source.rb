@@ -8,7 +8,7 @@ class Chef
           return "#{node['platform']} is not supported by the #{cookbook_name}::#{recipe_name} recipe" if node['platform'] == 'windows'
 
           include_recipe 'build-essential'
-          include_recipe 'yum-epel' if node['platform_family'] == 'rhel' && node['platform_version'].to_i < 6
+          include_recipe 'yum-epel' if node['platform_family'] == 'rhel' && node['platform_version'].to_i == 5
 
           # move this to attributes.
           case node['platform_family']
@@ -29,6 +29,9 @@ class Chef
           when 'debian'
             pkgs = %w(libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev)
             pkgs += %w( libpcre3-dev ) if new_resource.source_use_pcre
+          when 'suse'
+            pkgs = %w(tar libcurl-devel libexpat-devel gettext-tools zlib-devel libopenssl-devel)
+            pkgs += %w( libpcre2-devel ) if new_resource.source_use_pcre
           end
 
           pkgs.each do |pkg|
