@@ -2,6 +2,17 @@
 
 This file is used to list changes made in each version of the git cookbook.
 
+## v4.6.0 (2016-07-05)
+
+- Added support for compiling git on suse
+- Added the ability to pass a new group property to the config provider
+- Documented the git_config provider
+- Added the tar package on RHEL/Fedora for source installs as some minimal installs lack this package
+- Added suse, opensuse, and opensuseleap as supported platforms in the metadata
+- Switched to inspec for testing
+- Switched to cookstyle for Ruby linting
+- Added Travis integration testing of Debian 7/8
+
 ## v4.5.0 (2016-04-28)
 
 - Update git versions to 2.8.1
