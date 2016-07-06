@@ -3,7 +3,10 @@ driver:
 
 provisioner:
   name: chef_zero
-  data_path: test/fixtures
+
+verifier:
+  name: inspec
+  format: doc
 
 platforms:
   - name: centos-5.11
@@ -13,17 +16,19 @@ platforms:
     run_list: apt::default
   - name: debian-8.4
     run_list: apt::default
-  - name: fedora-22
-    run_list: yum::dnf_yum_compat
+  - name: freebsd-9.3
+    run_list: freebsd::portsnap
+  - name: freebsd-10.2
+    run_list: freebsd::portsnap
   - name: fedora-23
     run_list: yum::dnf_yum_compat
+  - name: opensuse-13.2
   - name: ubuntu-12.04
     run_list: apt::default
   - name: ubuntu-14.04
     run_list: apt::default
-  - name: freebsd-9.2
-    run_list:
-    - recipe[freebsd::portsnap]
+  - name: ubuntu-16.04
+    run_list: apt::default
   - name: windows-2012r2-standard
     driver:
       box: chef/windows-server-2012r2-standard # private box in Chef's Atlas account
@@ -46,15 +51,16 @@ suites:
 - name: source
   run_list:
   - recipe[git::source]
-
-# servespec on windows is pretty raw.
-# os detection forces us to use a separate suite.
-# rather than the usual os[:family] tricks
-
-- name: default-windows
-  includes: [
-    'windows-8.1-professional',
-    'windows-2008r2-standard'
-  ]
+  excludes:
+    - windows-2012r2-standard
+    - windows-2008r2-standard
+    - macosx-1010
+    - macosx-1011
+- name: server
   run_list:
-  - recipe[git]
+  - recipe[git::server]
+  excludes:
+    - windows-2012r2-standard
+    - windows-2008r2-standard
+    - macosx-1010
+    - macosx-1011

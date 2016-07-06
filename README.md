@@ -19,8 +19,6 @@ The following platforms have been tested with Test Kitchen:
 |--------------+-------|
 | centos-7     | X     |
 |--------------+-------|
-| fedora-22    | X     |
-|--------------+-------|
 | fedora-23    | X     |
 |--------------+-------|
 | debian-7     | X     |
@@ -31,7 +29,7 @@ The following platforms have been tested with Test Kitchen:
 |--------------+-------|
 | ubuntu-14.04 | X     |
 |--------------+-------|
-| ubuntu-15.04 | X     |
+| ubuntu-16.04 | X     |
 |--------------+-------|
 ```
 
