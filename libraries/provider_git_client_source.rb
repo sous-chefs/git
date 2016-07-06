@@ -13,14 +13,14 @@ class Chef
           # move this to attributes.
           case node['platform_family']
           when 'fedora'
-            pkgs = %w(openssl-devel libcurl-devel expat-devel perl-ExtUtils-MakeMaker)
+            pkgs = %w(tar openssl-devel libcurl-devel expat-devel perl-ExtUtils-MakeMaker)
           when 'rhel'
             case node['platform_version'].to_i
             when 5
-              pkgs = %w(expat-devel gettext-devel curl-devel openssl-devel zlib-devel)
+              pkgs = %w(tar expat-devel gettext-devel curl-devel openssl-devel zlib-devel)
               pkgs += %w( pcre-devel ) if new_resource.source_use_pcre
             when 6, 7
-              pkgs = %w(expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel)
+              pkgs = %w(tar expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel)
               pkgs += %w( pcre-devel ) if new_resource.source_use_pcre
             else
               pkgs = %w(expat-devel gettext-devel curl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel) if node['platform'] == 'amazon'
