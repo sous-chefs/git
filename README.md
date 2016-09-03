@@ -34,7 +34,8 @@ The following platforms have been tested with Test Kitchen:
 ```
 
 ### Chef
-- Chef 11+
+
+- Chef 12+
 
 ### Cookbooks
 - depends 'build-essential' - For compiling from source

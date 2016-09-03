@@ -32,5 +32,7 @@ depends 'dmg'
 depends 'windows'
 depends 'yum-epel'
 
-source_url 'https://github.com/chef-cookbooks/git' if respond_to?(:source_url)
-issues_url 'https://github.com/chef-cookbooks/git/issues' if respond_to?(:issues_url)
+source_url 'https://github.com/chef-cookbooks/git'
+issues_url 'https://github.com/chef-cookbooks/git/issues'
+
+chef_version '>= 12' if respond_to?(:chef_version)

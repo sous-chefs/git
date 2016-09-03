@@ -5,7 +5,7 @@ class Chef
       class Windows < Chef::Provider::GitClient
         include Chef::DSL::IncludeRecipe
 
-        provides :git_client, os: 'windows' if respond_to?(:provides)
+        provides :git_client, os: 'windows'
 
         action :install do
           windows_package parsed_windows_display_name do
