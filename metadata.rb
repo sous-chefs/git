@@ -29,7 +29,6 @@ supports 'windows'
 
 depends 'build-essential'
 depends 'dmg'
-depends 'windows'
 depends 'yum-epel'
 
 source_url 'https://github.com/chef-cookbooks/git'
