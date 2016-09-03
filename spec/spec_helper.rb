@@ -2,6 +2,7 @@ require 'chefspec'
 require 'chefspec/berkshelf'
 
 RSpec.configure do |config|
+  config.formatter = :documentation # Use the specified formatter
   config.color = true
   config.log_level = :fatal # ignore warnings
   config.alias_example_group_to :describe_recipe, type: :recipe
