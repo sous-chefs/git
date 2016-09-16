@@ -33,5 +33,4 @@ depends 'yum-epel'
 
 source_url 'https://github.com/chef-cookbooks/git'
 issues_url 'https://github.com/chef-cookbooks/git/issues'
-
 chef_version '>= 12.1'
