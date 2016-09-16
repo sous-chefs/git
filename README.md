@@ -38,7 +38,7 @@ The following platforms have been tested with Test Kitchen:
 
 ### Chef
 
-- Chef 12+
+- Chef 12.1+
 
 ### Cookbooks
 
