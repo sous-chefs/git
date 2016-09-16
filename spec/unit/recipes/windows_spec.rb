@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe_recipe 'git::windows' do
   let(:chef_run) do
-    ChefSpec::SoloRunner.new(
+    ChefSpec::ServerRunner.new(
       platform: 'windows',
-      version: '2012'
+      version: '2012R2'
     ).converge(described_recipe)
   end
 

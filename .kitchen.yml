@@ -22,6 +22,7 @@ platforms:
   - name: fedora-24
     run_list: yum::dnf_yum_compat
   - name: opensuse-13.2
+  - name: opensuse-leap-42.1
   - name: ubuntu-12.04
     run_list: apt::default
   - name: ubuntu-14.04
@@ -34,10 +35,6 @@ platforms:
   - name: windows-2008r2-standard
     driver:
       box: chef/windows-server-2008r2-standard # private box in Chef's Atlas account
-  - name: macosx-10.10
-    driver:
-      box: chef/macosx-10.10 # private box in Chef's Atlas account
-      provider: vmware_fusion
   - name: macosx-10.11
     driver:
       box: chef/macosx-10.11 # private box in Chef's Atlas account
@@ -53,7 +50,6 @@ suites:
   excludes:
     - windows-2012r2-standard
     - windows-2008r2-standard
-    - macosx-1010
     - macosx-1011
 - name: server
   run_list:
@@ -61,5 +57,4 @@ suites:
   excludes:
     - windows-2012r2-standard
     - windows-2008r2-standard
-    - macosx-1010
     - macosx-1011
