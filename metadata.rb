@@ -10,7 +10,6 @@ recipe 'git::server', 'Sets up a runit_service for git daemon'
 recipe 'git::source', 'Installs git from source'
 
 supports 'amazon'
-supports 'arch'
 supports 'centos'
 supports 'debian'
 supports 'fedora'
