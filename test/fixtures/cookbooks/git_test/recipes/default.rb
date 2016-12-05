@@ -1,5 +1,5 @@
 user 'random' do
-  supports manage_home: true
+  manage_home true
   home '/home/random'
 end
 
