@@ -2,10 +2,18 @@
 
 This file is used to list changes made in each version of the git cookbook.
 
+## 5.0.2 (2017-01-18)
+
+- Remove arch for the metadata
+- Avoid deprecation warning during testing
+- respond_to?(:chef_version) for < 12.6 compat
+
 ## 5.0.1 (2016-09-15)
+
 - Clarify we require Chef 12.1 or later
 
 ## 5.0.0 (2016-09-02)
+
 - Require Chef 12 or later
 - Don't depend on the windows cookbook since windows_package is built into Chef 12
 - Updates for testing
