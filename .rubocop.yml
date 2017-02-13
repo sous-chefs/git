@@ -1,0 +1,5 @@
+# rubocop todo
+
+Style/IdenticalConditionalBranches:
+  Exclude:
+    - 'libraries/provider_git_client_source.rb'

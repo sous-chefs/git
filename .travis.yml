@@ -20,15 +20,15 @@ services: docker
 
 env:
   matrix:
-  - INSTANCE=default-ubuntu-1404
-  - INSTANCE=default-ubuntu-1604
-  - INSTANCE=default-debian-7
-  - INSTANCE=default-debian-8
-  - INSTANCE=default-centos-6
-  - INSTANCE=default-centos-7
-  - INSTANCE=default-fedora-latest
-  - INSTANCE=default-opensuse-132
-  - INSTANCE=default-opensuse-leap
+  - INSTANCE=resources-ubuntu-1404
+  - INSTANCE=resources-ubuntu-1604
+  - INSTANCE=resources-debian-7
+  - INSTANCE=resources-debian-8
+  - INSTANCE=resources-centos-6
+  - INSTANCE=resources-centos-7
+  - INSTANCE=resources-fedora-latest
+  - INSTANCE=resources-opensuse-132
+  - INSTANCE=resources-opensuse-leap
   - INSTANCE=source-ubuntu-1404
   - INSTANCE=source-ubuntu-1604
   - INSTANCE=source-debian-7

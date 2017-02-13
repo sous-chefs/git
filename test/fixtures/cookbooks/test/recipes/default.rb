@@ -23,6 +23,7 @@ git_config 'change local path' do
   key 'user.name'
   value 'John Doe local'
   path '/home/random/git_repo'
+  not_if { platform_family?('rhel') && node['platform_version'].to_i <= 6 } # local scope isn't in RHEL 6
 end
 
 git_config 'change system config' do
