@@ -43,7 +43,7 @@ The following platforms have been tested with Test Kitchen:
 ### Cookbooks
 
 - depends 'build-essential' - For compiling from source
-- depends 'dmg' - For OSX Support
+- depends 'dmg' - For macOS Support
 - depends 'yum-epel' - For older RHEL platform_family support
 
 ## Usage
