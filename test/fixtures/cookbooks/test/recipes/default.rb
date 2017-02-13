@@ -1,3 +1,5 @@
+git_client 'install it'
+
 user 'random' do
   manage_home true
   home '/home/random'
@@ -31,18 +33,6 @@ end
 
 git_config 'url.https://github.com/.insteadOf' do
   value 'git://github.com/'
-  scope 'system'
-  options '--add'
-end
-
-git_config 'url.https://github.com/.insteadOf' do
-  value 'git@github.com:'
-  scope 'system'
-  options '--add'
-end
-
-git_config 'url.https://github.com/.insteadOf' do
-  value 'ssh://git@github.com/'
   scope 'system'
   options '--add'
 end

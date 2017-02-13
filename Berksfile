@@ -5,5 +5,5 @@ metadata
 group :integration do
   cookbook 'apt'
   cookbook 'freebsd'
-  cookbook 'git_test', path: './test/fixtures/cookbooks/git_test'
+  cookbook 'test', path: 'test/fixtures/cookbooks/test'
 end
