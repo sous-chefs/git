@@ -38,9 +38,9 @@ platforms:
       provider: vmware_fusion
 
 suites:
-- name: default
+- name: resources
   run_list:
-  - recipe[git]
+  - recipe[test::default]
 - name: source
   run_list:
   - recipe[git::source]

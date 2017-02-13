@@ -76,9 +76,9 @@ platforms:
     pid_one_command: /bin/systemd
 
 suites:
-- name: default
+- name: resources
   run_list:
-  - recipe[git]
+  - recipe[test::default]
 - name: source
   run_list:
   - recipe[git::source]
