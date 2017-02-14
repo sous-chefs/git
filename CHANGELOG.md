@@ -2,6 +2,15 @@
 
 This file is used to list changes made in each version of the git cookbook.
 
+## 6.0.0 (2017-02-14)
+
+- Fail on deprecations is now enabled so we're fully Chef 13 compatible
+- Define the chefspec matchers properly
+- Remove the legacy platform mappings that fail on Chef 13
+- Improve the test cookbook / integration tests
+- Convert config LWRP to a custom resource and make it fully idempotent
+- Require Chef 12.5 or later
+
 ## 5.0.2 (2017-01-18)
 
 - Remove arch for the metadata
