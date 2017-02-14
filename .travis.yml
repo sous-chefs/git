@@ -20,17 +20,15 @@ services: docker
 
 env:
   matrix:
-  - INSTANCE=default-ubuntu-1204
-  - INSTANCE=default-ubuntu-1404
-  - INSTANCE=default-ubuntu-1604
-  - INSTANCE=default-debian-7
-  - INSTANCE=default-debian-8
-  - INSTANCE=default-centos-6
-  - INSTANCE=default-centos-7
-  - INSTANCE=default-fedora-latest
-  - INSTANCE=default-opensuse-132
-  - INSTANCE=default-opensuse-421
-  - INSTANCE=source-ubuntu-1204
+  - INSTANCE=resources-ubuntu-1404
+  - INSTANCE=resources-ubuntu-1604
+  - INSTANCE=resources-debian-7
+  - INSTANCE=resources-debian-8
+  - INSTANCE=resources-centos-6
+  - INSTANCE=resources-centos-7
+  - INSTANCE=resources-fedora-latest
+  - INSTANCE=resources-opensuse-132
+  - INSTANCE=resources-opensuse-leap
   - INSTANCE=source-ubuntu-1404
   - INSTANCE=source-ubuntu-1604
   - INSTANCE=source-debian-7
@@ -39,21 +37,19 @@ env:
   - INSTANCE=source-centos-7
   - INSTANCE=source-fedora-latest
   - INSTANCE=source-opensuse-132
-  - INSTANCE=source-opensuse-421
+  - INSTANCE=source-opensuse-leap
 
 before_script:
   - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
   - eval "$(/opt/chefdk/bin/chef shell-init bash)"
+  - /opt/chefdk/embedded/bin/chef --version
+  - /opt/chefdk/embedded/bin/cookstyle --version
+  - /opt/chefdk/embedded/bin/foodcritic --version
 
 script: KITCHEN_LOCAL_YAML=.kitchen.docker.yml /opt/chefdk/embedded/bin/kitchen verify ${INSTANCE}
 
 matrix:
   include:
-    - before_script:
-      - eval "$(/opt/chefdk/bin/chef shell-init bash)"
-      - /opt/chefdk/embedded/bin/chef --version
-      - /opt/chefdk/embedded/bin/cookstyle --version
-      - /opt/chefdk/embedded/bin/foodcritic --version
     - script:
       - /opt/chefdk/bin/chef exec rake
       env: UNIT_AND_LINT=1

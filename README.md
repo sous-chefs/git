@@ -15,53 +15,45 @@ This cookbook is concerned with the Git SCM utility. It does not address ecosyst
 The following platforms have been tested with Test Kitchen:
 
 ```
-|--------------+-------|
-| centos-5     | X     |
-|--------------+-------|
-| centos-6     | X     |
-|--------------+-------|
-| centos-7     | X     |
-|--------------+-------|
-| fedora       | X     |
-|--------------+-------|
-| debian-7     | X     |
-|--------------+-------|
-| debian-8     | X     |
-|--------------+-------|
-| ubuntu-12.04 | X     |
-|--------------+-------|
-| ubuntu-14.04 | X     |
-|--------------+-------|
-| ubuntu-16.04 | X     |
-|--------------+-------|
+|---------------+-------|
+| centos-6      | X     |
+|---------------+-------|
+| centos-7      | X     |
+|---------------+-------|
+| fedora        | X     |
+|---------------+-------|
+| debian-7      | X     |
+|---------------+-------|
+| debian-8      | X     |
+|---------------+-------|
+| ubuntu-14.04  | X     |
+|---------------+-------|
+| ubuntu-16.04  | X     |
+|---------------+-------|
+| openSUSE 13.2 | X     |
+|---------------+-------|
+| openSUSE Leap | X     |
+|---------------+-------|
 ```
 
 ### Chef
 
-- Chef 12.1+
+- Chef 12.5+
 
 ### Cookbooks
 
 - depends 'build-essential' - For compiling from source
-- depends 'dmg' - For OSX Support
+- depends 'dmg' - For macOS Support
 - depends 'yum-epel' - For older RHEL platform_family support
 
 ## Usage
 
-- Add `git::default`, `git::source` or `git::windows` to your run_list
-- OR
-- Add `depends 'git', '~> 4.3'` to your cookbook's metadata.rb
-- include_recipe one of the recipes from your cookbook
-- OR
-- Use the git_client resource directly, the same way you'd use core
-- Chef resources (file, template, directory, package, etc).
+Add `git::default`, `git::source` or `git::windows` to your run_list OR add `depends 'git', '~> 4.3'` to your cookbook's metadata.rb. include_recipe one of the recipes from your cookbook OR use the git_client resource directly, the same way you'd use core Chef resources (file, template, directory, package, etc).
 
 ## Resources Overview
 
 - `git_client`: Manages a Git client installation on a machine. Acts as a singleton when using the (default) package provider. Source provider available as well.
-
 - `git_service`: Sets up a Git service via xinetd. WARNING: This is insecure and will probably be removed in the future
-
 - `git_config`: Sets up Git configuration on a node.
 
 ### git_client
@@ -70,7 +62,7 @@ The `git_client` resource manages the installation of a Git client on a machine.
 
 #### Example
 
-```
+```ruby
 git_client 'default' do
   action :install
 end
@@ -92,7 +84,7 @@ end
 
 #### Properties
 
-Currently, there are distinct sets of resource properties, used by the providers for source, package, osx, and windows.
+Currently, there are distinct sets of resource properties, used by the providers for source, package, macos, and windows.
 
 # used by linux package providers
 
@@ -152,7 +144,7 @@ This cookbook ships with ready to use, attribute driven recipes that utilize the
 
 - Author:: Joshua Timberman ([joshua@chef.io](mailto:joshua@chef.io))
 - Author:: Sean OMeara ([sean@sean.io](mailto:sean@sean.io))
-- Copyright:: 2009-2016, Chef Software, Inc.
+- Copyright:: 2009-2017, Chef Software, Inc.
 
 ```
 Licensed under the Apache License, Version 2.0 (the "License");

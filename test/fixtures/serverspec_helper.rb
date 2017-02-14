@@ -1,2 +1,0 @@
-require 'serverspec'
-require 'json'
