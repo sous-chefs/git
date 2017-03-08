@@ -27,7 +27,6 @@ env:
   - INSTANCE=resources-centos-6
   - INSTANCE=resources-centos-7
   - INSTANCE=resources-fedora-latest
-  - INSTANCE=resources-opensuse-132
   - INSTANCE=resources-opensuse-leap
   - INSTANCE=source-ubuntu-1404
   - INSTANCE=source-ubuntu-1604
@@ -36,7 +35,6 @@ env:
   - INSTANCE=source-centos-6
   - INSTANCE=source-centos-7
   - INSTANCE=source-fedora-latest
-  - INSTANCE=source-opensuse-132
   - INSTANCE=source-opensuse-leap
 
 before_script:
