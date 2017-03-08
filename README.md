@@ -47,7 +47,7 @@ The following platforms have been tested with Test Kitchen:
 
 ## Usage
 
-Add `git::default`, `git::source` or `git::windows` to your run_list OR add `depends 'git', '~> 4.3'` to your cookbook's metadata.rb. include_recipe one of the recipes from your cookbook OR use the git_client resource directly, the same way you'd use core Chef resources (file, template, directory, package, etc).
+Add `git::default`, `git::source` or `git::windows` to your run_list OR add `depends 'git'` to your cookbook's metadata.rb. include_recipe one of the recipes from your cookbook OR use the git_client resource directly, the same way you'd use core Chef resources (file, template, directory, package, etc).
 
 ## Resources Overview
 
