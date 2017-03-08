@@ -41,6 +41,8 @@ suites:
     - windows-2012r2-standard
     - windows-2008r2-standard
     - macosx-10.11
+    - freebsd-10.3
+    - freebsd-11.0
 - name: server
   run_list:
   - recipe[test::server]
@@ -48,3 +50,5 @@ suites:
     - windows-2012r2-standard
     - windows-2008r2-standard
     - macosx-10.11
+    - freebsd-10.3
+    - freebsd-11.0
