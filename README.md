@@ -1,7 +1,6 @@
 # Git Cookbook
 
-[![Build Status](https://travis-ci.org/chef-cookbooks/git.svg?branch=master)](https://travis-ci.org/chef-cookbooks/git) [![Build status](https://ci.appveyor.com/api/projects/status/63o3edl8rnwdg8wj/branch/master?svg=true)](https://ci.appveyor.com/project/ChefWindowsCookbooks/git/branch/master)
- [![Cookbook Version](https://img.shields.io/cookbook/v/git.svg)](https://supermarket.chef.io/cookbooks/git)
+[![Build Status](https://travis-ci.org/chef-cookbooks/git.svg?branch=master)](https://travis-ci.org/chef-cookbooks/git) [![Cookbook Version](https://img.shields.io/cookbook/v/git.svg)](https://supermarket.chef.io/cookbooks/git)
 
 Installs git_client from package or source. Optionally sets up a git service under xinetd.
 
@@ -39,13 +38,12 @@ The following platforms have been tested with Test Kitchen:
 
 ### Chef
 
-- Chef 12.5+
+- Chef 12.6+
 
 ### Cookbooks
 
 - depends 'build-essential' - For compiling from source
 - depends 'dmg' - For macOS Support
-- depends 'yum-epel' - For older RHEL platform_family support
 
 ## Usage
 
