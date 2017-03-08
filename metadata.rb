@@ -28,7 +28,6 @@ supports 'windows'
 
 depends 'build-essential'
 depends 'dmg'
-depends 'yum-epel'
 
 source_url 'https://github.com/chef-cookbooks/git'
 issues_url 'https://github.com/chef-cookbooks/git/issues'
