@@ -96,23 +96,23 @@ Currently, there are distinct sets of resource properties, used by the providers
 
 - `source_prefix` - Defaults to '/usr/local'
 - `source_url` - Defaults to a calculated URL based on source_version
-- `source_version` - Defaults to 2.7.4
+- `source_version` - Defaults to 2.8.1
 - `source_use_pcre` - configure option for build. Defaults to false
-- `source_checksum` - Defaults to a known value for the 2.7.4 source tarball
+- `source_checksum` - Defaults to a known value for the 2.8.1 source tarball
 
 # used by OSX package providers
 
-- `osx_dmg_app_name` - Defaults to 'git-2.7.1-intel-universal-mavericks'
+- `osx_dmg_app_name` - Defaults to 'git-2.8.1-intel-universal-mavericks'
 - `osx_dmg_package_id` - Defaults to 'GitOSX.Installer.git271.git.pkg'
-- `osx_dmg_volumes_dir` - Defaults to 'Git 2.7.1 Mavericks Intel Universal'
+- `osx_dmg_volumes_dir` - Defaults to 'Git 2.8.1 Mavericks Intel Universal'
 - `osx_dmg_url` - Defaults to Sourceforge
-- `osx_dmg_checksum` - Defaults to the value for 2.7.1
+- `osx_dmg_checksum` - Defaults to the value for 2.8.1
 
 # used by the Windows package providers
 
 - `windows_display_name` - Windows display name
 - `windows_package_url` - Defaults to the Internet
-- `windows_package_checksum` - Defaults to the value for 2.7.4
+- `windows_package_checksum` - Defaults to the value for 2.8.1
 
 ## Recipes
 
