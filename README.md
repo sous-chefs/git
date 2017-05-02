@@ -103,7 +103,7 @@ Currently, there are distinct sets of resource properties, used by the providers
 # used by OSX package providers
 
 - `osx_dmg_app_name` - Defaults to 'git-2.8.1-intel-universal-mavericks'
-- `osx_dmg_package_id` - Defaults to 'GitOSX.Installer.git271.git.pkg'
+- `osx_dmg_package_id` - Defaults to 'GitOSX.Installer.git281.git.pkg'
 - `osx_dmg_volumes_dir` - Defaults to 'Git 2.8.1 Mavericks Intel Universal'
 - `osx_dmg_url` - Defaults to Sourceforge
 - `osx_dmg_checksum` - Defaults to the value for 2.8.1
