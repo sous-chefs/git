@@ -38,17 +38,16 @@ The following platforms have been tested with Test Kitchen:
 
 ### Chef
 
-- Chef 12.5+
+- Chef 12.6+
 
 ### Cookbooks
 
 - depends 'build-essential' - For compiling from source
 - depends 'dmg' - For macOS Support
-- depends 'yum-epel' - For older RHEL platform_family support
 
 ## Usage
 
-Add `git::default`, `git::source` or `git::windows` to your run_list OR add `depends 'git', '~> 4.3'` to your cookbook's metadata.rb. include_recipe one of the recipes from your cookbook OR use the git_client resource directly, the same way you'd use core Chef resources (file, template, directory, package, etc).
+Add `git::default`, `git::source` or `git::windows` to your run_list OR add `depends 'git'` to your cookbook's metadata.rb. include_recipe one of the recipes from your cookbook OR use the git_client resource directly, the same way you'd use core Chef resources (file, template, directory, package, etc).
 
 ## Resources Overview
 

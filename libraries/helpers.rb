@@ -3,7 +3,6 @@ module GitCookbook
     # linux packages default to distro offering
     def parsed_package_name
       return new_resource.package_name if new_resource.package_name
-      return 'git-core' if node['platform'] == 'ubuntu' && node['platform_version'].to_f < 10.10
       return 'developer/versioning/git' if node['platform'] == 'omnios'
       return 'scmgit' if node['platform'] == 'smartos'
       'git'
@@ -32,17 +31,17 @@ module GitCookbook
 
     def parsed_windows_package_version
       return new_resource.windows_package_version if new_resource.windows_package_version
-      '2.7.4'
+      '2.12.0'
     end
 
     def parsed_windows_package_url
       return new_resource.windows_package_url if new_resource.windows_package_url
-      "https://github.com/git-for-windows/git/releases/download/v%#{parsed_windows_package_version}.windows.1/Git-%#{parsed_windows_package_version}-32-bit.exe"
+      "https://github.com/git-for-windows/git/releases/download/v#{parsed_windows_package_version}.windows.1/Git-#{parsed_windows_package_version}-32-bit.exe"
     end
 
     def parsed_windows_package_checksum
       return new_resource.windows_package_checksum if new_resource.windows_package_checksum
-      '49601d5102df249d6f866ecfa1eea68eb5672acc1dbb7e4051099e792f6da5fc'
+      'de7f69bd6313bf7b427b02687a0ee930012a32d40aed2bb96f428699c936180d'
     end
   end
 end

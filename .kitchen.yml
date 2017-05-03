@@ -12,19 +12,13 @@ platforms:
   - name: centos-6.8
   - name: centos-7.3
   - name: debian-7.11
-    run_list: apt::default
   - name: debian-8.6
-    run_list: apt::default
-  - name: freebsd-9.3
-    run_list: freebsd::portsnap
   - name: freebsd-10.3
-    run_list: freebsd::portsnap
+  - name: freebsd-11.0
   - name: fedora-25
   - name: opensuse-leap-42.2
   - name: ubuntu-14.04
-    run_list: apt::default
   - name: ubuntu-16.04
-    run_list: apt::default
   - name: windows-2012r2-standard
     driver:
       box: chef/windows-server-2012r2-standard # private box in Chef's Atlas account
@@ -42,15 +36,19 @@ suites:
   - recipe[test::default]
 - name: source
   run_list:
-  - recipe[git::source]
+  - recipe[test::source]
   excludes:
     - windows-2012r2-standard
     - windows-2008r2-standard
-    - macosx-1011
+    - macosx-10.11
+    - freebsd-10.3
+    - freebsd-11.0
 - name: server
   run_list:
-  - recipe[git::server]
+  - recipe[test::server]
   excludes:
     - windows-2012r2-standard
     - windows-2008r2-standard
-    - macosx-1011
+    - macosx-10.11
+    - freebsd-10.3
+    - freebsd-11.0

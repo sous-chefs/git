@@ -1,3 +1,5 @@
+apt_update 'update'
+
 git_client 'install it'
 
 user 'random' do
