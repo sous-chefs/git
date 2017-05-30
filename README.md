@@ -30,15 +30,13 @@ The following platforms have been tested with Test Kitchen:
 |---------------+-------|
 | ubuntu-16.04  | X     |
 |---------------+-------|
-| openSUSE 13.2 | X     |
-|---------------+-------|
 | openSUSE Leap | X     |
 |---------------+-------|
 ```
 
 ### Chef
 
-- Chef 12.5+
+- Chef 12.7+
 
 ### Cookbooks
 
