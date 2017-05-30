@@ -2,6 +2,14 @@
 
 This file is used to list changes made in each version of the git cookbook.
 
+## 6.1.0 (2017-05-30)
+
+- Test with Local Delivery and not Rake
+- Remove EOL platforms from the kitchen configs
+- Use a SPDX standard license string
+- Updated default versions documented in README to fix Issue #120.
+- Remove class_eval and require chef 12.7+
+
 ## 6.0.0 (2017-02-14)
 
 - Fail on deprecations is now enabled so we're fully Chef 13 compatible
