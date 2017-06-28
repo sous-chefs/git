@@ -13,7 +13,7 @@ platforms:
   - name: centos-7.3
   - name: debian-7.11
     run_list: apt::default
-  - name: debian-8.7
+  - name: debian-8.8
     run_list: apt::default
   - name: freebsd-9.3
     run_list: freebsd::portsnap
