@@ -2,6 +2,15 @@
 
 This file is used to list changes made in each version of the git cookbook.
 
+## 7.0.0 (2017-09-01)
+
+- Remove support for RHEL 5 which removes the need for the yum-epel cookbook
+- Move templates out of the default directory now that we require Chef 12
+- Remove support for Ubuntu 10.04
+- Remove the version requirement on mac_os_x in the metadata
+- Move maintainer information to the readme
+- Expand Travis testing
+
 ## 6.1.0 (2017-05-30)
 
 - Test with Local Delivery and not Rake
