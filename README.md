@@ -138,11 +138,13 @@ This cookbook ships with ready to use, attribute driven recipes that utilize the
 - `node['git']['checksum']` - tarball SHA256 checksum
 - `node['git']['use_pcre']` - if true, builds git with PCRE enabled
 
-## License & Authors
+## Maintainers
 
-- Author:: Joshua Timberman ([joshua@chef.io](mailto:joshua@chef.io))
-- Author:: Sean OMeara ([sean@sean.io](mailto:sean@sean.io))
-- Copyright:: 2009-2017, Chef Software, Inc.
+This cookbook is maintained by Chef's Community Cookbook Engineering team. Our goal is to improve cookbook quality and to aid the community in contributing to cookbooks. To learn more about our team, process, and design goals see our [team documentation](https://github.com/chef-cookbooks/community_cookbook_documentation/blob/master/COOKBOOK_TEAM.MD). To learn more about contributing to cookbooks like this see our [contributing documentation](https://github.com/chef-cookbooks/community_cookbook_documentation/blob/master/CONTRIBUTING.MD), or if you have general questions about this cookbook come chat with us in #cookbok-engineering on the [Chef Community Slack](http://community-slack.chef.io/)
+
+## License
+
+**Copyright:** 2009-2017, Chef Software, Inc.
 
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
