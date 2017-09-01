@@ -30,5 +30,3 @@ end
 RSpec.shared_context 'recipe tests', type: :recipe do
   let(:chef_run) { ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '16.04').converge(described_recipe) }
 end
-
-at_exit { ChefSpec::Coverage.report! }
