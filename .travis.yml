@@ -1,7 +1,6 @@
 sudo: required
 dist: trusty
 
-# install the pre-release chef-dk.
 addons:
   apt:
     sources:
@@ -24,6 +23,7 @@ env:
   - INSTANCE=resources-ubuntu-1604
   - INSTANCE=resources-debian-7
   - INSTANCE=resources-debian-8
+  - INSTANCE=resources-debian-9
   - INSTANCE=resources-centos-6
   - INSTANCE=resources-centos-7
   - INSTANCE=resources-fedora-latest
@@ -32,6 +32,7 @@ env:
   - INSTANCE=source-ubuntu-1604
   - INSTANCE=source-debian-7
   - INSTANCE=source-debian-8
+  - INSTANCE=source-debian-9
   - INSTANCE=source-centos-6
   - INSTANCE=source-centos-7
   - INSTANCE=source-fedora-latest

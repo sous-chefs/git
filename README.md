@@ -26,6 +26,8 @@ The following platforms have been tested with Test Kitchen:
 |---------------+-------|
 | debian-8      | X     |
 |---------------+-------|
+| debian-9      | X     |
+|---------------+-------|
 | ubuntu-14.04  | X     |
 |---------------+-------|
 | ubuntu-16.04  | X     |
@@ -42,7 +44,6 @@ The following platforms have been tested with Test Kitchen:
 
 - depends 'build-essential' - For compiling from source
 - depends 'dmg' - For macOS Support
-- depends 'yum-epel' - For older RHEL platform_family support
 
 ## Usage
 
