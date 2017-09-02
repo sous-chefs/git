@@ -12,7 +12,7 @@ class Chef
           # move this to attributes.
           case node['platform_family']
           when 'fedora'
-            pkgs = %w(tar openssl-devel libcurl-devel expat-devel perl-ExtUtils-MakeMaker)
+            pkgs = %w(tar openssl-devel libcurl-devel expat-devel perl-ExtUtils-MakeMaker zlib-devel)
           when 'rhel'
             case node['platform_version'].to_i
             when 6, 7
