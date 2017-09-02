@@ -2,6 +2,21 @@
 
 This file is used to list changes made in each version of the git cookbook.
 
+## 8.0.0 (2017-09-01)
+
+### Breaking Changes
+
+- macOS resource now properly executes and uses homebrew to install git instead of dmg and packages posted to SourceForge
+- Default to Git 2.9.5 now, which properly compiles on Fedora / Amazon Linux
+
+## Other Changes
+
+- Fixed support for Amazon Linux on Chef 13
+- Unified the package setup for source installs which fixes Amazon/Fedora
+- Removed an entirely duplicate service provider
+- Remove unused runit templates
+- Properly fail when we're on an unsupported platform
+
 ## 7.0.0 (2017-09-01)
 
 - Remove support for RHEL 5 which removes the need for the yum-epel cookbook
