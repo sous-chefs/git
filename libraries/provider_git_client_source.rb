@@ -17,11 +17,10 @@ class Chef
             case node['platform_version'].to_i
             when 6, 7
               pkgs = %w(tar expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel)
-              pkgs += %w( pcre-devel ) if new_resource.source_use_pcre
             else
               pkgs = %w(expat-devel gettext-devel curl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel) if node['platform'] == 'amazon'
-              pkgs += %w( pcre-devel ) if new_resource.source_use_pcre
             end
+            pkgs += %w( pcre-devel ) if new_resource.source_use_pcre
           when 'debian'
             pkgs = %w(libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev)
             pkgs += %w( libpcre3-dev ) if new_resource.source_use_pcre
