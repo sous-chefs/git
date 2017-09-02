@@ -43,7 +43,7 @@ The following platforms have been tested with Test Kitchen:
 ### Cookbooks
 
 - depends 'build-essential' - For compiling from source
-- depends 'dmg' - For macOS Support
+- depends 'homebrew' - For macOS Support
 
 ## Usage
 
@@ -99,14 +99,6 @@ Currently, there are distinct sets of resource properties, used by the providers
 - `source_use_pcre` - configure option for build. Defaults to false
 - `source_checksum` - Defaults to a known value for the 2.8.1 source tarball
 
-# used by OSX package providers
-
-- `osx_dmg_app_name` - Defaults to 'git-2.8.1-intel-universal-mavericks'
-- `osx_dmg_package_id` - Defaults to 'GitOSX.Installer.git281.git.pkg'
-- `osx_dmg_volumes_dir` - Defaults to 'Git 2.8.1 Mavericks Intel Universal'
-- `osx_dmg_url` - Defaults to Sourceforge
-- `osx_dmg_checksum` - Defaults to the value for 2.8.1
-
 # used by the Windows package providers
 
 - `windows_display_name` - Windows display name
@@ -125,11 +117,6 @@ This cookbook ships with ready to use, attribute driven recipes that utilize the
 - `node['git']['url']` - URL to git package
 - `node['git']['checksum']` - package SHA256 checksum
 - `node['git']['display_name']` - `windows_package` resource Display Name (makes the package install idempotent)
-
-### Mac OS X
-
-- `node['git']['osx_dmg']['url']` - URL to git package
-- `node['git']['osx_dmg']['checksum']` - package SHA256 checksum
 
 ### Linux
 

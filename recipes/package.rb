@@ -17,17 +17,6 @@
 # limitations under the License.
 
 case node['platform']
-when 'mac_os_x'
-  # FIXME: The resource has three distinct groups of properties used in
-  # different providers... should we make multiple resource types instead?
-  git_client 'default' do
-    osx_dmg_app_name node['git']['osx_dmg']['app_name']
-    osx_dmg_package_id node['git']['osx_dmg']['package_id']
-    osx_dmg_volumes_dir node['git']['osx_dmg']['volumes_dir']
-    osx_dmg_url node['git']['osx_dmg']['url']
-    osx_dmg_checksum node['git']['osx_dmg']['checksum']
-    action :install
-  end
 when 'windows'
   include_recipe 'git::windows'
 else
