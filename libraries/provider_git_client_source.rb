@@ -5,21 +5,14 @@ class Chef
         include Chef::DSL::IncludeRecipe
 
         action :install do
-          return "#{node['platform']} is not supported by the #{cookbook_name}::#{recipe_name} recipe" unless platform_family?('rhel', 'suse', 'fedora', 'debian')
+          return "#{node['platform']} is not supported by the #{cookbook_name}::#{recipe_name} recipe" unless platform_family?('rhel', 'suse', 'fedora', 'debian', 'amazon')
 
           include_recipe 'build-essential'
 
           # move this to attributes.
           case node['platform_family']
-          when 'fedora'
-            pkgs = %w(tar openssl-devel libcurl-devel expat-devel perl-ExtUtils-MakeMaker zlib-devel)
-          when 'rhel'
-            case node['platform_version'].to_i
-            when 6, 7
-              pkgs = %w(tar expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel)
-            else
-              pkgs = %w(expat-devel gettext-devel curl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel) if node['platform'] == 'amazon'
-            end
+          when 'rhel', 'fedora', 'amazon'
+            pkgs = %w(tar expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel)
             pkgs += %w( pcre-devel ) if new_resource.source_use_pcre
           when 'debian'
             pkgs = %w(libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev)
