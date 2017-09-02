@@ -5,7 +5,7 @@ class Chef
         include Chef::DSL::IncludeRecipe
 
         action :install do
-          return "#{node['platform']} is not supported by the #{cookbook_name}::#{recipe_name} recipe" unless platform_family?('rhel', 'suse', 'fedora', 'debian', 'amazon')
+          raise "#{node['platform']} is not supported by the git_client source resource" unless platform_family?('rhel', 'suse', 'fedora', 'debian', 'amazon')
 
           include_recipe 'build-essential'
 
