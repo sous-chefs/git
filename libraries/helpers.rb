@@ -20,7 +20,7 @@ module GitCookbook
 
     def parsed_source_checksum
       return new_resource.source_checksum if new_resource.source_checksum
-      '8d53703d75890c03e26a915c7af3b7b98d8cfb94382f685a9bcbee1eeaec47b4' # 2.7.4 tarball
+      '88995ab18154fa302478d33efa4418d354a5e592645ebef02c69b3dd76b526c1' # 2.9.5 tarball
     end
 
     # windows

@@ -37,9 +37,9 @@ when 'mac_os_x'
   default['git']['osx_dmg']['checksum']    = 'c2912895a1e2018d9be4c646765d511f7c82e0114275505dbd13d1ac70c62023'
 else
   default['git']['prefix'] = '/usr/local'
-  default['git']['version'] = '2.8.1'
+  default['git']['version'] = '2.9.5'
   default['git']['url'] = 'https://nodeload.github.com/git/git/tar.gz/v%{version}'
-  default['git']['checksum'] = 'e08503ecaf5d3ac10c40f22871c996a392256c8d038d16f52ebf974cba29ae42'
+  default['git']['checksum'] = '88995ab18154fa302478d33efa4418d354a5e592645ebef02c69b3dd76b526c1'
   default['git']['use_pcre'] = false
 end
 
