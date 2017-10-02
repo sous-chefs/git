@@ -33,6 +33,7 @@ class Chef
       attribute :windows_package_url,  kind_of: String, default: nil
       attribute :windows_package_checksum, kind_of: String, default: nil
       attribute :windows_package_version, kind_of: String, default: nil
+      attribute :git_options, kind_of: String, default: nil
     end
   end
 end
