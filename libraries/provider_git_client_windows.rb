@@ -13,7 +13,7 @@ class Chef
             source parsed_windows_package_url
             checksum parsed_windows_package_checksum
             installer_type :inno
-            options git_options
+            options parsed_git_options
           end
 
           # Git is installed to Program Files (x86) on 64-bit machines and

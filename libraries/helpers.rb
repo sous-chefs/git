@@ -43,5 +43,9 @@ module GitCookbook
       return new_resource.windows_package_checksum if new_resource.windows_package_checksum
       '49601d5102df249d6f866ecfa1eea68eb5672acc1dbb7e4051099e792f6da5fc'
     end
+    
+    def parsed_git_options
+      return new_resource.git_options
+     end
   end
 end
