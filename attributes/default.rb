@@ -23,6 +23,7 @@ when 'windows'
   if node['kernel']['machine'] == 'x86_64'
     default['git']['architecture'] = '64'
     default['git']['checksum'] = '5e5283990cc91d1e9bd0858f8411e7d0afb70ce26e23680252fb4869288c7cfb'
+    default['git']['options'] = nil
   else
     default['git']['architecture'] = '32'
     default['git']['checksum'] = '17418c2e507243b9c98db161e9e5e8041d958b93ce6078530569b8edaec6b8a4'
