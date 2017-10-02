@@ -45,7 +45,7 @@ module GitCookbook
     end
     
     def parsed_git_options
-      return new_resource.git_options
+      new_resource.git_options
      end
   end
 end
