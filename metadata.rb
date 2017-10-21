@@ -9,22 +9,9 @@ recipe 'git', 'Installs git'
 recipe 'git::server', 'Sets up a a git daemon'
 recipe 'git::source', 'Installs git from source'
 
-supports 'amazon'
-supports 'centos'
-supports 'debian'
-supports 'fedora'
-supports 'freebsd'
-supports 'mac_os_x'
-supports 'omnios'
-supports 'oracle'
-supports 'redhat'
-supports 'smartos'
-supports 'scientific'
-supports 'suse'
-supports 'opensuse'
-supports 'opensuseleap'
-supports 'ubuntu'
-supports 'windows'
+%w( amazon centos fedora freebsd debian omnios oracle mac_os_x redhat scientific smartos suse opensuse opensuseleap ubuntu windows ).each do |os|
+  supports os
+end
 
 depends 'build-essential'
 depends 'homebrew'
