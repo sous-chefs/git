@@ -31,17 +31,17 @@ module GitCookbook
 
     def parsed_windows_package_version
       return new_resource.windows_package_version if new_resource.windows_package_version
-      '2.7.4'
+      '2.14.2'
     end
 
     def parsed_windows_package_url
       return new_resource.windows_package_url if new_resource.windows_package_url
-      "https://github.com/git-for-windows/git/releases/download/v%#{parsed_windows_package_version}.windows.1/Git-%#{parsed_windows_package_version}-32-bit.exe"
+      "https://github.com/git-for-windows/git/releases/download/v#{parsed_windows_package_version}.windows.3/Git-#{parsed_windows_package_version}.3-32-bit.exe"
     end
 
     def parsed_windows_package_checksum
       return new_resource.windows_package_checksum if new_resource.windows_package_checksum
-      '49601d5102df249d6f866ecfa1eea68eb5672acc1dbb7e4051099e792f6da5fc'
+      '0b07ffb89ccd20c760cd9d4229e65ce732ed66713a4c8ac7dbedc95562c8adf6'
     end
   end
 end

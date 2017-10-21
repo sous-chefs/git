@@ -51,7 +51,8 @@ Add `git::default`, `git::source` or `git::windows` to your run_list OR add `dep
 
 ## Resources Overview
 
-- `git_client`: Manages a Git client installation on a machine. Acts as a singleton when using the (default) package provider. Source provider available as well.
+- `git_client`: Manages a Git client installation on a machine. Acts as a singleton when using the (default) package provider.
+- `git_client_source`: Installs git client from source. (Platforms supported: Linux only )
 - `git_service`: Sets up a Git service via xinetd. WARNING: This is insecure and will probably be removed in the future
 - `git_config`: Sets up Git configuration on a node.
 
@@ -63,6 +64,24 @@ The `git_client` resource manages the installation of a Git client on a machine.
 
 ```ruby
 git_client 'default' do
+  action :install
+end
+```
+
+
+### git_client_source
+
+The `git_client_source` resource manages the installation of a Git client from source on a machine.
+
+#### Example
+
+```ruby
+git_client_source 'default' do
+  source_checksum node['git']['checksum']
+  source_prefix node['git']['prefix']
+  source_url format(node['git']['url'], version: node['git']['version'])
+  source_use_pcre node['git']['use_pcre']
+  source_version node['git']['version']
   action :install
 end
 ```
@@ -83,7 +102,7 @@ end
 
 #### Properties
 
-Currently, there are distinct sets of resource properties, used by the providers for source, package, macos, and windows.
+Currently, there are distinct sets of resource properties, used by the providers for source, package, and windows.
 
 # used by linux package providers
 
@@ -107,7 +126,7 @@ Currently, there are distinct sets of resource properties, used by the providers
 
 ## Recipes
 
-This cookbook ships with ready to use, attribute driven recipes that utilize the `git_client` and `git_service` resources. As of cookbook 4.x, they utilize the same attributes layout scheme from the 3.x. Due to some overlap, it is currently impossible to simultaneously install the Git client as a package and from source by using the "manipulate a the node attributes and run a recipe" technique. If you need both, you'll need to utilize the git_client resource in a recipe.
+This cookbook ships with ready to use, attribute driven recipes that utilize the `git_client`, `git_client_source` and `git_service` resources. As of cookbook 4.x, they utilize the same attributes layout scheme from the 3.x. Due to some overlap, it is currently impossible to simultaneously install the Git client as a package and from source by using the "manipulate a the node attributes and run a recipe" technique. If you need both, you'll need to utilize the git_client resource in a recipe.
 
 ## Attributes
 

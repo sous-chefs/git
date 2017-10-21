@@ -1,8 +1,8 @@
 #
 # Cookbook:: git
-# Recipe:: source
+# Resource:: client_package
 #
-# Copyright:: 2012-2016, Brian Flad, Fletcher Nichol
+# Copyright:: 2017, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,12 +16,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# drive version from node attributes
-git_client_source 'default' do
-  source_checksum node['git']['checksum']
-  source_prefix node['git']['prefix']
-  source_url format(node['git']['url'], version: node['git']['version'])
-  source_use_pcre node['git']['use_pcre']
-  source_version node['git']['version']
-  action :install
+property :package_name, kind_of: String
+property :package_version, kind_of: String
+property :package_action, kind_of: Symbol, default: :install
+
+action :install do
+  include_recipe 'homebrew' if platform_family?('mac_os_x')
+  package "#{new_resource.name} :create #{parsed_package_name}" do
+    package_name parsed_package_name
+    version parsed_package_version
+    action new_resource.package_action
+  end
+end
+
+action_class do
+  include GitCookbook::Helpers
 end
