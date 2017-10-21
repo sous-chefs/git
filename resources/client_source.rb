@@ -38,7 +38,7 @@ action :install do
     pkgs = %w(tar expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel)
     pkgs += %w( pcre-devel ) if new_resource.source_use_pcre
   when 'debian'
-    pkgs = %w(libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev)
+    pkgs = %w(libcurl4-openssl-dev libexpat1-dev gettext libz-dev libssl-dev)
     pkgs += %w( libpcre3-dev ) if new_resource.source_use_pcre
   when 'suse'
     pkgs = %w(tar libcurl-devel libexpat-devel gettext-tools zlib-devel libopenssl-devel)
