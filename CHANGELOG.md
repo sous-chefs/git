@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of the git cookbook.
 
+## 8.0.1 (2018-02-10)
+
+- Resolve the new FC118 foodcritic warning
+- Remove the ChefSpec matchers which are auto generated now
+- Resolve FC104 warning
+
 ## 8.0.0 (2017-09-01)
 
 ### Breaking Changes
