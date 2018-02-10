@@ -36,7 +36,7 @@ class Chef
           end
 
           windows_path GIT_PATH do
-            notifies :create, 'ruby_block[Add Git Path]', :immediately
+            notifies :run, 'ruby_block[Add Git Path]', :immediately
             action :add
           end
         end
