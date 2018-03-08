@@ -21,7 +21,6 @@ env:
   matrix:
   - INSTANCE=resources-ubuntu-1404
   - INSTANCE=resources-ubuntu-1604
-  - INSTANCE=resources-debian-7
   - INSTANCE=resources-debian-8
   - INSTANCE=resources-debian-9
   - INSTANCE=resources-centos-6
@@ -30,7 +29,6 @@ env:
   - INSTANCE=resources-opensuse-leap
   - INSTANCE=source-ubuntu-1404
   - INSTANCE=source-ubuntu-1604
-  - INSTANCE=source-debian-7
   - INSTANCE=source-debian-8
   - INSTANCE=source-debian-9
   - INSTANCE=source-centos-6

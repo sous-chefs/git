@@ -14,8 +14,6 @@ platforms:
       box: mvbcoding/awslinux
   - name: centos-6
   - name: centos-7
-  - name: debian-7
-    run_list: apt::default
   - name: debian-8
     run_list: apt::default
   - name: freebsd-11
