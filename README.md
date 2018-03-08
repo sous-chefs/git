@@ -68,6 +68,17 @@ git_client 'default' do
 end
 ```
 
+#### Example of source install
+
+```ruby
+git_client 'source' do
+  provider Chef::Provider::GitClient::Source
+  source_version '2.14.2'
+  source_checksum 'a03a12331d4f9b0f71733db9f47e1232d4ddce00e7f2a6e20f6ec9a19ce5ff61'
+  action :install
+end
+```
+
 ### git_config
 
 The `git_config` resource manages the configuration of Git client on a machine.
