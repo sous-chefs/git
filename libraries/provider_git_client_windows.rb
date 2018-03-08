@@ -3,8 +3,6 @@ class Chef
   class Provider
     class GitClient
       class Windows < Chef::Provider::GitClient
-        include Chef::DSL::IncludeRecipe
-
         provides :git_client, os: 'windows'
 
         action :install do
