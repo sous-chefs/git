@@ -27,7 +27,6 @@ supports 'ubuntu'
 supports 'windows'
 
 depends 'build-essential'
-depends 'homebrew'
 
 source_url 'https://github.com/chef-cookbooks/git'
 issues_url 'https://github.com/chef-cookbooks/git/issues'

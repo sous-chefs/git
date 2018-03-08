@@ -43,7 +43,6 @@ The following platforms have been tested with Test Kitchen:
 ### Cookbooks
 
 - depends 'build-essential' - For compiling from source
-- depends 'homebrew' - For macOS Support
 
 ## Usage
 
@@ -58,6 +57,8 @@ Add `git::default`, `git::source` or `git::windows` to your run_list OR add `dep
 ### git_client
 
 The `git_client` resource manages the installation of a Git client on a machine.
+
+`Note`: on macOS systems homebrew must first be installed on the system before running this resource. Prior to version 9.0 of this cookbook homebrew was automatically installed.
 
 #### Example
 
