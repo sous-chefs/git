@@ -4,7 +4,7 @@ maintainer_email 'cookbooks@chef.io'
 license 'Apache-2.0'
 description 'Installs git and/or sets up a Git server daemon'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version '8.0.1'
+version '9.0.0'
 recipe 'git', 'Installs git'
 recipe 'git::server', 'Sets up a a git daemon'
 recipe 'git::source', 'Installs git from source'
