@@ -17,7 +17,7 @@ platforms:
   - name: debian-8
     run_list: apt::default
   - name: freebsd-11
-  - name: fedora-26
+  - name: fedora-27
   - name: opensuse-leap-42
   - name: ubuntu-14.04
     run_list: apt::default
@@ -26,12 +26,12 @@ platforms:
   - name: windows-2012r2-standard
     driver:
       box: chef/windows-server-2012r2-standard # private box in Chef's Atlas account
-  - name: windows-2008r2-standard
+  - name: windows-2016-standard
     driver:
-      box: chef/windows-server-2008r2-standard # private box in Chef's Atlas account
-  - name: macosx-10.11
+      box: chef/windows-server-2016-standard # private box in Chef's Atlas account
+  - name: macosx-10.12
     driver:
-      box: chef/macosx-10.11 # private box in Chef's Atlas account
+      box: chef/macosx-10.12 # private box in Chef's Atlas account
       provider: vmware_fusion
 
 suites:
@@ -43,12 +43,12 @@ suites:
   - recipe[git::source]
   excludes:
     - windows-2012r2-standard
-    - windows-2008r2-standard
-    - macosx-1011
+    - windows-2016-standard
+    - macosx-1012
 - name: server
   run_list:
   - recipe[git::server]
   excludes:
     - windows-2012r2-standard
-    - windows-2008r2-standard
-    - macosx-1011
+    - windows-2016-standard
+    - macosx-1012
