@@ -26,7 +26,7 @@ supports 'opensuseleap'
 supports 'ubuntu'
 supports 'windows'
 
-depends 'build-essential'
+depends 'build-essential', '>= 5.0.0'
 
 source_url 'https://github.com/chef-cookbooks/git'
 issues_url 'https://github.com/chef-cookbooks/git/issues'

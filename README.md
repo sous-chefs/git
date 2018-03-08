@@ -42,7 +42,7 @@ The following platforms have been tested with Test Kitchen:
 
 ### Cookbooks
 
-- depends 'build-essential' - For compiling from source
+- 'build-essential' 5.0 or later - For compiling from source
 
 ## Usage
 
