@@ -27,10 +27,10 @@ platforms:
   - name: windows-2016-standard
     driver:
       box: chef/windows-server-2016-standard # private box in Chef's Atlas account
-  - name: macosx-10.12
+  - name: macos-10.12
     run_list: homebrew::default
     driver:
-      box: chef/macosx-10.12 # private box in Chef's Atlas account
+      box: chef/macos-10.12 # private box in Chef's Atlas account
       provider: vmware_fusion
 
 suites:
