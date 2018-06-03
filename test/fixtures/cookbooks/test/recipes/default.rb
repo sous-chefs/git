@@ -1,3 +1,5 @@
+include_recipe 'chocolatey::default' if platform?('windows')
+
 apt_update
 
 git_client 'install it'
