@@ -19,8 +19,8 @@ platforms:
   - name: freebsd-11
   - name: fedora-28
   - name: opensuse-leap-42
-  - name: ubuntu-14.04
   - name: ubuntu-16.04
+  - name: ubuntu-18.04
   - name: windows-2012r2-standard
     driver:
       box: chef/windows-server-2012r2-standard # private box in Chef's Atlas account
