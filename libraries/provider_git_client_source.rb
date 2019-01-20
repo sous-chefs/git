@@ -38,7 +38,7 @@ class Chef
             command <<-COMMAND
     (mkdir git-#{new_resource.source_version} && tar -zxf git-#{new_resource.source_version}.tar.gz -C git-#{new_resource.source_version} --strip-components 1)
     (cd git-#{new_resource.source_version} && make prefix=#{new_resource.source_prefix} #{additional_make_params} install)
-  COMMAND
+            COMMAND
             not_if "git --version | grep #{new_resource.source_version}"
             not_if "#{new_resource.source_prefix}/bin/git --version | grep #{new_resource.source_version}"
           end
