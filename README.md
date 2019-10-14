@@ -20,15 +20,17 @@ The following platforms have been tested with Test Kitchen:
 |---------------+-------|
 | centos-7      | X     |
 |---------------+-------|
-| fedora        | X     |
+| centos-8      | X     |
 |---------------+-------|
-| debian-8      | X     |
+| fedora        | X     |
 |---------------+-------|
 | debian-9      | X     |
 |---------------+-------|
-| ubuntu-14.04  | X     |
+| debian-10     | X     |
 |---------------+-------|
 | ubuntu-16.04  | X     |
+|---------------+-------|
+| ubuntu-18.04  | X     |
 |---------------+-------|
 | openSUSE Leap | X     |
 |---------------+-------|
@@ -36,11 +38,11 @@ The following platforms have been tested with Test Kitchen:
 
 ### Chef
 
-- Chef 12.7+
+- Chef 14+
 
 ### Cookbooks
 
-- 'build-essential' 5.0 or later - For compiling from source
+- none
 
 ## Usage
 

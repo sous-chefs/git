@@ -1,19 +1,13 @@
 class Chef
   class Provider
     class GitClient < Chef::Provider::LWRPBase
-      use_inline_resources # ~FC113
-
-      def whyrun_supported?
-        true
-      end
-
       include Chef::DSL::IncludeRecipe
       include GitCookbook::Helpers
 
       provides :git_service, os: 'linux'
 
       action :create do
-        return "#{node['platform']} is not supported by the #{cookbook_name}::#{recipe_name} recipe" if node['platform'] == 'windows'
+        return "#{node['platform']} is not supported by the #{cookbook_name}::#{recipe_name} recipe" if platform?('windows')
 
         include_recipe 'git'
 

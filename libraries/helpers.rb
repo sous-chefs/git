@@ -3,8 +3,8 @@ module GitCookbook
     # linux packages default to distro offering
     def parsed_package_name
       return new_resource.package_name if new_resource.package_name
-      return 'developer/versioning/git' if node['platform'] == 'omnios'
-      return 'scmgit' if node['platform'] == 'smartos'
+      return 'developer/versioning/git' if platform?('smartos')
+      return 'scmgit' if platform?('smartos')
       'git'
     end
 
