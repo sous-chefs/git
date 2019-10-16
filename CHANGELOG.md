@@ -2,6 +2,12 @@
 
 This file is used to list changes made in each version of the git cookbook.
 
+## 10.0.0 (2019-10-16)
+
+- Add testing for CentOS 8, openSUSE 15, Ubuntu 18.04 in Travis
+- Require Chef Infra Client 14 or later so we can drop the dependency on build-essential
+- Resolve multiple cookstyle warnings
+
 ## 9.0.1 (2018-06-02)
 
 - Update the platforms we test on

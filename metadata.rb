@@ -3,7 +3,7 @@ maintainer 'Chef Software, Inc.'
 maintainer_email 'cookbooks@chef.io'
 license 'Apache-2.0'
 description 'Installs git and/or sets up a Git server daemon'
-version '9.0.1'
+version '10.0.0'
 
 supports 'amazon'
 supports 'centos'
