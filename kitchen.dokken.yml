@@ -9,6 +9,7 @@ transport:
 provisioner:
   name: dokken
   deprecations_as_errors: true
+  chef_license: accept-no-persist
 
 verifier:
   name: inspec
@@ -19,16 +20,21 @@ platforms:
     image: dokken/amazonlinux
     pid_one_command: /sbin/init
 
-- name: debian-8
+- name: amazonlinux-2
   driver:
-    image: dokken/debian-8
-    pid_one_command: /bin/systemd
-    intermediate_instructions:
-      - RUN /usr/bin/apt-get update
+    image: dokken/amazonlinux-2
+    pid_one_command: /usr/lib/systemd/systemd
 
 - name: debian-9
   driver:
     image: dokken/debian-9
+    pid_one_command: /bin/systemd
+    intermediate_instructions:
+      - RUN /usr/bin/apt-get update
+
+- name: debian-10
+  driver:
+    image: dokken/debian-10
     pid_one_command: /bin/systemd
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
@@ -43,17 +49,15 @@ platforms:
     image: dokken/centos-7
     pid_one_command: /usr/lib/systemd/systemd
 
+- name: centos-8
+  driver:
+    image: dokken/centos-8
+    pid_one_command: /usr/lib/systemd/systemd
+
 - name: fedora-latest
   driver:
     image: dokken/fedora-latest
     pid_one_command: /usr/lib/systemd/systemd
-
-- name: ubuntu-14.04
-  driver:
-    image: dokken/ubuntu-14.04
-    pid_one_command: /sbin/init
-    intermediate_instructions:
-      - RUN /usr/bin/apt-get update
 
 - name: ubuntu-16.04
   driver:
@@ -69,7 +73,7 @@ platforms:
     intermediate_instructions:
       - RUN /usr/bin/apt-get update
 
-- name: opensuse-leap
+- name: opensuse-leap-15
   driver:
-    image: dokken/opensuse-leap
+    image: dokken/opensuse-leap-15
     pid_one_command: /bin/systemd

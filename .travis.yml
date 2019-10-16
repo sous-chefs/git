@@ -5,7 +5,6 @@ addons:
     packages:
       - chef-workstation
 
-# Don't `bundle install` which takes about 1.5 mins
 install: echo "skip bundle install"
 
 env:
@@ -21,34 +20,34 @@ env:
   matrix:
   - INSTANCE=resources-ubuntu-1604
   - INSTANCE=resources-ubuntu-1804
-  - INSTANCE=resources-debian-8
   - INSTANCE=resources-debian-9
+  - INSTANCE=resources-debian-10
   - INSTANCE=resources-centos-6
   - INSTANCE=resources-centos-7
+  - INSTANCE=resources-centos-8
   - INSTANCE=resources-fedora-latest
-  - INSTANCE=resources-opensuse-leap
+  - INSTANCE=resources-opensuse-leap-15
   - INSTANCE=source-ubuntu-1604
   - INSTANCE=source-ubuntu-1804
-  - INSTANCE=source-debian-8
   - INSTANCE=source-debian-9
+  - INSTANCE=source-debian-10
   - INSTANCE=source-centos-6
   - INSTANCE=source-centos-7
+  - INSTANCE=source-centos-8
   - INSTANCE=source-fedora-latest
-  - INSTANCE=source-opensuse-leap
+  - INSTANCE=source-opensuse-leap-15
 
 before_script:
   - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
   - eval "$(chef shell-init bash)"
   - chef --version
-  - cookstyle --version
-  - foodcritic --version
 
-script: KITCHEN_LOCAL_YAML=kitchen.dokken.yml kitchen verify ${INSTANCE}
+script: KITCHEN_LOCAL_YAML=kitchen.dokken.yml CHEF_VERSION=${CHEF_VERSION} kitchen verify ${INSTANCE}
 
 matrix:
   include:
     - script:
-      - chef exec delivery local all
+      - delivery local all
       env:
         - UNIT_AND_LINT=1
         - CHEF_LICENSE=accept
