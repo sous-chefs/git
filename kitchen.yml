@@ -13,13 +13,15 @@ platforms:
   - name: amazonlinux
     driver_config:
       box: mvbcoding/awslinux
+  - name: amazonlinux-2
   - name: centos-6
   - name: centos-7
+  - name: centos-8
   - name: debian-9
   - name: debian-10
   - name: freebsd-11
   - name: fedora-29
-  - name: opensuse-leap-42
+  - name: opensuse-leap-15
   - name: ubuntu-16.04
   - name: ubuntu-18.04
   - name: windows-2012r2

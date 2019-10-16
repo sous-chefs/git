@@ -26,7 +26,7 @@ env:
   - INSTANCE=resources-centos-7
   - INSTANCE=resources-centos-8
   - INSTANCE=resources-fedora-latest
-  - INSTANCE=resources-opensuse-leap
+  - INSTANCE=resources-opensuse-leap-15
   - INSTANCE=source-ubuntu-1604
   - INSTANCE=source-ubuntu-1804
   - INSTANCE=source-debian-9
@@ -35,14 +35,14 @@ env:
   - INSTANCE=source-centos-7
   - INSTANCE=source-centos-8
   - INSTANCE=source-fedora-latest
-  - INSTANCE=source-opensuse-leap
+  - INSTANCE=source-opensuse-leap-15
 
 before_script:
   - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
   - eval "$(chef shell-init bash)"
   - chef --version
 
-script: KITCHEN_LOCAL_YAML=kitchen.dokken.yml kitchen verify ${INSTANCE}
+script: KITCHEN_LOCAL_YAML=kitchen.dokken.yml CHEF_VERSION=${CHEF_VERSION} kitchen verify ${INSTANCE}
 
 matrix:
   include:
