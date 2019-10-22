@@ -4,7 +4,6 @@ class Chef
   class Resource
     class GitClient < Chef::Resource::LWRPBase
       self.resource_name = :git_client
-      actions :install, :remove
       default_action :install
 
       provides :git_client
