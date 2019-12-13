@@ -17,8 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-case node['platform_family']
-when 'windows'
+if platform_family?('windows')
   default['git']['version'] = '2.8.1'
   if node['kernel']['machine'] == 'x86_64'
     default['git']['architecture'] = '64'
