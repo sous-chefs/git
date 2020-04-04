@@ -16,7 +16,7 @@ class Chef
             pkgs = %w(libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev)
             pkgs += %w( libpcre3-dev ) if new_resource.source_use_pcre
           when 'suse'
-            pkgs = %w(tar libcurl-devel libexpat-devel gettext-tools zlib-devel libopenssl-devel)
+            pkgs = %w(tar libcurl-devel libexpat-devel gettext-tools zlib-devel libopenssl-devel gzip)
             pkgs += %w( libpcre2-devel ) if new_resource.source_use_pcre
           end
 
