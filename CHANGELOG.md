@@ -18,6 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Cookstyle fixes
 - Yamllint fixes
 
+### Added
+
+- Include mdlrc file
+
 ## 10.0.0 (2019-10-16)
 
 - Add testing for CentOS 8, openSUSE 15, Ubuntu 18.04 in Travis
