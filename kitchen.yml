@@ -1,3 +1,4 @@
+---
 driver:
   name: vagrant
 
@@ -33,24 +34,24 @@ platforms:
   - name: macos-10.12
     run_list: homebrew::default
     driver:
-      box: chef/macos-10.12 # private box in Chef's Atlas account
+      box: chef/macos-10.12  # private box in Chef's Atlas account
       provider: vmware_fusion
 
 suites:
-- name: resources
-  run_list:
-  - recipe[test::default]
-- name: source
-  run_list:
-  - recipe[test::source]
-  excludes:
-    - windows-2012r2
-    - windows-2016-standard
-    - macosx-1012
-- name: server
-  run_list:
-  - recipe[test::server]
-  excludes:
-    - windows-2012r2
-    - windows-2016-standard
-    - macosx-1012
+  - name: resources
+    run_list:
+      - recipe[test::default]
+  - name: source
+    run_list:
+      - recipe[test::source]
+    excludes:
+      - windows-2012r2
+      - windows-2016-standard
+      - macosx-1012
+  - name: server
+    run_list:
+      - recipe[test::server]
+    excludes:
+      - windows-2012r2
+      - windows-2016-standard
+      - macosx-1012

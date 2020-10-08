@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixes
 
 - Cookstyle fixes
+- Yamllint fixes
 
 ## 10.0.0 (2019-10-16)
 
