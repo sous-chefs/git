@@ -20,8 +20,9 @@ class Chef
         case node['platform_family']
         when 'debian'
           package 'xinetd'
-        when 'rhel'
-          package 'git-daemon'
+        when 'rhel', 'amazon', 'fedora', 'suse'
+          # TODO(ramereth): migrate to using systemd socket and unit on platforms which use it
+          package %w(xinetd git-daemon)
         else
           log 'Platform requires setting up a git daemon service script.'
           log "Hint: /usr/bin/git daemon --export-all --user=nobody --group=daemon --base-path=#{new_resource.service_base_path}"
@@ -37,7 +38,8 @@ class Chef
           variables(
             git_daemon_binary: value_for_platform_family(
               'debian' => '/usr/lib/git-core/git-daemon',
-              'rhel' => '/usr/libexec/git-core/git-daemon'
+              %w(rhel fedora amazon) => '/usr/libexec/git-core/git-daemon',
+              'suse' => '/usr/lib/git/git-daemon'
             )
           )
         end

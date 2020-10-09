@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Cookstyle fixes
 - Yamllint fixes
+- Fix `git_service` on various systemd platforms
 
 ### Added
 
