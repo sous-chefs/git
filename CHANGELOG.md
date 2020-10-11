@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update Changelog to Sous Chefs
 - Update to use Sous Chefs GH workflow
 - Update README to sous-chefs
+- Update metadata.rb to Sous Chefs
 
 ### Fixes
 
