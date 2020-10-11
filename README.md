@@ -6,7 +6,6 @@
 [![OpenCollective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
-
 Installs git_client from package or source. Optionally sets up a git service under xinetd.
 
 ## Scope
