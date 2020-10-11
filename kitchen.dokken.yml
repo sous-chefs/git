@@ -1,19 +1,15 @@
 ---
 driver:
   name: dokken
-  privileged: true  # because Docker and SystemD/Upstart
+  privileged: true  # because Docker and SystemD
   chef_version: <%= ENV['CHEF_VERSION'] || 'current' %>
+  env: [CHEF_LICENSE=accept]
 
 transport:
   name: dokken
 
 provisioner:
   name: dokken
-  deprecations_as_errors: true
-  chef_license: accept-no-persist
-
-verifier:
-  name: inspec
 
 platforms:
   - name: amazonlinux
