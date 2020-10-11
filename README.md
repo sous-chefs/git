@@ -41,6 +41,8 @@ The following platforms have been tested with Test Kitchen:
 |---------------+-------|
 | ubuntu-18.04  | X     |
 |---------------+-------|
+| ubuntu-20.04  | X     |
+|---------------+-------|
 | openSUSE Leap | X     |
 |---------------+-------|
 ```

@@ -48,6 +48,7 @@ jobs:
           - 'fedora-latest'
           - 'ubuntu-1604'
           - 'ubuntu-1804'
+          - 'ubuntu-2004'
           - 'opensuse-leap-15'
         suite:
           - 'resources'

@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Include mdlrc file
+- Add testing for Ubuntu 20.04
 
 ### Removed
 
