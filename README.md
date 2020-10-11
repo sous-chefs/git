@@ -27,8 +27,6 @@ The following platforms have been tested with Test Kitchen:
 |---------------+-------|
 | amazonlinux-2 | X     |
 |---------------+-------|
-| centos-6      | X     |
-|---------------+-------|
 | centos-7      | X     |
 |---------------+-------|
 | centos-8      | X     |
