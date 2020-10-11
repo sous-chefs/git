@@ -42,10 +42,11 @@ class Chef
               'suse' => '/usr/lib/git/git-daemon'
             )
           )
+          notifies :restart, 'service[xinetd]'
         end
 
         service 'xinetd' do
-          action [:enable, :restart]
+          action [:enable, :start]
         end
       end
     end
