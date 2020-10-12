@@ -33,7 +33,7 @@ platforms:
   - name: macos-10.12
     run_list: homebrew::default
     driver:
-      box: chef/macos-10.12  # private box in Chef's Atlas account
+      box: tas50/macos_10.15
       provider: vmware_fusion
 
 suites:
