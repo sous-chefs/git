@@ -1,6 +1,6 @@
 property :key, String, name_property: true
 property :value, String
-property :scope, equal_to: %w(local global system), default: 'global', desired_state: false
+property :scope, String, equal_to: %w(local global system), default: 'global', desired_state: false
 property :path, String, desired_state: false
 property :user, String, desired_state: false
 property :group, String, desired_state: false

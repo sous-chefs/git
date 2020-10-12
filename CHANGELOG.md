@@ -2,6 +2,37 @@
 
 This file is used to list changes made in each version of the git cookbook.
 
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## Unreleased
+
+### Changed
+
+- Sous Chefs Adoption
+- Update Changelog to Sous Chefs
+- Update to use Sous Chefs GH workflow
+- Update README to sous-chefs
+- Update metadata.rb to Sous Chefs
+- Update test-kitchen to Sous Chefs
+
+### Fixes
+
+- Cookstyle fixes
+- Yamllint fixes
+- Fix `git_service` on various systemd platforms
+- Fix idempotency issues with xinetd service
+
+### Added
+
+- Include mdlrc file
+- Add testing for Ubuntu 20.04
+
+### Removed
+
+- Remove support for Amazon Linux 1
+- Remove support for CentOS 6
+
 ## 10.0.0 (2019-10-16)
 
 - Add testing for CentOS 8, openSUSE 15, Ubuntu 18.04 in Travis
