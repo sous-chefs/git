@@ -2,14 +2,14 @@
 driver:
   name: dokken
   privileged: true  # because Docker and SystemD
-  chef_version: <%= ENV['CHEF_VERSION'] || 'current' %>
-  env: [CHEF_LICENSE=accept]
 
 transport:
   name: dokken
 
 provisioner:
   name: dokken
+  chef_version: <%= ENV['CHEF_VERSION'] || 'current' %>
+  chef_license: accept-no-persist
 
 platforms:
   - name: amazonlinux-2

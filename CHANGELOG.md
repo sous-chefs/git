@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## Unreleased
 
 - Enable `unified_mode` for Chef 17 compatibility
+- Add some missing test coverage
 
 ## 10.1.0 (2020-10-12)
 
