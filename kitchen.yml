@@ -46,11 +46,11 @@ suites:
     excludes:
       - windows-2012r2
       - windows-2016-standard
-      - macosx-1012
+      - macos-10.12
   - name: server
     run_list:
       - recipe[test::server]
     excludes:
       - windows-2012r2
       - windows-2016-standard
-      - macosx-1012
+      - macos-10.12

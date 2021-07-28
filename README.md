@@ -60,7 +60,7 @@ Add `git::default`, `git::source` or `git::windows` to your run_list OR add `dep
 
 ## Resources Overview
 
-- `git_client`: Manages a Git client installation on a machine. Acts as a singleton when using the (default) package provider. Source provider available as well.
+- `git_client`: Manages a Git client installation on a machine. Source install action is available on Linux.
 - `git_service`: Sets up a Git service via xinetd. WARNING: This is insecure and will probably be removed in the future
 - `git_config`: Sets up Git configuration on a node.
 
@@ -73,19 +73,16 @@ The `git_client` resource manages the installation of a Git client on a machine.
 #### Example
 
 ```ruby
-git_client 'default' do
-  action :install
-end
+git_client 'default'
 ```
 
 #### Example of source install
 
 ```ruby
 git_client 'source' do
-  provider Chef::Provider::GitClient::Source
   source_version '2.14.2'
   source_checksum 'a03a12331d4f9b0f71733db9f47e1232d4ddce00e7f2a6e20f6ec9a19ce5ff61'
-  action :install
+  action :install_from_source
 end
 ```
 
@@ -107,13 +104,13 @@ end
 
 Currently, there are distinct sets of resource properties, used by the providers for source, package, macos, and windows.
 
-# used by linux package providers
+# used by Linux provider
 
 - `package_name` - Package name to install on Linux machines. Defaults to a calculated value based on platform.
 - `package_version` - Defaults to nil.
 - `package_action` - Defaults to `:install`
 
-# used by source providers
+# used by Linux source install
 
 - `source_prefix` - Defaults to '/usr/local'
 - `source_url` - Defaults to a calculated URL based on source_version
@@ -121,7 +118,7 @@ Currently, there are distinct sets of resource properties, used by the providers
 - `source_use_pcre` - configure option for build. Defaults to false
 - `source_checksum` - Defaults to a known value for the 2.8.1 source tarball
 
-# used by the Windows package providers
+# used by the Windows provider
 
 - `windows_display_name` - Windows display name
 - `windows_package_url` - Defaults to the Internet

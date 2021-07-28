@@ -9,7 +9,7 @@ describe ini('/home/random/.gitconfig') do
   its(%w(user name)) { should eq 'John Doe global' }
 end
 
-describe ini('/home/random/git/repo/.git/config') do
+describe ini('/home/random/git_repo/.git/config') do
   its(%w(user name)) { should eq 'John Doe local' }
 end
 

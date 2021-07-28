@@ -19,7 +19,5 @@
 if platform?('windows')
   include_recipe 'git::windows'
 else
-  git_client 'default' do
-    action :install
-  end
+  git_client 'default'
 end
