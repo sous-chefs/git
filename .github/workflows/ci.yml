@@ -45,7 +45,6 @@ jobs:
           - debian-10
           - centos-7
           - centos-8
-          - fedora-latest
           - ubuntu-1604
           - ubuntu-1804
           - ubuntu-2004
@@ -83,8 +82,9 @@ jobs:
       matrix:
         os:
           - windows-2012r2
-          - windows-2016-standard
-          - macos-1012
+          - windows-2016
+          - windows-2019
+          - macos-1015
         suite:
           - resources
       fail-fast: false
