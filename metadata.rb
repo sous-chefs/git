@@ -8,6 +8,8 @@ source_url        'https://github.com/sous-chefs/git'
 issues_url        'https://github.com/sous-chefs/git/issues'
 chef_version      '>= 15.3'
 
+depends 'ark'
+
 supports 'amazon'
 supports 'centos'
 supports 'debian'

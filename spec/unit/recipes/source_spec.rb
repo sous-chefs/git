@@ -7,8 +7,8 @@ describe 'git::source' do
 
   before do
     stub_command(%r{test -f /tmp/.+/git-2.17.1.tar.gz})
-    stub_command("git --version | grep 2.17.1")
-    stub_command("/usr/local/bin/git --version | grep 2.17.1")
+    stub_command('git --version | grep 2.17.1')
+    stub_command('/usr/local/bin/git --version | grep 2.17.1')
   end
 
   it do

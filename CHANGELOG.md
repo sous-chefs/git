@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Convert `git_service` LWRP to custom resource
 - Convert `git_client` LWRP to custom resource
   - **BREAKING**: source provider changed to `:install_from_source` action
+  - use `ark` cookbook for source install
 
 ## 10.1.0 (2020-10-12)
 

@@ -52,11 +52,11 @@ The following platforms have been tested with Test Kitchen:
 
 ### Cookbooks
 
-- none
+- ark (for `git_client` source install)
 
 ## Usage
 
-Add `git::default`, `git::source` or `git::windows` to your run_list OR add `depends 'git', '~> 4.3'` to your cookbook's metadata.rb. include_recipe one of the recipes from your cookbook OR use the git_client resource directly, the same way you'd use core Chef resources (file, template, directory, package, etc).
+Include `git::default`, `git::windows`, or `git::source` in your cookbook OR use the `git_client` resource directly.
 
 ## Resources Overview
 
@@ -126,7 +126,7 @@ Currently, there are distinct sets of resource properties, used by the providers
 
 ## Recipes
 
-This cookbook ships with ready to use, attribute driven recipes that utilize the `git_client` and `git_service` resources. As of cookbook 4.x, they utilize the same attributes layout scheme from the 3.x. Due to some overlap, it is currently impossible to simultaneously install the Git client as a package and from source by using the "manipulate a the node attributes and run a recipe" technique. If you need both, you'll need to utilize the git_client resource in a recipe.
+This cookbook ships with ready to use, attribute driven recipes that utilize the `git_client` and `git_service` resources. As of cookbook 4.x, they utilize the same attributes layout scheme from the 3.x. Due to some overlap, it is currently impossible to simultaneously install the Git client as a package and from source by using the "manipulate the node attributes and run a recipe" technique. If you need both, you'll need to utilize the git_client resource in a recipe.
 
 ## Attributes
 
