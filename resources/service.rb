@@ -1,7 +1,5 @@
 unified_mode true
 
-provides :git_service, os: 'linux'
-
 property :service_base_path, String, default: '/srv/git'
 
 action :create do

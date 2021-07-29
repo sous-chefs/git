@@ -1,9 +1,20 @@
-require 'spec_helper'
+require_relative '../../spec_helper'
 
-describe_recipe 'git::default' do
-  context 'when using include_recipe or adding git::default to the run_list' do
-    it 'installs git_client[default]' do
-      expect(chef_run).to install_git_client('default')
+describe 'git::default' do
+  context 'on windows' do
+    let(:chef_run) do
+      ChefSpec::ServerRunner.new(
+        platform: 'windows',
+        version: '10'
+      ).converge(described_recipe)
     end
+
+    it { expect(chef_run).to include_recipe('git::windows') }
+  end
+
+  context 'on linux' do
+    platform 'ubuntu'
+
+    it { is_expected.to install_git_client('default') }
   end
 end
