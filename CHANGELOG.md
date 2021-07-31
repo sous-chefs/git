@@ -5,6 +5,15 @@ This file is used to list changes made in each version of the git cookbook.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+- Enable `unified_mode` for Chef 17 compatibility
+- Add some missing test coverage
+- Convert `git_service` LWRP to custom resource
+- Convert `git_client` LWRP to custom resource
+  - **BREAKING**: source provider changed to `:install_from_source` action
+  - use `ark` cookbook for source install
+
 ## 10.1.0 (2020-10-12)
 
 ### Changed

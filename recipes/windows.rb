@@ -20,5 +20,4 @@ git_client 'default' do
   windows_display_name node['git']['display_name']
   windows_package_url format(node['git']['url'], version: node['git']['version'], architecture: node['git']['architecture'])
   windows_package_checksum node['git']['checksum']
-  action :install
 end
