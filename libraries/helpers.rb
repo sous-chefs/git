@@ -36,7 +36,7 @@ module GitCookbook
 
     def parsed_windows_package_url
       return new_resource.windows_package_url if new_resource.windows_package_url
-      "https://github.com/git-for-windows/git/releases/download/v%#{parsed_windows_package_version}.windows.1/Git-%#{parsed_windows_package_version}-32-bit.exe"
+      "https://github.com/git-for-windows/git/releases/download/v#{parsed_windows_package_version}.windows.1/Git-#{parsed_windows_package_version}-32-bit.exe"
     end
 
     def parsed_windows_package_checksum

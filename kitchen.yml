@@ -4,9 +4,10 @@ driver:
 
 provisioner:
   name: chef_zero
-  product_name: cinc
-  enforce_idempotency: true
+  product_name: chef
+  chef_license: accept-no-persist
   multiple_converge: 2
+  enforce_idempotency: true
   deprecations_as_errors: true
 
 verifier:
