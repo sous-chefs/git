@@ -12,7 +12,7 @@ jobs:
     uses: sous-chefs/.github/.github/workflows/lint-unit.yml@0.0.3
 
   integration:
-    needs: lint
+    needs: lint-unit
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -54,7 +54,7 @@ jobs:
             KITCHEN_LOCAL_YAML=kitchen.dokken.yml /usr/bin/kitchen exec ${{ matrix.suite }}-${{ matrix.os }} -c "journalctl -l"
 
   integration-macos:
-    needs: lint
+    needs: lint-unit
     runs-on: macos-10.15
     strategy:
       matrix:
