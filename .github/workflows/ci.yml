@@ -17,15 +17,16 @@ jobs:
     strategy:
       matrix:
         os:
+          - almalinux-8
           - amazonlinux-2
-          - debian-9
-          - debian-10
           - centos-7
-          - centos-8
-          - ubuntu-1604
+          - centos-stream-8
+          - debian-10
+          - debian-11
+          - opensuse-leap-15
+          - rockylinux-8
           - ubuntu-1804
           - ubuntu-2004
-          - opensuse-leap-15
         suite:
           - resources
           - source
@@ -53,8 +54,8 @@ jobs:
             KITCHEN_LOCAL_YAML=kitchen.dokken.yml /usr/bin/kitchen exec ${{ matrix.suite }}-${{ matrix.os }} -c "journalctl -l"
 
   integration-macos:
-    needs: [mdl, yamllint, delivery]
-    runs-on: macos-latest
+    needs: lint
+    runs-on: macos-10.15
     strategy:
       matrix:
         os:
