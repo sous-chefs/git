@@ -39,7 +39,6 @@ platforms:
     run_list: homebrew::default
     driver:
       box: tas50/macos_10.15
-      provider: vmware_fusion
 
 suites:
   - name: resources
