@@ -78,7 +78,7 @@ jobs:
 
   integration-macos:
     needs: lint-unit
-    runs-on: macos-10.15
+    runs-on: macos-11
     strategy:
       matrix:
         os: [macos-latest]

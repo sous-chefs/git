@@ -1,10 +1,9 @@
 ---
 driver:
   name: dokken
-  privileged: true  # because Docker and SystemD
+  privileged: true
 
-transport:
-  name: dokken
+transport: { name: dokken }
 
 provisioner:
   name: dokken
