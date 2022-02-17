@@ -16,8 +16,4 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if platform?('windows')
-  include_recipe 'git::windows'
-else
-  git_client 'default'
-end
+git_client 'default'

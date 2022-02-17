@@ -6,17 +6,25 @@ property :scope, String, equal_to: %w(local global system), default: 'global', d
 property :path, String, desired_state: false
 property :user, String, desired_state: false
 property :group, String, desired_state: false
+property :password, String, desired_state: false, sensitive: true
 property :options, String, desired_state: false
 
-def initialize(*args)
-  super
-
-  @run_context.include_recipe 'git'
-end
-
 load_current_value do
-  cmd_env = user ? { 'USER' => user, 'HOME' => ::Dir.home(user) } : nil
-  config_vals = Mixlib::ShellOut.new("git config --get --#{scope} #{key}", user: user, group: group, cwd: path, env: cmd_env)
+  begin
+    home_dir = ::Dir.home(user)
+  rescue
+    value nil
+  end
+
+  cmd_env = user ? { 'USER' => user, 'HOME' => home_dir } : nil
+  config_vals = Mixlib::ShellOut.new(
+    "git config --get --#{scope} #{key}",
+    user: user,
+    group: group,
+    password: password,
+    cwd: path,
+    env: cmd_env
+  )
   config_vals.run_command
   if config_vals.stdout.empty?
     value nil
@@ -31,6 +39,7 @@ action :set do
       cwd new_resource.path
       user new_resource.user
       group new_resource.group
+      password new_resource.password
       environment cmd_env
     end
   end

@@ -1,13 +1,15 @@
 ---
 driver:
   name: vagrant
+  gui: false
 
 provisioner:
   name: chef_infra
-  product_name: chef
+  product_name: <%= ENV['CHEF_PRODUCT_NAME'] || 'chef' %>
   enforce_idempotency: true
   multiple_converge: 2
   deprecations_as_errors: true
+  chef_license: accept-no-persist
 
 verifier:
   name: inspec
@@ -26,15 +28,39 @@ platforms:
   - name: windows-2012r2
     driver:
       box: tas50/windows_2012r2
-      gui: false
+      customize:
+        cpus: 2
+        memory: 4096
+    transport:
+      name: winrm
+      elevated: true
+    provisioner:
+      enforce_idempotency: false
+      multiple_converge: 1
   - name: windows-2016
     driver:
       box: tas50/windows_2016
-      gui: false
+      customize:
+        cpus: 2
+        memory: 4096
+    transport:
+      name: winrm
+      elevated: true
+    provisioner:
+      enforce_idempotency: false
+      multiple_converge: 1
   - name: windows-2019
     driver:
       box: tas50/windows_2019
-      gui: false
+      customize:
+        cpus: 2
+        memory: 4096
+    transport:
+      name: winrm
+      elevated: true
+    provisioner:
+      enforce_idempotency: false
+      multiple_converge: 1
   - name: macos-10.15
     run_list: homebrew::default
     driver:

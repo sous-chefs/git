@@ -11,4 +11,7 @@ provisioner:
 
 platforms:
   - name: windows-latest
+    provisioner:
+      enforce_idempotency: false
+      multiple_converge: 1
   - name: macos-latest

@@ -15,6 +15,7 @@ action :install do
   windows_package parsed_windows_display_name do
     source parsed_windows_package_url
     checksum parsed_windows_package_checksum
+    version parsed_windows_package_version
     installer_type :inno
   end
 
