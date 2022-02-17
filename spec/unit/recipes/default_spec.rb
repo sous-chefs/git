@@ -9,7 +9,7 @@ describe 'git::default' do
       ).converge(described_recipe)
     end
 
-    it { expect(chef_run).to include_recipe('git::windows') }
+    it { is_expected.to install_git_client('default') }
   end
 
   context 'on linux' do
