@@ -1,5 +1,10 @@
 apt_update
 
+# CI Runners include git via chocolatey, so remove it first
+chocolatey_package 'git' do
+  action :purge
+end if windows?
+
 git_client 'install it'
 
 home_dir =
