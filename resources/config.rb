@@ -3,6 +3,7 @@ unified_mode true
 property :key, String, name_property: true
 property :value, String
 property :scope, String, equal_to: %w(local global system), default: 'global', desired_state: false
+property :env, Hash, default: {}, desired_state: false
 property :path, String, desired_state: false
 property :user, String, desired_state: false
 property :group, String, desired_state: false
@@ -15,7 +16,10 @@ def initialize(*args)
 end
 
 load_current_value do
-  cmd_env = user ? { 'USER' => user, 'HOME' => ::Dir.home(user) } : nil
+  cmd_env = user ? { 'USER' => user, 'HOME' => ::Dir.home(user) } : {}
+  if property_is_set?(:env)
+    cmd_env.merge!(env)
+  end
   config_vals = Mixlib::ShellOut.new("git config --get --#{scope} #{key}", user: user, group: group, cwd: path, env: cmd_env)
   config_vals.run_command
   if config_vals.stdout.empty?
