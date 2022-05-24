@@ -49,3 +49,9 @@ git_config 'url.https://github.com/.insteadOf' do
   scope 'system'
   options '--add'
 end
+
+git_config 'user.signingkey' do
+  value 'FA2D8E280A6DD5'
+  scope 'file'
+  config_file '~/.gitconfig.key'
+end
