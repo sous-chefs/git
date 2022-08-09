@@ -1,0 +1,17 @@
+---
+driver:
+  name: exec
+
+transport:
+  name: exec
+
+provisioner:
+  name: chef_zero
+  deprecations_as_errors: true
+
+platforms:
+  - name: windows-latest
+    provisioner:
+      enforce_idempotency: false
+      multiple_converge: 1
+  - name: macos-latest

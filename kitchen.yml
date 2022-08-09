@@ -1,13 +1,15 @@
 ---
 driver:
   name: vagrant
+  gui: false
 
 provisioner:
-  name: chef_zero
-  product_name: chef
+  name: chef_infra
+  product_name: <%= ENV['CHEF_PRODUCT_NAME'] || 'chef' %>
   enforce_idempotency: true
   multiple_converge: 2
   deprecations_as_errors: true
+  chef_license: accept-no-persist
 
 verifier:
   name: inspec
@@ -15,32 +17,54 @@ verifier:
 platforms:
   - name: amazonlinux-2
   - name: centos-7
-  - name: centos-8
-  - name: debian-9
+  - name: centos-stream-8
   - name: debian-10
-  - name: freebsd-11
-  - name: fedora-29
+  - name: debian-11
+  - name: freebsd-13
+  - name: fedora-latest
   - name: opensuse-leap-15
-  - name: ubuntu-16.04
   - name: ubuntu-18.04
   - name: ubuntu-20.04
   - name: windows-2012r2
     driver:
       box: tas50/windows_2012r2
-      gui: false
+      customize:
+        cpus: 2
+        memory: 4096
+    transport:
+      name: winrm
+      elevated: true
+    provisioner:
+      enforce_idempotency: false
+      multiple_converge: 1
   - name: windows-2016
     driver:
       box: tas50/windows_2016
-      gui: false
+      customize:
+        cpus: 2
+        memory: 4096
+    transport:
+      name: winrm
+      elevated: true
+    provisioner:
+      enforce_idempotency: false
+      multiple_converge: 1
   - name: windows-2019
     driver:
       box: tas50/windows_2019
-      gui: false
+      customize:
+        cpus: 2
+        memory: 4096
+    transport:
+      name: winrm
+      elevated: true
+    provisioner:
+      enforce_idempotency: false
+      multiple_converge: 1
   - name: macos-10.15
     run_list: homebrew::default
     driver:
       box: tas50/macos_10.15
-      provider: vmware_fusion
 
 suites:
   - name: resources

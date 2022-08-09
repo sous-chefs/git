@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+- Standardise files with files in sous-chefs/repo-management
+- Update tested platforms
+- Update Windows version to 2.35.1
+  - Update helpers to deal with 32/64bit
+  - Switch `git::package` to use `git_client` for windows
+- Remove inclusion of `git::default` from `git_config` resource
+- Add `password` property to `git_config` resource which is required on Windows if running as a different user
+- Fix tests on MacOS and Windows
+
 ## 11.0.2 - *2022-05-16*
 
 - Remove delivery folder

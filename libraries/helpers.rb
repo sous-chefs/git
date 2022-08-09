@@ -31,17 +31,25 @@ module GitCookbook
 
     def parsed_windows_package_version
       return new_resource.windows_package_version if new_resource.windows_package_version
-      '2.7.4'
+      '2.35.1'
     end
 
     def parsed_windows_package_url
       return new_resource.windows_package_url if new_resource.windows_package_url
-      "https://github.com/git-for-windows/git/releases/download/v%#{parsed_windows_package_version}.windows.1/Git-%#{parsed_windows_package_version}-32-bit.exe"
+      if node['kernel']['machine'] == 'x86_64'
+        "https://github.com/git-for-windows/git/releases/download/v#{parsed_windows_package_version}.windows.1/Git-#{parsed_windows_package_version}-64-bit.exe"
+      else
+        "https://github.com/git-for-windows/git/releases/download/v#{parsed_windows_package_version}.windows.1/Git-#{parsed_windows_package_version}-32-bit.exe"
+      end
     end
 
     def parsed_windows_package_checksum
       return new_resource.windows_package_checksum if new_resource.windows_package_checksum
-      '49601d5102df249d6f866ecfa1eea68eb5672acc1dbb7e4051099e792f6da5fc'
+      if node['kernel']['machine'] == 'x86_64'
+        '5d66948e7ada0ab184b2745fdf6e11843443a97655891c3c6268b5985b88bf4f'
+      else
+        '5e45b1226b106dd241de0be0b350052afe53bd61dce80ac6044600dc85fbfa0b'
+      end
     end
   end
 end

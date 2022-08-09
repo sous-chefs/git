@@ -22,15 +22,16 @@ jobs:
     strategy:
       matrix:
         os:
+          - almalinux-8
           - amazonlinux-2
-          - debian-9
-          - debian-10
           - centos-7
-          - centos-8
-          - ubuntu-1604
+          - centos-stream-8
+          - debian-10
+          - debian-11
+          - opensuse-leap-15
+          - rockylinux-8
           - ubuntu-1804
           - ubuntu-2004
-          - opensuse-leap-15
         suite:
           - resources
           - source
@@ -57,16 +58,14 @@ jobs:
             sudo journalctl -l --since today
             KITCHEN_LOCAL_YAML=kitchen.dokken.yml /usr/bin/kitchen exec ${{ matrix.suite }}-${{ matrix.os }} -c "journalctl -l"
 
-  integration-macos:
+  integration-windows:
     needs: lint-unit
-    runs-on: macos-latest
+    runs-on: macos-10.15
     strategy:
       matrix:
         os:
-          - windows-2012r2
           - windows-2016
           - windows-2019
-          - macos-1015
         suite:
           - resources
       fail-fast: false
@@ -80,6 +79,31 @@ jobs:
         uses: actionshub/test-kitchen@main
         env:
           CHEF_LICENSE: accept-no-persist
+        with:
+          suite: ${{ matrix.suite }}
+          os: ${{ matrix.os }}
+
+  integration-macos:
+    needs: lint-unit
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        os:
+          - macos-latest
+        suite:
+          - resources
+      fail-fast: false
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Install Chef
+        uses: actionshub/chef-install@main
+      - name: test-kitchen
+        uses: actionshub/test-kitchen@main
+        env:
+          CHEF_LICENSE: accept-no-persist
+          KITCHEN_LOCAL_YAML: kitchen.exec.yml
         with:
           suite: ${{ matrix.suite }}
           os: ${{ matrix.os }}

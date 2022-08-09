@@ -18,7 +18,7 @@
 # limitations under the License.
 
 if platform_family?('windows')
-  default['git']['version'] = '2.8.1'
+  default['git']['version'] = '2.35.1'
   if node['kernel']['machine'] == 'x86_64'
     default['git']['architecture'] = '64'
     default['git']['checksum'] = '5e5283990cc91d1e9bd0858f8411e7d0afb70ce26e23680252fb4869288c7cfb'
