@@ -1,22 +1,5 @@
 apt_update
 
-if windows?
-  # CI Runners include hub via chocolatey, which depends on git
-  chocolatey_package 'hub' do
-    action :purge
-  end
-
-  # CI Runners include git via chocolatey, so remove it first
-  chocolatey_package 'git' do
-    action :purge
-  end
-
-  directory 'C:\Program Files\Git' do
-    recursive true
-    action :delete
-  end
-end
-
 git_client 'install it'
 
 home_dir =

@@ -60,11 +60,12 @@ jobs:
 
   integration-windows:
     needs: lint-unit
-    runs-on: windows-latest
+    runs-on: macos-10.15
     strategy:
       matrix:
         os:
-          - windows-latest
+          - windows-2016
+          - windows-2019
         suite:
           - resources
       fail-fast: false
@@ -78,7 +79,6 @@ jobs:
         uses: actionshub/test-kitchen@main
         env:
           CHEF_LICENSE: accept-no-persist
-          KITCHEN_LOCAL_YAML: kitchen.exec.yml
         with:
           suite: ${{ matrix.suite }}
           os: ${{ matrix.os }}
