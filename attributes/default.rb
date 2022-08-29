@@ -24,7 +24,7 @@ if platform_family?('windows')
     default['git']['checksum'] = '5d66948e7ada0ab184b2745fdf6e11843443a97655891c3c6268b5985b88bf4f'
   else
     default['git']['architecture'] = '32'
-    default['git']['checksum'] = '17418c2e507243b9c98db161e9e5e8041d958b93ce6078530569b8edaec6b8a4'
+    default['git']['checksum'] = '5e45b1226b106dd241de0be0b350052afe53bd61dce80ac6044600dc85fbfa0b'
   end
   default['git']['url'] = 'https://github.com/git-for-windows/git/releases/download/v%{version}.windows.1/Git-%{version}-%{architecture}-bit.exe'
   default['git']['display_name'] = "Git version #{node['git']['version']}"
