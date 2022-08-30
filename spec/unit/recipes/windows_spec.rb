@@ -12,7 +12,7 @@ describe_recipe 'git::windows' do
     expect(chef_run).to install_git_client('default').with(
       windows_display_name: 'Git version 2.35.1',
       windows_package_url: 'https://github.com/git-for-windows/git/releases/download/v2.35.1.windows.1/Git-2.35.1-64-bit.exe',
-      windows_package_checksum: '5e5283990cc91d1e9bd0858f8411e7d0afb70ce26e23680252fb4869288c7cfb'
+      windows_package_checksum: '5d66948e7ada0ab184b2745fdf6e11843443a97655891c3c6268b5985b88bf4f'
     )
   end
 end
