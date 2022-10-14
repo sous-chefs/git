@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-- Fix package name for smartos/omnios 
+- Fix package name for smartos/omnios
 
 ## 11.1.1 - *2022-08-30*
 
