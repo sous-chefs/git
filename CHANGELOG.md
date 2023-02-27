@@ -36,8 +36,8 @@ Standardise files with files in sous-chefs/repo-management
 - Standardise files with files in sous-chefs/repo-management
 - Update tested platforms
 - Update Windows version to 2.35.1
-  - Update helpers to deal with 32/64bit
-  - Switch `git::package` to use `git_client` for windows
+- Update helpers to deal with 32/64bit
+- Switch `git::package` to use `git_client` for windows
 - Remove inclusion of `git::default` from `git_config` resource
 - Add `password` property to `git_config` resource which is required on Windows if running as a different user
 - Fix tests on MacOS and Windows
@@ -57,8 +57,8 @@ Standardise files with files in sous-chefs/repo-management
 - Add some missing test coverage
 - Convert `git_service` LWRP to custom resource
 - Convert `git_client` LWRP to custom resource
-  - **BREAKING**: source provider changed to `:install_from_source` action
-  - use `ark` cookbook for source install
+- **BREAKING**: source provider changed to `:install_from_source` action
+- use `ark` cookbook for source install
 
 ## 10.1.0 (2020-10-12)
 
