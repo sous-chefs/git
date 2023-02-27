@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+Update to the version number and hash for 32-bit/64-bit windows
+
 ## 11.1.6 - *2023-02-27*
 
 Standardise files with files in sous-chefs/repo-management
