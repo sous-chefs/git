@@ -232,7 +232,7 @@ Standardise files with files in sous-chefs/repo-management
 
 ## v4.3.3 (2015-07-27)
 
-- # 76: Use checksum keyname instead of value in source recipe
+- #76: Use checksum keyname instead of value in source recipe
 
 ## v4.3.2 (2015-07-27)
 
@@ -314,13 +314,9 @@ Locking yum dependency to '< 3'
 
 ## v2.8.0
 
-### Bug
-
 - [COOK-3433] - git::server does not correctly set git-daemon's base-path on Debian
 
 ## v2.7.0
-
-### Bug
 
 - **[COOK-3624](https://tickets.chef.io/browse/COOK-3624)** - Don't restart `xinetd` on each Chef client run
 - **[COOK-3482](https://tickets.chef.io/browse/COOK-3482)** - Force git to add itself to the current process' PATH
@@ -336,8 +332,6 @@ Locking yum dependency to '< 3'
 - **[COOK-3193](https://tickets.chef.io/browse/COOK-3193)** - Add proper debian packages
 
 ## v2.5.2
-
-### Bug
 
 - [COOK-2813]: Fix bad string interpolation in source recipe
 
