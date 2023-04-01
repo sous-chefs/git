@@ -5,7 +5,7 @@ This file is used to list changes made in each version of the git cookbook.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## 11.2.4 - *2023-04-01*
 
 ## 11.2.3 - *2023-04-01*
 
