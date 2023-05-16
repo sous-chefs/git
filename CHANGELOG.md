@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+Standardise files with files in sous-chefs/repo-management
+
 ## 11.2.1 - *2023-03-02*
 
 Standardise files with files in sous-chefs/repo-management
@@ -70,8 +72,6 @@ Standardise files with files in sous-chefs/repo-management
 
 ## 10.1.0 (2020-10-12)
 
-### Changed
-
 - Sous Chefs Adoption
 - Update Changelog to Sous Chefs
 - Update to use Sous Chefs GH workflow
@@ -86,12 +86,8 @@ Standardise files with files in sous-chefs/repo-management
 - Fix `git_service` on various systemd platforms
 - Fix idempotency issues with xinetd service
 
-### Added
-
 - Include mdlrc file
 - Add testing for Ubuntu 20.04
-
-### Removed
 
 - Remove support for Amazon Linux 1
 - Remove support for CentOS 6
