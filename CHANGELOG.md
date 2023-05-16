@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove server recipe
   The server recipe was insecure and not a recommended way of runing a Git service
 
+## 11.2.9 - *2023-05-16*
+
 ## 11.2.8 - *2023-05-16*
 
 Standardise files with files in sous-chefs/repo-management
