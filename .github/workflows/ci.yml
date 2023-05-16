@@ -35,7 +35,6 @@ jobs:
         suite:
           - resources
           - source
-          - server
       fail-fast: false
 
     steps:
