@@ -106,3 +106,22 @@ jobs:
         with:
           suite: ${{ matrix.suite }}
           os: ${{ matrix.os }}
+
+  results:
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    name: Final Results
+    needs: [integration, integration-macos, integration-windows]
+    steps:
+      - run: |
+          results=(
+           "${{ needs.integration.result }}"
+           "${{ needs.integration-macos.result }}"
+           "${{ needs.integration-windows.result }}"
+          )
+
+          for exit_code in $results; do
+            if [[ $exit_code != "success" && $exit_code != "skipped" ]]; then
+              exit 1
+            fi
+          done
