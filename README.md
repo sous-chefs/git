@@ -18,34 +18,6 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 
 ## Requirements
 
-### Platforms
-
-The following platforms have been tested with Test Kitchen:
-
-```
-|---------------+-------|
-| amazonlinux-2 | X     |
-|---------------+-------|
-| centos-7      | X     |
-|---------------+-------|
-| centos-8      | X     |
-|---------------+-------|
-| fedora        | X     |
-|---------------+-------|
-| debian-9      | X     |
-|---------------+-------|
-| debian-10     | X     |
-|---------------+-------|
-| ubuntu-16.04  | X     |
-|---------------+-------|
-| ubuntu-18.04  | X     |
-|---------------+-------|
-| ubuntu-20.04  | X     |
-|---------------+-------|
-| openSUSE Leap | X     |
-|---------------+-------|
-```
-
 ### Chef
 
 - Chef 15.3+
@@ -60,69 +32,8 @@ Include `git::default`, `git::windows`, or `git::source` in your cookbook OR use
 
 ## Resources Overview
 
-- `git_client`: Manages a Git client installation on a machine. Source install action is available on Linux.
-- `git_service`: Sets up a Git service via xinetd. WARNING: This is insecure and will probably be removed in the future
-- `git_config`: Sets up Git configuration on a node.
-
-### git_client
-
-The `git_client` resource manages the installation of a Git client on a machine.
-
-`Note`: on macOS systems homebrew must first be installed on the system before running this resource. Prior to version 9.0 of this cookbook homebrew was automatically installed.
-
-#### Example
-
-```ruby
-git_client 'default'
-```
-
-#### Example of source install
-
-```ruby
-git_client 'source' do
-  source_version '2.14.2'
-  source_checksum 'a03a12331d4f9b0f71733db9f47e1232d4ddce00e7f2a6e20f6ec9a19ce5ff61'
-  action :install_from_source
-end
-```
-
-### git_config
-
-The `git_config` resource manages the configuration of Git client on a machine.
-
-#### Example
-
-```ruby
-git_config 'url.https://github.com/.insteadOf' do
-  value 'git://github.com/'
-  scope 'system'
-  options '--add'
-end
-```
-
-#### Properties
-
-Currently, there are distinct sets of resource properties, used by the providers for source, package, macos, and windows.
-
-# used by Linux provider
-
-- `package_name` - Package name to install on Linux machines. Defaults to a calculated value based on platform.
-- `package_version` - Defaults to nil.
-- `package_action` - Defaults to `:install`
-
-# used by Linux source install
-
-- `source_prefix` - Defaults to '/usr/local'
-- `source_url` - Defaults to a calculated URL based on source_version
-- `source_version` - Defaults to 2.8.1
-- `source_use_pcre` - configure option for build. Defaults to false
-- `source_checksum` - Defaults to a known value for the 2.8.1 source tarball
-
-# used by the Windows provider
-
-- `windows_display_name` - Windows display name
-- `windows_package_url` - Defaults to the Internet
-- `windows_package_checksum` - Defaults to the value for 2.8.1
+- [`git_client`](./documentation/git_client.md): Manages a Git client installation on a machine. Source install action is available on Linux.
+- [`git_config`](./documentation/git_config.md): Sets up Git configuration on a node.
 
 ## Recipes
 

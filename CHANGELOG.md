@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+- Remove service resource
+- Remove server recipe
+  The server recipe was insecure and not a recommended way of runing a Git service
+- Remove links to tickets.chef.io
+
 ## 11.2.9 - *2023-05-16*
 
 ## 11.2.8 - *2023-05-16*
@@ -332,22 +337,22 @@ Locking yum dependency to '< 3'
 
 ## v2.8.0
 
-- [COOK-3433] - git::server does not correctly set git-daemon's base-path on Debian
+- git::server does not correctly set git-daemon's base-path on Debian
 
 ## v2.7.0
 
-- **[COOK-3624](https://tickets.chef.io/browse/COOK-3624)** - Don't restart `xinetd` on each Chef client run
-- **[COOK-3482](https://tickets.chef.io/browse/COOK-3482)** - Force git to add itself to the current process' PATH
+- Don't restart `xinetd` on each Chef client run
+- Force git to add itself to the current process' PATH
 
 ### New Feature
 
-- **[COOK-3223](https://tickets.chef.io/browse/COOK-3223)** - Support Omnios and SmartOS package installs
+- Support Omnios and SmartOS package installs
 
 ## v2.6.0
 
 ### Improvement
 
-- **[COOK-3193](https://tickets.chef.io/browse/COOK-3193)** - Add proper debian packages
+- Add proper debian packages
 
 ## v2.5.2
 
