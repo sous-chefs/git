@@ -3,7 +3,7 @@ module GitCookbook
     # linux packages default to distro offering
     def parsed_package_name
       return new_resource.package_name if new_resource.package_name
-      return 'developer/versioning/git' if platform?('smartos')
+      return 'developer/versioning/git' if platform?('omnios')
       return 'scmgit' if platform?('smartos')
       'git'
     end
@@ -31,7 +31,7 @@ module GitCookbook
 
     def parsed_windows_package_version
       return new_resource.windows_package_version if new_resource.windows_package_version
-      '2.35.1'
+      '2.39.2'
     end
 
     def parsed_windows_package_url
@@ -46,9 +46,9 @@ module GitCookbook
     def parsed_windows_package_checksum
       return new_resource.windows_package_checksum if new_resource.windows_package_checksum
       if node['kernel']['machine'] == 'x86_64'
-        '5d66948e7ada0ab184b2745fdf6e11843443a97655891c3c6268b5985b88bf4f'
+        'D7608FBD854B3689102FF48B03C8CC77B35138F9F7350D134306DA0BA5751464'
       else
-        '5e45b1226b106dd241de0be0b350052afe53bd61dce80ac6044600dc85fbfa0b'
+        'ADDF55B0A57F38A7950B3AD37CE5C76752202E6818D9F8995B477496B71FB757'
       end
     end
   end

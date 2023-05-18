@@ -9,13 +9,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add the 'file' scope
 
+## 12.0.0 - *2023-05-18*
+
+- Remove service resource
+- Remove server recipe
+  The server recipe was insecure and not a recommended way of runing a Git service
+- Remove links to tickets.chef.io
+
+## 11.2.9 - *2023-05-16*
+
+## 11.2.8 - *2023-05-16*
+
+Standardise files with files in sous-chefs/repo-management
+
+## 11.2.7 - *2023-04-17*
+
+## 11.2.6 - *2023-04-07*
+
+Standardise files with files in sous-chefs/repo-management
+
+## 11.2.5 - *2023-04-01*
+
+## 11.2.4 - *2023-04-01*
+
+## 11.2.3 - *2023-04-01*
+
+Standardise files with files in sous-chefs/repo-management
+
+## 11.2.2 - *2023-03-02*
+
+## 11.2.1 - *2023-03-02*
+
+Standardise files with files in sous-chefs/repo-management
+
+## 11.2.0 - *2023-02-27*
+
+Update to the version number and hash for 32-bit/64-bit windows
+
+## 11.1.6 - *2023-02-27*
+
+Standardise files with files in sous-chefs/repo-management
+
+## 11.1.5 - *2023-02-16*
+
+Standardise files with files in sous-chefs/repo-management
+
+## 11.1.4 - *2023-02-14*
+
+Standardise files with files in sous-chefs/repo-management
+
+## 11.1.3 - *2022-12-08*
+
+Standardise files with files in sous-chefs/repo-management
+
+## 11.1.2 - *2022-10-14*
+
+- Fix package name for smartos/omnios
+
+## 11.1.1 - *2022-08-30*
+
+- Fix Windows default git checksum
+
 ## 11.1.0 - *2022-08-09*
 
 - Standardise files with files in sous-chefs/repo-management
 - Update tested platforms
 - Update Windows version to 2.35.1
-  - Update helpers to deal with 32/64bit
-  - Switch `git::package` to use `git_client` for windows
+- Update helpers to deal with 32/64bit
+- Switch `git::package` to use `git_client` for windows
 - Remove inclusion of `git::default` from `git_config` resource
 - Add `password` property to `git_config` resource which is required on Windows if running as a different user
 - Fix tests on MacOS and Windows
@@ -35,12 +96,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add some missing test coverage
 - Convert `git_service` LWRP to custom resource
 - Convert `git_client` LWRP to custom resource
-  - **BREAKING**: source provider changed to `:install_from_source` action
-  - use `ark` cookbook for source install
+- **BREAKING**: source provider changed to `:install_from_source` action
+- use `ark` cookbook for source install
 
 ## 10.1.0 (2020-10-12)
-
-### Changed
 
 - Sous Chefs Adoption
 - Update Changelog to Sous Chefs
@@ -56,12 +115,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix `git_service` on various systemd platforms
 - Fix idempotency issues with xinetd service
 
-### Added
-
 - Include mdlrc file
 - Add testing for Ubuntu 20.04
-
-### Removed
 
 - Remove support for Amazon Linux 1
 - Remove support for CentOS 6
@@ -204,7 +259,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## v4.3.3 (2015-07-27)
 
-- # 76: Use checksum keyname instead of value in source recipe
+- #76: Use checksum keyname instead of value in source recipe
 
 ## v4.3.2 (2015-07-27)
 
@@ -286,30 +341,24 @@ Locking yum dependency to '< 3'
 
 ## v2.8.0
 
-### Bug
-
-- [COOK-3433] - git::server does not correctly set git-daemon's base-path on Debian
+- git::server does not correctly set git-daemon's base-path on Debian
 
 ## v2.7.0
 
-### Bug
-
-- **[COOK-3624](https://tickets.chef.io/browse/COOK-3624)** - Don't restart `xinetd` on each Chef client run
-- **[COOK-3482](https://tickets.chef.io/browse/COOK-3482)** - Force git to add itself to the current process' PATH
+- Don't restart `xinetd` on each Chef client run
+- Force git to add itself to the current process' PATH
 
 ### New Feature
 
-- **[COOK-3223](https://tickets.chef.io/browse/COOK-3223)** - Support Omnios and SmartOS package installs
+- Support Omnios and SmartOS package installs
 
 ## v2.6.0
 
 ### Improvement
 
-- **[COOK-3193](https://tickets.chef.io/browse/COOK-3193)** - Add proper debian packages
+- Add proper debian packages
 
 ## v2.5.2
-
-### Bug
 
 - [COOK-2813]: Fix bad string interpolation in source recipe
 
