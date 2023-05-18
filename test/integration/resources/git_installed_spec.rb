@@ -45,3 +45,7 @@ describe ini("#{etc_dir}/gitconfig") do
   its(%w(user name)) { should eq 'John Doe system' }
   its(['url "https://github.com/"', 'insteadOf']) { should eq 'git://github.com/' }
 end
+
+describe ini('/root/.gitconfig.key') do
+  its(%w(user signingkey)) { should eq 'FA2D8E280A6DD5' }
+end

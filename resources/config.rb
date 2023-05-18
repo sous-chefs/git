@@ -2,7 +2,8 @@ unified_mode true
 
 property :key, String, name_property: true
 property :value, String
-property :scope, String, equal_to: %w(local global system), default: 'global', desired_state: false
+property :scope, String, equal_to: %w(local global system file), default: 'global', desired_state: false
+property :config_file, String, desired_state: false
 property :path, String, desired_state: false
 property :user, String, desired_state: false
 property :group, String, desired_state: false
@@ -18,7 +19,7 @@ load_current_value do
 
   cmd_env = user ? { 'USER' => user, 'HOME' => home_dir } : nil
   config_vals = Mixlib::ShellOut.new(
-    "git config --get --#{scope} #{key}",
+    "git config --get --#{scope} #{config_file} #{key}",
     user: user,
     group: group,
     password: password,
@@ -47,7 +48,7 @@ end
 
 action_class do
   def config_cmd
-    "git config --#{new_resource.scope}"
+    "git config --#{new_resource.scope} #{new_resource.config_file}"
   end
 
   def cmd_env

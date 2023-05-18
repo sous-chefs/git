@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+- Add the 'file' scope
+
 ## 12.0.0 - *2023-05-18*
 
 - Remove service resource
