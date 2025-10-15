@@ -5,13 +5,8 @@ This file is used to list changes made in each version of the git cookbook.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
-
 Standardise files with files in sous-chefs/repo-management
-
 Standardise files with files in sous-chefs/repo-management
-
-## 12.1.9 - *2025-09-04*
 
 ## 12.1.8 - *2025-06-08*
 
@@ -31,48 +26,28 @@ Standardise files with files in sous-chefs/repo-management
 
 Standardise files with files in sous-chefs/repo-management
 
-## 12.1.5 - *2024-05-02*
-
-## 12.1.4 - *2024-05-02*
-
-## 12.1.3 - *2023-09-28*
-
-## 12.1.2 - *2023-09-04*
-
-## 12.1.1 - *2023-07-10*
-
 ## 12.1.0 - *2023-05-18*
 
-- Add the 'file' scope
+* Add the 'file' scope
 
 ## 12.0.0 - *2023-05-18*
 
-- Remove service resource
-- Remove server recipe
+* Remove service resource
+* Remove server recipe
   The server recipe was insecure and not a recommended way of runing a Git service
-- Remove links to tickets.chef.io
-
-## 11.2.9 - *2023-05-16*
+* Remove links to tickets.chef.io
 
 ## 11.2.8 - *2023-05-16*
 
 Standardise files with files in sous-chefs/repo-management
 
-## 11.2.7 - *2023-04-17*
-
 ## 11.2.6 - *2023-04-07*
 
 Standardise files with files in sous-chefs/repo-management
 
-## 11.2.5 - *2023-04-01*
-
-## 11.2.4 - *2023-04-01*
-
 ## 11.2.3 - *2023-04-01*
 
 Standardise files with files in sous-chefs/repo-management
-
-## 11.2.2 - *2023-03-02*
 
 ## 11.2.1 - *2023-03-02*
 
@@ -100,259 +75,259 @@ Standardise files with files in sous-chefs/repo-management
 
 ## 11.1.2 - *2022-10-14*
 
-- Fix package name for smartos/omnios
+* Fix package name for smartos/omnios
 
 ## 11.1.1 - *2022-08-30*
 
-- Fix Windows default git checksum
+* Fix Windows default git checksum
 
 ## 11.1.0 - *2022-08-09*
 
-- Standardise files with files in sous-chefs/repo-management
-- Update tested platforms
-- Update Windows version to 2.35.1
-- Update helpers to deal with 32/64bit
-- Switch `git::package` to use `git_client` for windows
-- Remove inclusion of `git::default` from `git_config` resource
-- Add `password` property to `git_config` resource which is required on Windows if running as a different user
-- Fix tests on MacOS and Windows
+* Standardise files with files in sous-chefs/repo-management
+* Update tested platforms
+* Update Windows version to 2.35.1
+* Update helpers to deal with 32/64bit
+* Switch `git::package` to use `git_client` for windows
+* Remove inclusion of `git::default` from `git_config` resource
+* Add `password` property to `git_config` resource which is required on Windows if running as a different user
+* Fix tests on MacOS and Windows
 
 ## 11.0.2 - *2022-05-16*
 
-- Remove delivery folder
-- Use reuable workflows
+* Remove delivery folder
+* Use reuable workflows
 
 ## 11.0.1 - *2021-08-30*
 
-- Standardise files with files in sous-chefs/repo-management
+* Standardise files with files in sous-chefs/repo-management
 
 ## 11.0.0 - *2021-07-31*
 
-- Enable `unified_mode` for Chef 17 compatibility
-- Add some missing test coverage
-- Convert `git_service` LWRP to custom resource
-- Convert `git_client` LWRP to custom resource
-- **BREAKING**: source provider changed to `:install_from_source` action
-- use `ark` cookbook for source install
+* Enable `unified_mode` for Chef 17 compatibility
+* Add some missing test coverage
+* Convert `git_service` LWRP to custom resource
+* Convert `git_client` LWRP to custom resource
+**BREAKING**: source provider changed to `:install_from_source` action
+* use `ark` cookbook for source install
 
 ## 10.1.0 (2020-10-12)
 
-- Sous Chefs Adoption
-- Update Changelog to Sous Chefs
-- Update to use Sous Chefs GH workflow
-- Update README to sous-chefs
-- Update metadata.rb to Sous Chefs
-- Update test-kitchen to Sous Chefs
+* Sous Chefs Adoption
+* Update Changelog to Sous Chefs
+* Update to use Sous Chefs GH workflow
+* Update README to sous-chefs
+* Update metadata.rb to Sous Chefs
+* Update test-kitchen to Sous Chefs
 
 ### Fixes
 
-- Cookstyle fixes
-- Yamllint fixes
-- Fix `git_service` on various systemd platforms
-- Fix idempotency issues with xinetd service
+* Cookstyle fixes
+* Yamllint fixes
+* Fix `git_service` on various systemd platforms
+* Fix idempotency issues with xinetd service
 
-- Include mdlrc file
-- Add testing for Ubuntu 20.04
+* Include mdlrc file
+* Add testing for Ubuntu 20.04
 
-- Remove support for Amazon Linux 1
-- Remove support for CentOS 6
+* Remove support for Amazon Linux 1
+* Remove support for CentOS 6
 
 ## 10.0.0 (2019-10-16)
 
-- Add testing for CentOS 8, openSUSE 15, Ubuntu 18.04 in Travis
-- Require Chef Infra Client 14 or later so we can drop the dependency on build-essential
-- Resolve multiple cookstyle warnings
+* Add testing for CentOS 8, openSUSE 15, Ubuntu 18.04 in Travis
+* Require Chef Infra Client 14 or later so we can drop the dependency on build-essential
+* Resolve multiple cookstyle warnings
 
 ## 9.0.1 (2018-06-02)
 
-- Update the platforms we test on
-- Remove extra attr_accessor in config and requires
-- Bump git version to 2.17.1 to resolve CVE
+* Update the platforms we test on
+* Remove extra attr_accessor in config and requires
+* Bump git version to 2.17.1 to resolve CVE
 
 ## 9.0.0 (2018-03-08)
 
-- Remove the dependency on the homebrew cookbook by not automatically installing homebrew in the git resource on macOS systems. Homebrew needs to be setup before this resource runs and that should probably be the very first thing you do on a macOS system
-- Use the build_essential resource instead of including the default recipe. This requires version 5.0 or later of the build-essential cookbook and allows us to use the build_essential resource that will be built into Chef 14 when that ships
-- Remove extra includes in the resources that weren't necessary
-- Updated testing to include Fedora 27, Ubuntu 18.04, Debian 9, macOS 10.12, and Windows 2016
+* Remove the dependency on the homebrew cookbook by not automatically installing homebrew in the git resource on macOS systems. Homebrew needs to be setup before this resource runs and that should probably be the very first thing you do on a macOS system
+* Use the build_essential resource instead of including the default recipe. This requires version 5.0 or later of the build-essential cookbook and allows us to use the build_essential resource that will be built into Chef 14 when that ships
+* Remove extra includes in the resources that weren't necessary
+* Updated testing to include Fedora 27, Ubuntu 18.04, Debian 9, macOS 10.12, and Windows 2016
 
 ## 8.0.1 (2018-02-10)
 
-- Resolve the new FC118 foodcritic warning
-- Remove the ChefSpec matchers which are auto generated now
-- Resolve FC104 warning
+* Resolve the new FC118 foodcritic warning
+* Remove the ChefSpec matchers which are auto generated now
+* Resolve FC104 warning
 
 ## 8.0.0 (2017-09-01)
 
 ### Breaking Changes
 
-- macOS resource now properly executes and uses homebrew to install git instead of dmg and packages posted to SourceForge
-- Default to Git 2.9.5 now, which properly compiles on Fedora / Amazon Linux
+* macOS resource now properly executes and uses homebrew to install git instead of dmg and packages posted to SourceForge
+* Default to Git 2.9.5 now, which properly compiles on Fedora / Amazon Linux
 
 ## Other Changes
 
-- Fixed support for Amazon Linux on Chef 13
-- Unified the package setup for source installs which fixes Amazon/Fedora
-- Removed an entirely duplicate service provider
-- Remove unused runit templates
-- Properly fail when we're on an unsupported platform
+* Fixed support for Amazon Linux on Chef 13
+* Unified the package setup for source installs which fixes Amazon/Fedora
+* Removed an entirely duplicate service provider
+* Remove unused runit templates
+* Properly fail when we're on an unsupported platform
 
 ## 7.0.0 (2017-09-01)
 
-- Remove support for RHEL 5 which removes the need for the yum-epel cookbook
-- Move templates out of the default directory now that we require Chef 12
-- Remove support for Ubuntu 10.04
-- Remove the version requirement on mac_os_x in the metadata
-- Move maintainer information to the readme
-- Expand Travis testing
+* Remove support for RHEL 5 which removes the need for the yum-epel cookbook
+* Move templates out of the default directory now that we require Chef 12
+* Remove support for Ubuntu 10.04
+* Remove the version requirement on mac_os_x in the metadata
+* Move maintainer information to the readme
+* Expand Travis testing
 
 ## 6.1.0 (2017-05-30)
 
-- Test with Local Delivery and not Rake
-- Remove EOL platforms from the kitchen configs
-- Use a SPDX standard license string
-- Updated default versions documented in README to fix Issue #120.
-- Remove class_eval and require chef 12.7+
+* Test with Local Delivery and not Rake
+* Remove EOL platforms from the kitchen configs
+* Use a SPDX standard license string
+* Updated default versions documented in README to fix Issue #120.
+* Remove class_eval and require chef 12.7+
 
 ## 6.0.0 (2017-02-14)
 
-- Fail on deprecations is now enabled so we're fully Chef 13 compatible
-- Define the chefspec matchers properly
-- Remove the legacy platform mappings that fail on Chef 13
-- Improve the test cookbook / integration tests
-- Convert config LWRP to a custom resource and make it fully idempotent
-- Require Chef 12.5 or later
+* Fail on deprecations is now enabled so we're fully Chef 13 compatible
+* Define the chefspec matchers properly
+* Remove the legacy platform mappings that fail on Chef 13
+* Improve the test cookbook / integration tests
+* Convert config LWRP to a custom resource and make it fully idempotent
+* Require Chef 12.5 or later
 
 ## 5.0.2 (2017-01-18)
 
-- Remove arch for the metadata
-- Avoid deprecation warning during testing
-- respond_to?(:chef_version) for < 12.6 compat
+* Remove arch for the metadata
+* Avoid deprecation warning during testing
+* respond_to?(:chef_version) for < 12.6 compat
 
 ## 5.0.1 (2016-09-15)
 
-- Clarify we require Chef 12.1 or later
+* Clarify we require Chef 12.1 or later
 
 ## 5.0.0 (2016-09-02)
 
-- Require Chef 12 or later
-- Don't depend on the windows cookbook since windows_package is built into Chef 12
-- Updates for testing
+* Require Chef 12 or later
+* Don't depend on the windows cookbook since windows_package is built into Chef 12
+* Updates for testing
 
 ## v4.6.0 (2016-07-05)
 
-- Added support for compiling git on suse
-- Added the ability to pass a new group property to the config provider
-- Documented the git_config provider
-- Added the tar package on RHEL/Fedora for source installs as some minimal installs lack this package
-- Added suse, opensuse, and opensuseleap as supported platforms in the metadata
-- Switched to inspec for testing
-- Switched to cookstyle for Ruby linting
-- Added Travis integration testing of Debian 7/8
+* Added support for compiling git on suse
+* Added the ability to pass a new group property to the config provider
+* Documented the git_config provider
+* Added the tar package on RHEL/Fedora for source installs as some minimal installs lack this package
+* Added suse, opensuse, and opensuseleap as supported platforms in the metadata
+* Switched to inspec for testing
+* Switched to cookstyle for Ruby linting
+* Added Travis integration testing of Debian 7/8
 
 ## v4.5.0 (2016-04-28)
 
-- Update git versions to 2.8.1
+* Update git versions to 2.8.1
 
 ## v4.4.1 (2016-03-31)
 
-- PR #95 support 32 bit and 64 bit installs on windows @smurawski
+* PR #95 support 32 bit and 64 bit installs on windows @smurawski
 
 ## v4.4.0 (2016-03-23)
 
-- PR #93 bump to latest git @ksubrama
+* PR #93 bump to latest git @ksubrama
 
 ## v4.3.7 (2016-02-03)
 
-- PR #90 port node[git][server][export_all] to true/false @scalp42
-- PR #89 make attributes more wrapper friendly @scalp42
-- Update testing deps + rubocop fixes
-- README fix @zverulacis
+* PR #90 port node[git][server][export_all] to true/false @scalp42
+* PR #89 make attributes more wrapper friendly @scalp42
+* Update testing deps + rubocop fixes
+* README fix @zverulacis
 
 ## v4.3.6 (2016-01-25)
 
-- Windows fixes
+* Windows fixes
 
 ## v4.3.5 (2015-12-15)
 
-- Fixed installation on Windows nodes
-- Removed the last of the Chef 10 compatibility code
-- Added up to date contributing and testing docs
-- Updated test deps in the Gemfile
-- Removed test kitchen digital ocean config
-- Test with kitchen-docker in Travis CI
-- Removed uncessary windows cookbook entry from the Berksfile
-- Added the chef standard rubocop.yml file and resolved all warnings
-- Added chefignore file
-- Removed bin dir
-- Added maintainers.md and maintainers.toml files
-- Added travis and supermarket version badges to the readme
+* Fixed installation on Windows nodes
+* Removed the last of the Chef 10 compatibility code
+* Added up to date contributing and testing docs
+* Updated test deps in the Gemfile
+* Removed test kitchen digital ocean config
+* Test with kitchen-docker in Travis CI
+* Removed uncessary windows cookbook entry from the Berksfile
+* Added the chef standard rubocop.yml file and resolved all warnings
+* Added chefignore file
+* Removed bin dir
+* Added maintainers.md and maintainers.toml files
+* Added travis and supermarket version badges to the readme
 
 ## v4.3.4 (2015-09-06)
 
-- Fixing package_id on OSX
-- Adding 2.5.1 data for Windows
+* Fixing package_id on OSX
+* Adding 2.5.1 data for Windows
 
 ## v4.3.3 (2015-07-27)
 
-- #76: Use checksum keyname instead of value in source recipe
+* #76: Use checksum keyname instead of value in source recipe
 
 ## v4.3.2 (2015-07-27)
 
-- Fixing up Windows provider (issue #73)
-- Supporting changes to source_prefix in source provider (#62)
+* Fixing up Windows provider (issue #73)
+* Supporting changes to source_prefix in source provider (#62)
 
 ## v4.3.1 (2015-07-23)
 
-- Fixing up osx_dmg_source_url
+* Fixing up osx_dmg_source_url
 
 ## v4.3.0 (2015-07-20)
 
-- Removing references to node attributes from provider code
-- Name-spacing of client resource property names
-- Addition of windows recipe
-- Creation of package recipe
+* Removing references to node attributes from provider code
+* Name-spacing of client resource property names
+* Addition of windows recipe
+* Creation of package recipe
 
 ## v4.2.4 (2015-07-19)
 
-- Fixing source provider selection bug from 4.2.3
+* Fixing source provider selection bug from 4.2.3
 
 ## v4.2.3 (2015-07-18)
 
-- mac_os_x provider mapping
-- various rubocops
+* mac_os_x provider mapping
+* various rubocops
 
 ## v4.2.2 (2015-04-23)
 
-- Fix up action in Chef::Resource::GitService
-- Adding matchers
+* Fix up action in Chef::Resource::GitService
+* Adding matchers
 
 ## v4.2.1 (2015-04-17)
 
-- Fixing Chef 11 support.
-- Adding provider mapping file
+* Fixing Chef 11 support.
+* Adding provider mapping file
 
 ## v4.2.0 (2015-04-15)
 
-- Converting recipes to resources.
-- Keeping recipe interface for backwards compat
+* Converting recipes to resources.
+* Keeping recipe interface for backwards compat
 
 ## v4.1.0 (2014-12-23)
 
-- Fixing windows package checksums
-- Various test coverage additions
+* Fixing windows package checksums
+* Various test coverage additions
 
 ## v4.0.2 (2014-04-23)
 
-- [COOK-4482] - Add FreeBSD support for installing git client
+* [COOK-4482] - Add FreeBSD support for installing git client
 
 ## v4.0.0 (2014-03-18)
 
-- [COOK-4397] Only use_inline_resources on Chef 11
+* [COOK-4397] Only use_inline_resources on Chef 11
 
 ## v3.1.0 (2014-03-12)
 
-- [COOK-4392] - Cleanup git_config LWRP
+* [COOK-4392] - Cleanup git_config LWRP
 
 ## v3.0.0 (2014-02-28)
 
@@ -360,8 +335,8 @@ Standardise files with files in sous-chefs/repo-management
 
 ## v2.10.0 (2014-02-25)
 
-- [COOK-4146] - wrong dependency in git::source for rhel 6
-- [COOK-3947] - Git cookbook adds itself to the path every run
+* [COOK-4146] - wrong dependency in git::source for rhel 6
+* [COOK-3947] - Git cookbook adds itself to the path every run
 
 ## v2.9.0
 
@@ -377,87 +352,87 @@ Locking yum dependency to '< 3'
 
 ## v2.8.0
 
-- git::server does not correctly set git-daemon's base-path on Debian
+* git::server does not correctly set git-daemon's base-path on Debian
 
 ## v2.7.0
 
-- Don't restart `xinetd` on each Chef client run
-- Force git to add itself to the current process' PATH
+* Don't restart `xinetd` on each Chef client run
+* Force git to add itself to the current process' PATH
 
 ### New Feature
 
-- Support Omnios and SmartOS package installs
+* Support Omnios and SmartOS package installs
 
 ## v2.6.0
 
 ### Improvement
 
-- Add proper debian packages
+* Add proper debian packages
 
 ## v2.5.2
 
-- [COOK-2813]: Fix bad string interpolation in source recipe
+* [COOK-2813]: Fix bad string interpolation in source recipe
 
 ## v2.5.0
 
-- Relax runit version constraint (now depend on 1.0+).
+* Relax runit version constraint (now depend on 1.0+).
 
 ## v2.4.0
 
-- [COOK-2734] - update git versions
+* [COOK-2734] - update git versions
 
 ## v2.3.0
 
-- [COOK-2385] - update git::server for `runit_service` resource support
+* [COOK-2385] - update git::server for `runit_service` resource support
 
 ## v2.2.0
 
-- [COOK-2303] - git::server support for RHEL `platform_family`
+* [COOK-2303] - git::server support for RHEL `platform_family`
 
 ## v2.1.4
 
-- [COOK-2110] - initial test-kitchen support (only available in GitHub repository)
-- [COOK-2253] - pin runit dependency
+* [COOK-2110] - initial test-kitchen support (only available in GitHub repository)
+* [COOK-2253] - pin runit dependency
 
 ## v2.1.2
 
-- [COOK-2043] - install git on ubuntu 12.04 not git-core
+* [COOK-2043] - install git on ubuntu 12.04 not git-core
 
 ## v2.1.0
 
 The repository didn't have pushed commits, and so the following changes from earlier-than-latest versions wouldn't be available on the community site. We're releasing 2.1.0 to correct this.
 
-- [COOK-1943] - Update to git 1.8.0
-- [COOK-2020] - Add setup option attributes to Git Windows package install
+* [COOK-1943] - Update to git 1.8.0
+* [COOK-2020] - Add setup option attributes to Git Windows package install
 
 ## v2.0.0
 
 This version uses `platform_family` attribute, making the cookbook incompatible with older versions of Chef/Ohai, hence the major version bump.
 
-- [COOK-1668] - git cookbook fails to run due to bad `platform_family` call
-- [COOK-1759] - git::source needs additional package for rhel `platform_family`
+* [COOK-1668] - git cookbook fails to run due to bad `platform_family` call
+* [COOK-1759] - git::source needs additional package for rhel `platform_family`
 
 ## v1.1.2
 
-- [COOK-2020] - Add setup option attributes to Git Windows package install
+* [COOK-2020] - Add setup option attributes to Git Windows package install
 
 ## v1.1.0
 
-- [COOK-1943] - Update to git 1.8.0
+* [COOK-1943] - Update to git 1.8.0
 
 ## v1.0.2
 
-- [COOK-1537] - add recipe for source installation
+* [COOK-1537] - add recipe for source installation
 
 ## v1.0.0
 
-- [COOK-1152] - Add support for Mac OS X
-- [COOK-1112] - Add support for Windows
+* [COOK-1152] - Add support for Mac OS X
+* [COOK-1112] - Add support for Windows
 
 ## v0.10.0
 
-- [COOK-853] - Git client installation on CentOS
+* [COOK-853] - Git client installation on CentOS
 
 ## v0.9.0
 
-- Current public release
+* Current public release
