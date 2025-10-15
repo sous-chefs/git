@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Standardise files with files in sous-chefs/repo-management
 Standardise files with files in sous-chefs/repo-management
 
+## [12.1.10](https://github.com/sous-chefs/git/compare/12.1.9...v12.1.10) (2025-10-15)
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#203](https://github.com/sous-chefs/git/issues/203)) ([0a45d03](https://github.com/sous-chefs/git/commit/0a45d0377261cca27f68325271cd12a1755287b4))
+
 ## 12.1.8 - *2025-06-08*
 
 Standardise files with files in sous-chefs/repo-management
