@@ -9,7 +9,7 @@ module GitCookbook
     end
 
     def parsed_package_version
-      return new_resource.package_version if new_resource.package_version
+      new_resource.package_version if new_resource.package_version
     end
 
     # source
