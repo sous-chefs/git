@@ -8,6 +8,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Standardise files with files in sous-chefs/repo-management
 Standardise files with files in sous-chefs/repo-management
 
+## [13.0.0](https://github.com/sous-chefs/git/compare/v12.1.11...v13.0.0) (2026-05-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate git to custom resources ([#210](https://github.com/sous-chefs/git/issues/210))
+
+### Features
+
+* migrate git to custom resources ([#210](https://github.com/sous-chefs/git/issues/210)) ([196a4cd](https://github.com/sous-chefs/git/commit/196a4cdc54dfe5e9de811eba4986be26b3cca3ac))
+
+
+### Bug Fixes
+
+* **ci:** Update workflows to use release pipeline ([#203](https://github.com/sous-chefs/git/issues/203)) ([0a45d03](https://github.com/sous-chefs/git/commit/0a45d0377261cca27f68325271cd12a1755287b4))
+
 ## [12.1.11](https://github.com/sous-chefs/git/compare/v12.1.10...v12.1.11) (2025-10-16)
 
 
