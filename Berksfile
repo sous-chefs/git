@@ -3,6 +3,5 @@ source 'https://supermarket.chef.io'
 metadata
 
 group :integration do
-  cookbook 'homebrew'
-  cookbook 'test', path: 'test/fixtures/cookbooks/test'
+  cookbook 'test', path: 'test/cookbooks/test'
 end

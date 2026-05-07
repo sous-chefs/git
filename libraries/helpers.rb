@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GitCookbook
   module Helpers
     # linux packages default to distro offering
@@ -9,18 +11,49 @@ module GitCookbook
     end
 
     def parsed_package_version
-      new_resource.package_version if new_resource.package_version
+      new_resource.package_version
     end
 
     # source
     def parsed_source_url
       return new_resource.source_url if new_resource.source_url
-      "https://nodeload.github.com/git/git/tar.gz/v#{new_resource.source_version}"
+      "https://mirrors.edge.kernel.org/pub/software/scm/git/git-#{new_resource.source_version}.tar.gz"
     end
 
     def parsed_source_checksum
       return new_resource.source_checksum if new_resource.source_checksum
-      '690f12cc5691e5adaf2dd390eae6f5acce68ae0d9bd9403814f8a1433833f02a' # 2.17.1 tarball
+      '45e8107643a44e3ce46f5665beb35af3932fb0d70017687905ab5d4e3aafa8eb' # 2.54.0 tarball
+    end
+
+    def source_build_packages
+      packages =
+        case node['platform_family']
+        when 'rhel', 'fedora', 'amazon'
+          %w(tar expat-devel gettext-devel libcurl-devel openssl-devel perl-ExtUtils-MakeMaker zlib-devel)
+        when 'debian'
+          %w(libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev)
+        when 'suse'
+          %w(tar libcurl-devel libexpat-devel gettext-tools zlib-devel libopenssl-devel)
+        end
+
+      return packages unless new_resource.source_use_pcre
+
+      packages + [source_pcre_package]
+    end
+
+    def source_pcre_package
+      case node['platform_family']
+      when 'rhel', 'fedora', 'amazon'
+        'pcre-devel'
+      when 'debian'
+        'libpcre3-dev'
+      when 'suse'
+        'libpcre2-devel'
+      end
+    end
+
+    def source_make_opts
+      ["prefix=#{new_resource.source_prefix}", ('USE_LIBPCRE=1' if new_resource.source_use_pcre)].compact
     end
 
     # windows
@@ -36,8 +69,10 @@ module GitCookbook
 
     def parsed_windows_package_url
       return new_resource.windows_package_url if new_resource.windows_package_url
-      if node['kernel']['machine'] == 'x86_64'
+      if new_resource.windows_architecture == '64'
         "https://github.com/git-for-windows/git/releases/download/v#{parsed_windows_package_version}.windows.1/Git-#{parsed_windows_package_version}-64-bit.exe"
+      elsif new_resource.windows_architecture == 'arm64'
+        "https://github.com/git-for-windows/git/releases/download/v#{parsed_windows_package_version}.windows.1/Git-#{parsed_windows_package_version}-arm64.exe"
       else
         "https://github.com/git-for-windows/git/releases/download/v#{parsed_windows_package_version}.windows.1/Git-#{parsed_windows_package_version}-32-bit.exe"
       end
@@ -45,10 +80,34 @@ module GitCookbook
 
     def parsed_windows_package_checksum
       return new_resource.windows_package_checksum if new_resource.windows_package_checksum
-      if node['kernel']['machine'] == 'x86_64'
-        'D7608FBD854B3689102FF48B03C8CC77B35138F9F7350D134306DA0BA5751464'
+      nil
+    end
+
+    def windows_git_path
+      "#{windows_program_files}\\Git\\Cmd"
+    end
+
+    def windows_git_exe
+      "#{windows_git_path}\\git.exe"
+    end
+
+    def windows_git_installed?
+      ::File.exist?(windows_git_exe)
+    end
+
+    def windows_path_configured?
+      windows_path_entries.include?(windows_git_path.downcase)
+    end
+
+    def windows_path_entries
+      ENV['PATH'].to_s.split(';').map { |path| path.tr('/', '\\').downcase }
+    end
+
+    def windows_program_files
+      if new_resource.windows_architecture == '32'
+        ENV['ProgramFiles(x86)'] || ENV['ProgramFiles'] || 'C:\\Program Files (x86)'
       else
-        'ADDF55B0A57F38A7950B3AD37CE5C76752202E6818D9F8995B477496B71FB757'
+        ENV['ProgramW6432'] || ENV['ProgramFiles'] || 'C:\\Program Files'
       end
     end
   end

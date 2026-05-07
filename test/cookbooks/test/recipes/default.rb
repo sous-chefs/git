@@ -1,6 +1,8 @@
-apt_update
+# frozen_string_literal: true
 
-git_client 'install it'
+apt_update 'update apt cache' if platform_family?('debian')
+
+git_client 'default'
 
 home_dir =
   if windows?
@@ -18,6 +20,19 @@ end unless windows?
 
 directory 'C:\temp' if windows?
 
+repo_path = "#{home_dir}/git_repo"
+
+directory repo_path do
+  owner 'random' unless windows?
+end
+
+execute 'initialize local git repository' do
+  command 'git init'
+  cwd repo_path
+  user 'random' unless windows?
+  creates "#{repo_path}/.git"
+end
+
 git_config 'add name to random' do
   user 'random' unless windows?
   scope 'global'
@@ -25,17 +40,12 @@ git_config 'add name to random' do
   value 'John Doe global'
 end
 
-git "#{home_dir}/git_repo" do
-  repository 'https://github.com/chef/chef-repo.git'
-  user 'random' unless windows?
-end
-
 git_config 'change local path' do
   user 'random' unless windows?
   scope 'local'
   key 'user.name'
   value 'John Doe local'
-  path "#{home_dir}/git_repo"
+  path repo_path
 end
 
 git_config 'change system config' do

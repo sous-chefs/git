@@ -1,0 +1,7 @@
+---
+name: source
+title: Git Source Tests
+maintainer: Sous Chefs
+license: Apache-2.0
+summary: Source install integration tests for the git cookbook
+version: 1.0.0

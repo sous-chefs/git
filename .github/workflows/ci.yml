@@ -10,11 +10,9 @@ jobs:
   lint-unit:
     uses: sous-chefs/.github/.github/workflows/lint-unit.yml@6.0.0
     permissions:
-      actions: write
       checks: write
       pull-requests: write
       statuses: write
-      issues: write
 
   integration:
     needs: lint-unit
@@ -23,17 +21,24 @@ jobs:
       matrix:
         os:
           - almalinux-8
-          - amazonlinux-2
-          - centos-7
-          - centos-stream-8
-          - debian-10
-          - debian-11
+          - almalinux-9
+          - almalinux-10
+          - amazonlinux-2023
+          - centos-stream-9
+          - centos-stream-10
+          - debian-12
+          - debian-13
+          - fedora-latest
           - opensuse-leap-15
+          - oraclelinux-8
+          - oraclelinux-9
           - rockylinux-8
-          - ubuntu-1804
-          - ubuntu-2004
+          - rockylinux-9
+          - rockylinux-10
+          - ubuntu-2204
+          - ubuntu-2404
         suite:
-          - resources
+          - default
           - source
       fail-fast: false
 
@@ -41,7 +46,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v6
       - name: Install Chef
-        uses: actionshub/chef-install@6.0.0
+        uses: sous-chefs/.github/.github/actions/install-workstation@6.0.0
       - name: Dokken
         uses: actionshub/test-kitchen@3.0.0
         env:
@@ -57,47 +62,23 @@ jobs:
           sudo journalctl -l --since today
           KITCHEN_LOCAL_YAML=kitchen.dokken.yml /usr/bin/kitchen exec ${{ matrix.suite }}-${{ matrix.os }} -c "journalctl -l"
 
-  integration-windows:
+  integration-exec:
     needs: lint-unit
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        os:
-          - windows-2016
-          - windows-2019
-        suite:
-          - resources
-      fail-fast: false
-
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v6
-      - name: Install Chef
-        uses: actionshub/chef-install@6.0.0
-      - name: test-kitchen
-        uses: actionshub/test-kitchen@3.0.0
-        env:
-          CHEF_LICENSE: accept-no-persist
-        with:
-          suite: ${{ matrix.suite }}
-          os: ${{ matrix.os }}
-
-  integration-macos:
-    needs: lint-unit
-    runs-on: macos-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os:
           - macos-latest
+          - windows-latest
         suite:
-          - resources
+          - default
       fail-fast: false
 
     steps:
       - name: Check out code
         uses: actions/checkout@v6
       - name: Install Chef
-        uses: actionshub/chef-install@6.0.0
+        uses: sous-chefs/.github/.github/actions/install-workstation@6.0.0
       - name: test-kitchen
         uses: actionshub/test-kitchen@3.0.0
         env:
@@ -111,16 +92,15 @@ jobs:
     if: ${{ always() }}
     runs-on: ubuntu-latest
     name: Final Results
-    needs: [integration, integration-macos, integration-windows]
+    needs: [integration, integration-exec]
     steps:
       - run: |
           results=(
            "${{ needs.integration.result }}"
-           "${{ needs.integration-macos.result }}"
-           "${{ needs.integration-windows.result }}"
+           "${{ needs.integration-exec.result }}"
           )
 
-          for exit_code in $results; do
+          for exit_code in "${results[@]}"; do
             if [[ $exit_code != "success" && $exit_code != "skipped" ]]; then
               exit 1
             fi

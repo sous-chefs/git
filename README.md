@@ -6,7 +6,7 @@
 [![OpenCollective](https://opencollective.com/sous-chefs/sponsors/badge.svg)](#sponsors)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Installs git_client from package or source. Optionally sets up a git service under xinetd.
+Installs Git from package, source, or the Git for Windows installer and manages Git configuration.
 
 ## Scope
 
@@ -28,33 +28,30 @@ This cookbook is maintained by the Sous Chefs. The Sous Chefs are a community of
 
 ## Usage
 
-Include `git::default`, `git::windows`, or `git::source` in your cookbook OR use the `git_client` resource directly.
+Use the `git_client` resource directly from your cookbook:
+
+```ruby
+git_client 'default'
+```
+
+For source installs:
+
+```ruby
+git_client 'source' do
+  source_version '2.54.0'
+  action :install_from_source
+end
+```
 
 ## Resources Overview
 
 - [`git_client`](./documentation/git_client.md): Manages a Git client installation on a machine. Source install action is available on Linux.
 - [`git_config`](./documentation/git_config.md): Sets up Git configuration on a node.
 
-## Recipes
+## Migration
 
-This cookbook ships with ready to use, attribute driven recipes that utilize the `git_client` and `git_service` resources. As of cookbook 4.x, they utilize the same attributes layout scheme from the 3.x. Due to some overlap, it is currently impossible to simultaneously install the Git client as a package and from source by using the "manipulate the node attributes and run a recipe" technique. If you need both, you'll need to utilize the git_client resource in a recipe.
-
-## Attributes
-
-### Windows
-
-- `node['git']['version']` - git version to install
-- `node['git']['url']` - URL to git package
-- `node['git']['checksum']` - package SHA256 checksum
-- `node['git']['display_name']` - `windows_package` resource Display Name (makes the package install idempotent)
-
-### Linux
-
-- `node['git']['prefix']` - git install directory
-- `node['git']['version']` - git version to install
-- `node['git']['url']` - URL to git tarball
-- `node['git']['checksum']` - tarball SHA256 checksum
-- `node['git']['use_pcre']` - if true, builds git with PCRE enabled
+This cookbook is now a custom-resource-only cookbook. See [migration.md](./migration.md) for
+the breaking changes from recipe and node attribute usage to resource properties.
 
 ## Contributors
 
