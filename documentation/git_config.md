@@ -2,7 +2,30 @@
 
 The `git_config` resource manages the configuration of Git client on a machine.
 
-## Example
+## Actions
+
+| Action | Description |
+|--------|-------------|
+| `:set` | Sets a Git config key to the requested value. Default. |
+| `:unset` | Removes all values for a Git config key in the requested scope. |
+
+## Properties
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `key` | String | name property | Git configuration key. |
+| `value` | String | `nil` | Git configuration value. Required for `:set`. |
+| `scope` | String | `'global'` | Config scope: `local`, `global`, `system`, or `file`. |
+| `config_file` | String | `nil` | Config file used with `scope 'file'`. |
+| `path` | String | `nil` | Working directory for local config operations. |
+| `user` | String | `nil` | User for the git config command. |
+| `group` | String | `nil` | Group for the git config command. |
+| `password` | String | `nil` | Password for Windows elevated execution. Sensitive. |
+| `options` | String | `nil` | Additional options appended to the set command, such as `--add`. |
+
+## Examples
+
+### Set a system value
 
 ```ruby
 git_config 'url.https://github.com/.insteadOf' do
@@ -12,26 +35,10 @@ git_config 'url.https://github.com/.insteadOf' do
 end
 ```
 
-## Properties
+### Unset a global value
 
-Currently, there are distinct sets of resource properties, used by the providers for source, package, macos, and windows.
-
-### used by Linux provider
-
-- `package_name` - Package name to install on Linux machines. Defaults to a calculated value based on platform.
-- `package_version` - Defaults to nil.
-- `package_action` - Defaults to `:install`
-
-### used by Linux source install
-
-- `source_prefix` - Defaults to '/usr/local'
-- `source_url` - Defaults to a calculated URL based on source_version
-- `source_version` - Defaults to 2.8.1
-- `source_use_pcre` - configure option for build. Defaults to false
-- `source_checksum` - Defaults to a known value for the 2.8.1 source tarball
-
-### used by the Windows provider
-
-- `windows_display_name` - Windows display name
-- `windows_package_url` - Defaults to the Internet
-- `windows_package_checksum` - Defaults to the value for 2.8.1
+```ruby
+git_config 'user.name' do
+  action :unset
+end
+```
