@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Standardise files with files in sous-chefs/repo-management
 Standardise files with files in sous-chefs/repo-management
 
+## [13.0.1](https://github.com/sous-chefs/git/compare/v13.0.0...v13.0.1) (2026-07-09)
+
+
+### Bug Fixes
+
+* migrate to Policyfile and map Kitchen suites ([#218](https://github.com/sous-chefs/git/issues/218)) ([52b4a7c](https://github.com/sous-chefs/git/commit/52b4a7c070863d8cb2ee359806bfe8abd82e3cca))
+
 ## [13.0.0](https://github.com/sous-chefs/git/compare/v12.1.11...v13.0.0) (2026-05-07)
 
 
